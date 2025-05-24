@@ -1,0 +1,122 @@
+{
+  "projectionOrdering": {
+    "Values": [
+      0,
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "CategoriaProducto",
+        "Name": "Categorias de Producto.CategoriaProducto",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Suma de CantidadOrden",
+        "Name": "Sum(Ventas.CantidadOrden)",
+        "Type": 3,
+        "Format": "0"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Categorias de Producto"
+              }
+            },
+            "Property": "CategoriaProducto"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "CantidadOrden"
+              }
+            },
+            "Function": 0
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "CategoriaProducto",
+      "queryName": "Categorias de Producto.CategoriaProducto",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Categorias de Producto"
+            }
+          },
+          "Property": "CategoriaProducto"
+        }
+      }
+    },
+    {
+      "displayName": "Suma de CantidadOrden",
+      "format": "0",
+      "queryName": "Sum(Ventas.CantidadOrden)",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Ventas"
+                }
+              },
+              "Property": "CantidadOrden"
+            }
+          },
+          "Function": 0
+        }
+      }
+    }
+  ]
+}

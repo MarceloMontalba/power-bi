@@ -1,0 +1,104 @@
+﻿table Clientes
+
+	column IDCliente
+		dataType: int64
+		isKey
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prefijo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Prefijo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Apellido
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Apellido
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nacimiento
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nacimiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoCivil
+		dataType: string
+		summarizeBy: none
+		sourceColumn: EstadoCivil
+
+		annotation SummarizationSetBy = Automatic
+
+	column Género
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Género
+
+		annotation SummarizationSetBy = Automatic
+
+	column correo-e
+		dataType: string
+		summarizeBy: none
+		sourceColumn: correo-e
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngresoAnual
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IngresoAnual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hijos
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Hijos
+
+		annotation SummarizationSetBy = Automatic
+
+	column NivelEducativo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: NivelEducativo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ocupacion
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ocupacion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clientes = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(RutaProyecto&"Clientes CicloVida.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDCliente", Int64.Type}, {"Prefijo", type text}, {"Nombre", type text}, {"Apellido", type text}, {"Nacimiento", type text}, {"EstadoCivil", type text}, {"Género", type text}, {"correo-e", type text}, {"IngresoAnual", Int64.Type}, {"Hijos", Int64.Type}, {"NivelEducativo", type text}, {"Ocupacion", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

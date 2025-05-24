@@ -1,0 +1,76 @@
+{
+  "name": "15de232abe8a6da6a423",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 9.9555555555555557,
+        "y": 0,
+        "z": 0,
+        "width": 584.5333333333333,
+        "height": 590.22222222222217,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Categorias de Producto.CategoriaProducto"
+        },
+        {
+          "queryRef": "Sum(Ventas.CantidadOrden)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "c",
+          "Entity": "Categorias de Producto",
+          "Type": 0
+        },
+        {
+          "Name": "v",
+          "Entity": "Ventas",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "c"
+              }
+            },
+            "Property": "CategoriaProducto"
+          },
+          "Name": "Categorias de Producto.CategoriaProducto",
+          "NativeReferenceName": "CategoriaProducto"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "v"
+                  }
+                },
+                "Property": "CantidadOrden"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(Ventas.CantidadOrden)",
+          "NativeReferenceName": "Suma de CantidadOrden"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

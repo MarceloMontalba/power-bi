@@ -1,0 +1,32 @@
+﻿model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transformar archivo de Ventas'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
+
+annotation PBI_QueryOrder = ["RutaProyecto","Territorios","Clientes","Productos","Calendario","Categorias de Producto","Subcategorias de Producto","Ventas","Parámetro1","Transformar archivo de ejemplo","Archivo de ejemplo","Transformar archivo"]
+
+ref table Territorios
+ref table Clientes
+ref table Productos
+ref table Calendario
+ref table 'Categorias de Producto'
+ref table 'Subcategorias de Producto'
+ref table Ventas
+
+ref cultureInfo es-ES
+

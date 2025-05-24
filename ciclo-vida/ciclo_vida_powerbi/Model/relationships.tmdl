@@ -1,0 +1,24 @@
+﻿relationship 3b8b9d26-571f-555e-509d-6374f6993c73
+	fromColumn: Productos.IDSubcategoriaProducto
+	toColumn: 'Subcategorias de Producto'.IDSubcategoriaProducto
+
+relationship cb0e428a-99b0-fc2b-cd3a-b2b5670c70e1
+	fromColumn: 'Subcategorias de Producto'.IDCategoriaProducto
+	toColumn: 'Categorias de Producto'.IDCategoriaProducto
+
+relationship a7b03221-6683-0adf-3d50-e6419bd2dc15
+	fromColumn: Ventas.FechaOrden
+	toColumn: Calendario.Fechas
+
+relationship 50113e6b-296b-91e2-5ecf-8f32b379fe20
+	fromColumn: Ventas.IDCliente
+	toColumn: Clientes.IDCliente
+
+relationship 17f6aba3-5387-f8b0-8a65-5555f3ea4ffd
+	fromColumn: Ventas.IDProducto
+	toColumn: Productos.IDProducto
+
+relationship 20f13a43-d2ce-a2af-7769-b0989b0bc2f5
+	fromColumn: Ventas.IDTerritorio
+	toColumn: Territorios.IDTerritorio
+

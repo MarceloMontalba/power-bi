@@ -1,0 +1,90 @@
+﻿table Ventas
+
+	column FechaOrden
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: FechaOrden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FechaAbastecimiento
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: FechaAbastecimiento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IDOrden
+		dataType: string
+		summarizeBy: none
+		sourceColumn: IDOrden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDProducto
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDCliente
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDTerritorio
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDTerritorio
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineaPedido
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: LineaPedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column CantidadOrden
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: CantidadOrden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Ventas = m
+		mode: import
+		source =
+				let
+				    Origen = Folder.Files(RutaProyecto&"Ventas"),
+				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo", each #"Transformar archivo"([Content])),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+				    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo"}),
+				    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo", Table.ColumnNames(#"Transformar archivo"(#"Archivo de ejemplo"))),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"FechaOrden", type text}, {"FechaAbastecimiento", type text}, {"IDOrden", type text}, {"IDProducto", Int64.Type}, {"IDCliente", Int64.Type}, {"IDTerritorio", Int64.Type}, {"LineaPedido", Int64.Type}, {"CantidadOrden", Int64.Type}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Source.Name"}),
+				    #"Tipo cambiado con configuración regional" = Table.TransformColumnTypes(#"Columnas quitadas", {{"FechaOrden", type date}}, "es-419"),
+				    #"Tipo cambiado con configuración regional1" = Table.TransformColumnTypes(#"Tipo cambiado con configuración regional", {{"FechaAbastecimiento", type date}}, "es-419")
+				in
+				    #"Tipo cambiado con configuración regional1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,32 @@
+﻿table 'Categorias de Producto'
+
+	column IDCategoriaProducto
+		dataType: int64
+		isKey
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDCategoriaProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoriaProducto
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CategoriaProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Categorias de Producto' = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(RutaProyecto&"Categorias de Producto CicloVida.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDCategoriaProducto", Int64.Type}, {"CategoriaProducto", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

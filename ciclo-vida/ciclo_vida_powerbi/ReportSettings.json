@@ -1,0 +1,10 @@
+{
+  "Version": 4,
+  "ReportSettings": {
+    "IsRelationshipAutodetectionEnabled": false
+  },
+  "QueriesSettings": {
+    "TypeDetectionEnabled": true,
+    "Version": "2.143.578.0"
+  }
+}

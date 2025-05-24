@@ -1,0 +1,40 @@
+﻿table 'Subcategorias de Producto'
+
+	column IDSubcategoriaProducto
+		dataType: int64
+		isKey
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDSubcategoriaProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubcategoriaProducto
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SubcategoriaProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDCategoriaProducto
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDCategoriaProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Subcategorias de Producto' = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(RutaProyecto&"Subcategorias de Producto Ciclovida.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDSubcategoriaProducto", Int64.Type}, {"SubcategoriaProducto", type text}, {"IDCategoriaProducto", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

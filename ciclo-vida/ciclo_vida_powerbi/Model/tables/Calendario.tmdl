@@ -1,0 +1,29 @@
+﻿table Calendario
+
+	column Fechas
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: Fechas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Calendario = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(RutaProyecto&"Calendario.csv"),[Delimiter=",", Columns=1, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Column1", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
+				    #"Tipo cambiado con configuración regional" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"Datos", type date}}, "es-419"),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado con configuración regional",{{"Datos", "Fechas"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,45 @@
+﻿expression RutaProyecto = "C:\Users\mmont\Documents\power-bi\ciclo-vida\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+
+expression Parámetro1 = #"Archivo de ejemplo" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo", Type="Binary", IsParameterQueryRequired=true]
+	queryGroup: 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo' =
+		let
+		    Origen = Csv.Document(Parámetro1,[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	queryGroup: 'Transformar archivo de Ventas'
+
+	annotation PBI_ResultType = Table
+
+expression 'Archivo de ejemplo' =
+		let
+		    Origen = Folder.Files(RutaProyecto&"Ventas"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	queryGroup: 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo' =
+		let
+		    Origen = (Parámetro1 as binary) => let
+		        Origen = Csv.Document(Parámetro1,[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		        #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		    in
+		        #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo""}" ]
+	queryGroup: 'Transformar archivo de Ventas\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+

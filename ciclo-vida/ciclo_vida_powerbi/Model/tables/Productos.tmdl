@@ -1,0 +1,100 @@
+﻿table Productos
+
+	column IDProducto
+		dataType: int64
+		isKey
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IDSubcategoriaProducto
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDSubcategoriaProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = Automatic
+
+	column Producto
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modelo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Modelo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripcion
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column Talla
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Talla
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estilo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Estilo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Costo
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: Costo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Precio
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: Precio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Productos = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(RutaProyecto&"Productos.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDProducto", Int64.Type}, {"IDSubcategoriaProducto", Int64.Type}, {"SKU", type text}, {"Producto", type text}, {"Modelo", type text}, {"Descripcion", type text}, {"Color", type text}, {"Talla", type text}, {"Estilo", type text}, {"Costo", type number}, {"Precio", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

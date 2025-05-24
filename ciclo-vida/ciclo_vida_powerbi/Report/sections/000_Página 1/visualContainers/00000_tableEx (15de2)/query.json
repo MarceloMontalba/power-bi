@@ -1,0 +1,77 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Categorias de Producto",
+              "Type": 0
+            },
+            {
+              "Name": "v",
+              "Entity": "Ventas",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "CategoriaProducto"
+              },
+              "Name": "Categorias de Producto.CategoriaProducto",
+              "NativeReferenceName": "CategoriaProducto"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "v"
+                      }
+                    },
+                    "Property": "CantidadOrden"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(Ventas.CantidadOrden)",
+              "NativeReferenceName": "Suma de CantidadOrden"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ],
+                "Subtotal": 1
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Window": {
+                "Count": 500
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+﻿table Territorios
+
+	column IDTerritorio
+		dataType: int64
+		isKey
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: IDTerritorio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continente
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Continente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Territorios = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(RutaProyecto&"Territorios.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDTerritorio", Int64.Type}, {"Region", type text}, {"Pais", type text}, {"Continente", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
