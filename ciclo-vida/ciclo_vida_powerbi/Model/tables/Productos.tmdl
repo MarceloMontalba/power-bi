@@ -13,6 +13,7 @@
 
 	column IDSubcategoriaProducto
 		dataType: int64
+		isHidden
 		formatString: 0
 		summarizeBy: none
 		sourceColumn: IDSubcategoriaProducto
@@ -86,6 +87,7 @@
 
 	column Costo
 		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		summarizeBy: sum
 		sourceColumn: Costo
 
@@ -93,10 +95,11 @@
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column Precio
 		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		summarizeBy: sum
 		sourceColumn: Precio
 
@@ -104,7 +107,7 @@
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	partition Productos = m
 		mode: import
@@ -112,7 +115,7 @@
 				let
 				    Origen = Csv.Document(File.Contents(RutaProyecto&"Productos.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDProducto", Int64.Type}, {"IDSubcategoriaProducto", Int64.Type}, {"SKU", type text}, {"Producto", type text}, {"Modelo", type text}, {"Descripcion", type text}, {"Color", type text}, {"Talla", type text}, {"Estilo", type text}, {"Costo", type number}, {"Precio", type number}})
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDProducto", Int64.Type}, {"IDSubcategoriaProducto", Int64.Type}, {"Costo", type number}, {"Precio", type number}})
 				in
 				    #"Tipo cambiado"
 

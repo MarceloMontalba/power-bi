@@ -2,7 +2,8 @@
 
 	column FechaOrden
 		dataType: dateTime
-		formatString: Long Date
+		isHidden
+		formatString: Short Date
 		summarizeBy: none
 		sourceColumn: FechaOrden
 
@@ -14,7 +15,8 @@
 
 	column FechaAbastecimiento
 		dataType: dateTime
-		formatString: Long Date
+		isHidden
+		formatString: Short Date
 		summarizeBy: none
 		sourceColumn: FechaAbastecimiento
 
@@ -35,6 +37,7 @@
 
 	column IDProducto
 		dataType: int64
+		isHidden
 		formatString: 0
 		summarizeBy: none
 		sourceColumn: IDProducto
@@ -45,6 +48,7 @@
 
 	column IDCliente
 		dataType: int64
+		isHidden
 		formatString: 0
 		summarizeBy: none
 		sourceColumn: IDCliente
@@ -55,6 +59,7 @@
 
 	column IDTerritorio
 		dataType: int64
+		isHidden
 		formatString: 0
 		summarizeBy: none
 		sourceColumn: IDTerritorio

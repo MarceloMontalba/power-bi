@@ -22,6 +22,7 @@
 
 	column Pais
 		dataType: string
+		dataCategory: Country
 		summarizeBy: none
 		sourceColumn: Pais
 
@@ -31,12 +32,24 @@
 
 	column Continente
 		dataType: string
+		dataCategory: Continent
 		summarizeBy: none
 		sourceColumn: Continente
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Jerarquía de Territorio'
+
+		level Continente
+			column: Continente
+
+		level Pais
+			column: Pais
+
+		level Region
+			column: Region
 
 	partition Territorios = m
 		mode: import

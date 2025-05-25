@@ -1,0 +1,194 @@
+{
+  "name": "15de232abe8a6da6a423",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 9.4936708860759484,
+        "y": 0,
+        "z": 0,
+        "width": 477.84810126582278,
+        "height": 890.82278481012656,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "pivotTable",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sum(Ventas.CantidadOrden)"
+        },
+        {
+          "queryRef": "Sum(Devoluciones.CantidadDevuelta)"
+        }
+      ],
+      "Rows": [
+        {
+          "queryRef": "Calendario.Jerarquía de Fecha.Año",
+          "active": true
+        },
+        {
+          "queryRef": "Calendario.Jerarquía de Fecha.Trimestre",
+          "active": true
+        },
+        {
+          "queryRef": "Calendario.Jerarquía de Fecha.Nombre del mes",
+          "active": true
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "v",
+          "Entity": "Ventas",
+          "Type": 0
+        },
+        {
+          "Name": "d",
+          "Entity": "Devoluciones",
+          "Type": 0
+        },
+        {
+          "Name": "c",
+          "Entity": "Calendario",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "v"
+                  }
+                },
+                "Property": "CantidadOrden"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(Ventas.CantidadOrden)",
+          "NativeReferenceName": "Suma de CantidadOrden"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "d"
+                  }
+                },
+                "Property": "CantidadDevuelta"
+              }
+            },
+            "Function": 0
+          },
+          "Name": "Sum(Devoluciones.CantidadDevuelta)",
+          "NativeReferenceName": "Suma de CantidadDevuelta"
+        },
+        {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Hierarchy": "Jerarquía de Fecha"
+              }
+            },
+            "Level": "Año"
+          },
+          "Name": "Calendario.Jerarquía de Fecha.Año",
+          "NativeReferenceName": "Jerarquía de Fecha Año"
+        },
+        {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Hierarchy": "Jerarquía de Fecha"
+              }
+            },
+            "Level": "Trimestre"
+          },
+          "Name": "Calendario.Jerarquía de Fecha.Trimestre",
+          "NativeReferenceName": "Jerarquía de Fecha Trimestre"
+        },
+        {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Hierarchy": "Jerarquía de Fecha"
+              }
+            },
+            "Level": "Nombre del mes"
+          },
+          "Name": "Calendario.Jerarquía de Fecha.Nombre del mes",
+          "NativeReferenceName": "Jerarquía de Fecha Nombre del mes"
+        }
+      ]
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Calendario.Jerarquía de Fecha.Año"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendario"
+                    }
+                  },
+                  "Property": "Año"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Calendario.Jerarquía de Fecha.Trimestre"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Calendario.Jerarquía de Fecha.Nombre del mes"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "identityValues": null
+        }
+      }
+    ],
+    "drillFilterOtherVisuals": true
+  }
+}

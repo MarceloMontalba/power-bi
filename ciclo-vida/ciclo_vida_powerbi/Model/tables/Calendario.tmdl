@@ -1,17 +1,78 @@
 ﻿table Calendario
 
-	column Fechas
+	column Fecha
 		dataType: dateTime
 		isKey
-		formatString: Long Date
+		formatString: Short Date
 		summarizeBy: none
-		sourceColumn: Fechas
+		sourceColumn: Fecha
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Inicio del mes'
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: Inicio del mes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Nombre del día'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre del día
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inicio de la semana'
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: Inicio de la semana
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Año
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre del mes'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre del mes
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Jerarquía de Fecha'
+
+		level Año
+			column: Año
+
+		level Trimestre
+			column: Trimestre
+
+		level 'Nombre del mes'
+			column: 'Nombre del mes'
 
 	partition Calendario = m
 		mode: import
@@ -20,10 +81,18 @@
 				    Origen = Csv.Document(File.Contents(RutaProyecto&"Calendario.csv"),[Delimiter=",", Columns=1, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Column1", type text}}),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado", [PromoteAllScalars=true]),
-				    #"Tipo cambiado con configuración regional" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"Datos", type date}}, "es-419"),
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado con configuración regional",{{"Datos", "Fechas"}})
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Encabezados promovidos",{{"Datos", "Fecha"}}),
+				    #"Tipo cambiado con configuración regional" = Table.TransformColumnTypes(#"Columnas con nombre cambiado", {{"Fecha", type date}}, "es-419"),
+				    Personalizado1 = Table.AddColumn(#"Tipo cambiado con configuración regional", "Nombre del día", each Date.ToText([Fecha], "dddd", "es-ES"), type text),
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(Personalizado1,{{"Nombre del día", Text.Proper, type text}}),
+				    #"Inicio de la semana insertado" = Table.AddColumn(#"Poner En Mayúsculas Cada Palabra", "Inicio de la semana", each Date.StartOfWeek([Fecha],1), type date),
+				    #"Inicio del mes insertado" = Table.AddColumn(#"Inicio de la semana insertado", "Inicio del mes", each Date.StartOfMonth([Fecha]), type date),
+				    #"Año insertado" = Table.AddColumn(#"Inicio del mes insertado", "Año", each Date.Year([Fecha]), Int64.Type),
+				    #"Trimestre insertado" = Table.AddColumn(#"Año insertado", "Trimestre", each Date.QuarterOfYear([Fecha]), Int64.Type),
+				    #"Nombre del mes insertado" = Table.AddColumn(#"Trimestre insertado", "Nombre del mes", each Date.MonthName([Fecha],"es-ES"), type text),
+				    #"Poner En Mayúsculas Cada Palabra1" = Table.TransformColumns(#"Nombre del mes insertado",{{"Nombre del mes", Text.Proper, type text}})
 				in
-				    #"Columnas con nombre cambiado"
+				    #"Poner En Mayúsculas Cada Palabra1"
 
 	annotation PBI_NavigationStepName = Navegación
 

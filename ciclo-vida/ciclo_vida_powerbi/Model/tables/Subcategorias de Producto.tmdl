@@ -22,6 +22,7 @@
 
 	column IDCategoriaProducto
 		dataType: int64
+		isHidden
 		formatString: 0
 		summarizeBy: none
 		sourceColumn: IDCategoriaProducto

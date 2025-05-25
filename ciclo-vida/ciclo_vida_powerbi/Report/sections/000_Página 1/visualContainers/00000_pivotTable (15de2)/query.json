@@ -1,0 +1,151 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "v",
+              "Entity": "Ventas",
+              "Type": 0
+            },
+            {
+              "Name": "d",
+              "Entity": "Devoluciones",
+              "Type": 0
+            },
+            {
+              "Name": "c",
+              "Entity": "Calendario",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "v"
+                      }
+                    },
+                    "Property": "CantidadOrden"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(Ventas.CantidadOrden)",
+              "NativeReferenceName": "Suma de CantidadOrden"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "d"
+                      }
+                    },
+                    "Property": "CantidadDevuelta"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(Devoluciones.CantidadDevuelta)",
+              "NativeReferenceName": "Suma de CantidadDevuelta"
+            },
+            {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Hierarchy": "Jerarquía de Fecha"
+                  }
+                },
+                "Level": "Año"
+              },
+              "Name": "Calendario.Jerarquía de Fecha.Año",
+              "NativeReferenceName": "Jerarquía de Fecha Año"
+            },
+            {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Hierarchy": "Jerarquía de Fecha"
+                  }
+                },
+                "Level": "Trimestre"
+              },
+              "Name": "Calendario.Jerarquía de Fecha.Trimestre",
+              "NativeReferenceName": "Jerarquía de Fecha Trimestre"
+            },
+            {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Hierarchy": "Jerarquía de Fecha"
+                  }
+                },
+                "Level": "Nombre del mes"
+              },
+              "Name": "Calendario.Jerarquía de Fecha.Nombre del mes",
+              "NativeReferenceName": "Jerarquía de Fecha Nombre del mes"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  2
+                ],
+                "Subtotal": 1
+              },
+              {
+                "Projections": [
+                  3
+                ],
+                "Subtotal": 1
+              },
+              {
+                "Projections": [
+                  0,
+                  1,
+                  4
+                ],
+                "Subtotal": 1
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Window": {
+                "Count": 500
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "projectionOrdering": {
+    "Values": [
+      0,
+      1
+    ],
+    "Rows": [
+      2,
+      3,
+      4
+    ]
+  },
+  "projectionActiveItems": {
+    "Rows": [
+      {
+        "queryRef": "Calendario.Jerarquía de Fecha.Año",
+        "suppressConcat": false
+      },
+      {
+        "queryRef": "Calendario.Jerarquía de Fecha.Trimestre",
+        "suppressConcat": false
+      },
+      {
+        "queryRef": "Calendario.Jerarquía de Fecha.Nombre del mes",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Suma de CantidadOrden",
+        "Name": "Sum(Ventas.CantidadOrden)",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Suma de CantidadDevuelta",
+        "Name": "Sum(Devoluciones.CantidadDevuelta)",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Año",
+        "Name": "Calendario.Jerarquía de Fecha.Año",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Trimestre",
+        "Name": "Calendario.Jerarquía de Fecha.Trimestre",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Nombre del mes",
+        "Name": "Calendario.Jerarquía de Fecha.Nombre del mes",
+        "Type": 2048
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ventas"
+                  }
+                },
+                "Property": "CantidadOrden"
+              }
+            },
+            "Function": 0
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Devoluciones"
+                  }
+                },
+                "Property": "CantidadDevuelta"
+              }
+            },
+            "Function": 0
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendario"
+                  }
+                },
+                "Hierarchy": "Jerarquía de Fecha"
+              }
+            },
+            "Level": "Año"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendario"
+                  }
+                },
+                "Hierarchy": "Jerarquía de Fecha"
+              }
+            },
+            "Level": "Trimestre"
+          }
+        }
+      },
+      {
+        "type": 0,
+        "expression": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendario"
+                  }
+                },
+                "Hierarchy": "Jerarquía de Fecha"
+              }
+            },
+            "Level": "Nombre del mes"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Rows",
+          "Projection": 2,
+          "isActive": true
+        },
+        {
+          "Name": "Rows",
+          "Projection": 3,
+          "isActive": true
+        },
+        {
+          "Name": "Rows",
+          "Projection": 4,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Suma de CantidadOrden",
+      "format": "0",
+      "queryName": "Sum(Ventas.CantidadOrden)",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Ventas"
+                }
+              },
+              "Property": "CantidadOrden"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Suma de CantidadDevuelta",
+      "format": "0",
+      "queryName": "Sum(Devoluciones.CantidadDevuelta)",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Devoluciones"
+                }
+              },
+              "Property": "CantidadDevuelta"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Año",
+      "format": "0",
+      "queryName": "Calendario.Jerarquía de Fecha.Año",
+      "roles": {
+        "Rows": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Calendario"
+                }
+              },
+              "Hierarchy": "Jerarquía de Fecha"
+            }
+          },
+          "Level": "Año"
+        }
+      }
+    },
+    {
+      "displayName": "Trimestre",
+      "format": "0",
+      "queryName": "Calendario.Jerarquía de Fecha.Trimestre",
+      "roles": {
+        "Rows": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Calendario"
+                }
+              },
+              "Hierarchy": "Jerarquía de Fecha"
+            }
+          },
+          "Level": "Trimestre"
+        }
+      }
+    },
+    {
+      "displayName": "Nombre del mes",
+      "queryName": "Calendario.Jerarquía de Fecha.Nombre del mes",
+      "roles": {
+        "Rows": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "HierarchyLevel": {
+          "Expression": {
+            "Hierarchy": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Calendario"
+                }
+              },
+              "Hierarchy": "Jerarquía de Fecha"
+            }
+          },
+          "Level": "Nombre del mes"
+        }
+      }
+    }
+  ],
+  "expansionStates": [
+    {
+      "roles": [
+        "Rows"
+      ],
+      "levels": [
+        {
+          "queryRefs": [
+            "Calendario.Jerarquía de Fecha.Año"
+          ],
+          "identityKeys": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Calendario"
+                  }
+                },
+                "Property": "Año"
+              }
+            }
+          ],
+          "isPinned": true
+        },
+        {
+          "queryRefs": [
+            "Calendario.Jerarquía de Fecha.Trimestre"
+          ],
+          "isPinned": true
+        },
+        {
+          "queryRefs": [
+            "Calendario.Jerarquía de Fecha.Nombre del mes"
+          ],
+          "isCollapsed": true,
+          "isPinned": true
+        }
+      ],
+      "root": {
+        "identityValues": null
+      }
+    }
+  ]
+}

@@ -2,7 +2,8 @@
 
 	column FechaDevolucion
 		dataType: dateTime
-		formatString: Long Date
+		isHidden
+		formatString: Short Date
 		summarizeBy: none
 		sourceColumn: FechaDevolucion
 
@@ -50,7 +51,7 @@
 				let
 				    Origen = Csv.Document(File.Contents(RutaProyecto&"Devoluciones de Productos CicloVida.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"FechaDevolucion", type text}, {"IDTerritorio", Int64.Type}, {"IDProducto", Int64.Type}, {"CantidadDevuelta", Int64.Type}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"IDTerritorio", Int64.Type}, {"IDProducto", Int64.Type}, {"CantidadDevuelta", Int64.Type}}),
 				    #"Tipo cambiado con configuración regional" = Table.TransformColumnTypes(#"Tipo cambiado", {{"FechaDevolucion", type date}}, "es-419")
 				in
 				    #"Tipo cambiado con configuración regional"
