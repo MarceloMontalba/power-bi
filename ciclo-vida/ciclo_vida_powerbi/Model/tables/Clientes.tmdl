@@ -7,12 +7,16 @@
 		summarizeBy: none
 		sourceColumn: IDCliente
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Prefijo
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Prefijo
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -21,12 +25,16 @@
 		summarizeBy: none
 		sourceColumn: Nombre
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Apellido
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Apellido
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -35,12 +43,16 @@
 		summarizeBy: none
 		sourceColumn: Nacimiento
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column EstadoCivil
 		dataType: string
 		summarizeBy: none
 		sourceColumn: EstadoCivil
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -49,12 +61,16 @@
 		summarizeBy: none
 		sourceColumn: Género
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column correo-e
 		dataType: string
 		summarizeBy: none
 		sourceColumn: correo-e
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -64,6 +80,8 @@
 		summarizeBy: none
 		sourceColumn: IngresoAnual
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Hijos
@@ -72,6 +90,8 @@
 		summarizeBy: none
 		sourceColumn: Hijos
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column NivelEducativo
@@ -79,12 +99,16 @@
 		summarizeBy: none
 		sourceColumn: NivelEducativo
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Ocupacion
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Ocupacion
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

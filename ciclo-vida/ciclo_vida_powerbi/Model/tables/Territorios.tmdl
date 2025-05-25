@@ -7,12 +7,16 @@
 		summarizeBy: none
 		sourceColumn: IDTerritorio
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Region
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Region
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -21,12 +25,16 @@
 		summarizeBy: none
 		sourceColumn: Pais
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Continente
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Continente
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

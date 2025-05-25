@@ -22,3 +22,20 @@ relationship 20f13a43-d2ce-a2af-7769-b0989b0bc2f5
 	fromColumn: Ventas.IDTerritorio
 	toColumn: Territorios.IDTerritorio
 
+relationship ac17ff1e-0e6e-4921-bfa3-0bb2541e08b5
+	isActive: false
+	fromColumn: Ventas.FechaAbastecimiento
+	toColumn: Calendario.Fechas
+
+relationship 7c0f3765-1e96-4c6a-ba20-a586a2265f08
+	fromColumn: Devoluciones.IDProducto
+	toColumn: Productos.IDProducto
+
+relationship c5d4bd4b-0347-4dc8-8854-86eeb5465f6c
+	fromColumn: Devoluciones.IDTerritorio
+	toColumn: Territorios.IDTerritorio
+
+relationship c14cafc4-5310-4a48-a024-ff14a87ef4ee
+	fromColumn: Devoluciones.FechaDevolucion
+	toColumn: Calendario.Fechas
+

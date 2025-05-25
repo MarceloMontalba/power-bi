@@ -6,29 +6,17 @@
           "Version": 2,
           "From": [
             {
-              "Name": "c",
-              "Entity": "Categorias de Producto",
+              "Name": "v",
+              "Entity": "Ventas",
               "Type": 0
             },
             {
-              "Name": "v",
-              "Entity": "Ventas",
+              "Name": "d",
+              "Entity": "Devoluciones",
               "Type": 0
             }
           ],
           "Select": [
-            {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "c"
-                  }
-                },
-                "Property": "CategoriaProducto"
-              },
-              "Name": "Categorias de Producto.CategoriaProducto",
-              "NativeReferenceName": "CategoriaProducto"
-            },
             {
               "Aggregation": {
                 "Expression": {
@@ -45,6 +33,35 @@
               },
               "Name": "Sum(Ventas.CantidadOrden)",
               "NativeReferenceName": "Suma de CantidadOrden"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "d"
+                  }
+                },
+                "Property": "IDTerritorio"
+              },
+              "Name": "Devoluciones.IDTerritorio",
+              "NativeReferenceName": "IDTerritorio"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "d"
+                      }
+                    },
+                    "Property": "CantidadDevuelta"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(Devoluciones.CantidadDevuelta)",
+              "NativeReferenceName": "Suma de CantidadDevuelta"
             }
           ]
         },
@@ -54,7 +71,8 @@
               {
                 "Projections": [
                   0,
-                  1
+                  1,
+                  2
                 ],
                 "Subtotal": 1
               }

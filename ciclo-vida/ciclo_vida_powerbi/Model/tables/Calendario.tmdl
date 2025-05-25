@@ -7,6 +7,8 @@
 		summarizeBy: none
 		sourceColumn: Fechas
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

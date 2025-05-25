@@ -7,12 +7,16 @@
 		summarizeBy: none
 		sourceColumn: IDCategoriaProducto
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column CategoriaProducto
 		dataType: string
 		summarizeBy: none
 		sourceColumn: CategoriaProducto
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

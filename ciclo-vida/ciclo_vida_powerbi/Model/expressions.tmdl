@@ -1,4 +1,4 @@
-﻿expression RutaProyecto = "C:\Users\mmont\Documents\power-bi\ciclo-vida\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
+﻿expression RutaProyecto = "C:\Users\marcelo\Documents\power-bi-github\power-bi\ciclo-vida\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
 
 	annotation PBI_NavigationStepName = Navegación
 
@@ -32,10 +32,10 @@ expression 'Archivo de ejemplo' =
 expression 'Transformar archivo' =
 		let
 		    Origen = (Parámetro1 as binary) => let
-		        Origen = Csv.Document(Parámetro1,[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
-		        #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
-		    in
-		        #"Encabezados promovidos"
+		    Origen = Csv.Document(Parámetro1,[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
 		in
 		    Origen
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo""}" ]

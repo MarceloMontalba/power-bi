@@ -7,12 +7,16 @@
 		summarizeBy: none
 		sourceColumn: IDSubcategoriaProducto
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column SubcategoriaProducto
 		dataType: string
 		summarizeBy: none
 		sourceColumn: SubcategoriaProducto
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -21,6 +25,8 @@
 		formatString: 0
 		summarizeBy: none
 		sourceColumn: IDCategoriaProducto
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
