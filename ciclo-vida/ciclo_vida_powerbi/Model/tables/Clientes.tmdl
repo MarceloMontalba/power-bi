@@ -112,6 +112,11 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column TieneHijos = IF(Clientes[Hijos]>0, "SI", "NO")
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clientes = m
 		mode: import
 		source =
