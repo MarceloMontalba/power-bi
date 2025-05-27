@@ -5,13 +5,13 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 632.50869927704252
+        "y": 835.76461045049791
       },
       "nodes": [
         {
           "location": {
             "x": 322.62093138234712,
-            "y": 769.0522798594659
+            "y": 1631.9569271220835
           },
           "nodeIndex": "Calendario",
           "nodeLineageTag": "c5cc8fe5-1b66-4b23-8a36-66d03cb7f237",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 0,
-            "y": 710.30322991781134
+            "y": 1573.2078771804286
           },
           "nodeIndex": "Clientes",
           "nodeLineageTag": "287bb419-aea2-47b6-8090-8ef4196ff22d",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 458.28409210242023,
-            "y": 419.60601121148858
+            "y": 1282.5106584741059
           },
           "nodeIndex": "Productos",
           "nodeLineageTag": "9deb1f2b-0b85-4bc8-8943-a21d06898f6e",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 748.594136518066,
-            "y": 773.08997864498
+            "y": 1635.9946259075973
           },
           "nodeIndex": "Territorios",
           "nodeLineageTag": "0a051d58-a7d0-4693-9892-1deebf47f08d",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 1016.7864635761772,
-            "y": 363.32827253162839
+            "y": 1226.2329197942456
           },
           "nodeIndex": "Categorias de Producto",
           "nodeLineageTag": "8bbed0a6-f29c-481a-ab6a-7e867258c8f2",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 815.949844268348,
-            "y": 554.4851196876707
+            "y": 1417.389766950288
           },
           "nodeIndex": "Subcategorias de Producto",
           "nodeLineageTag": "53de1a24-ad92-4395-92c1-acf66a1e42e8",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 231.16693084191678,
-            "y": 1049.3688802364602
+            "y": 1912.2735274990778
           },
           "nodeIndex": "Ventas",
           "nodeLineageTag": "0f639e98-0c23-4309-a514-fd20ec3e59af",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 719.59839242611827,
-            "y": 1083.5338556376769
+            "y": 1946.4385029002942
           },
           "nodeIndex": "Devoluciones",
           "nodeLineageTag": "db7c5d1b-6147-4306-b82c-17b4e156cb05",
@@ -111,6 +111,19 @@
             "width": 234
           },
           "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1300.7864635761771,
+            "y": 835.76461045049791
+          },
+          "nodeIndex": "MEDIDAS",
+          "nodeLineageTag": "e3615f76-a496-4bf2-945b-fe07f16c3afd",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",
