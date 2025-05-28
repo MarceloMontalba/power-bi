@@ -109,6 +109,19 @@
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
+	column CategoríaPrecios = ```
+			
+			    SWITCH(
+			        TRUE(),
+			        Productos[Precio]>1000, "Alto",
+			        Productos[Precio]<300, "Bajo",
+			        "Medio"
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Productos = m
 		mode: import
 		source =

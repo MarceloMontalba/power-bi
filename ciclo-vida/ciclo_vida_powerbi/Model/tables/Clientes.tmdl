@@ -117,6 +117,54 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column ProfesionalSoltero = ```
+			
+			    IF(
+			        AND(Clientes[Ocupacion]="Profesional", Clientes[EstadoCivil]="Soltero"),
+			        "SI","NO"
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prioridad = ```
+			
+			    IF(Clientes[Ocupacion]="Profesional" && Clientes[EstadoCivil]="Soltero" && Clientes[IngresoAnual]>18000,
+			    "Alta",
+			    "Normal"
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nivel Ingreso' = ```
+			
+			    SWITCH(
+			        TRUE(),
+			        Clientes[IngresoAnual]>30000, "Muy Alto",
+			        Clientes[IngresoAnual]>24000, "Alto",
+			        Clientes[IngresoAnual]>18000, "Promedio",
+			        "Bajo"
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grado Universitario' = ```
+			
+			    SWITCH(Clientes[NivelEducativo],
+			    "Educacion Universitaria Completa","Grado",
+			    "Postgrado", "Postgrado",
+			    "Sin Grado"
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clientes = m
 		mode: import
 		source =

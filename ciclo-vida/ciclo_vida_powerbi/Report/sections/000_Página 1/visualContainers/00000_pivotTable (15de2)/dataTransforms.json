@@ -1,11 +1,15 @@
 {
   "projectionOrdering": {
     "Values": [
+      1,
+      6,
       0,
-      1
+      5,
+      2,
+      7,
+      8
     ],
     "Rows": [
-      2,
       3,
       4
     ]
@@ -13,15 +17,11 @@
   "projectionActiveItems": {
     "Rows": [
       {
-        "queryRef": "Calendario.Jerarquía de Fecha.Año",
+        "queryRef": "Categorias de Producto.CategoriaProducto",
         "suppressConcat": false
       },
       {
-        "queryRef": "Calendario.Jerarquía de Fecha.Trimestre",
-        "suppressConcat": false
-      },
-      {
-        "queryRef": "Calendario.Jerarquía de Fecha.Nombre del mes",
+        "queryRef": "Subcategorias de Producto.SubcategoriaProducto",
         "suppressConcat": false
       }
     ]
@@ -29,33 +29,175 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Suma de CantidadOrden",
-        "Name": "Sum(Ventas.CantidadOrden)",
+        "Restatement": "Cantidad Devoluciones",
+        "Name": "MEDIDAS.Cantidad Devoluciones",
         "Type": 3,
-        "Format": "0"
+        "Format": "#,0"
       },
       {
-        "Restatement": "Suma de CantidadDevuelta",
-        "Name": "Sum(Devoluciones.CantidadDevuelta)",
+        "Restatement": "Cantidad Vendida",
+        "Name": "MEDIDAS.Cantidad Ordenada",
         "Type": 3,
-        "Format": "0"
+        "Format": "#,0"
       },
       {
-        "Restatement": "Año",
-        "Name": "Calendario.Jerarquía de Fecha.Año",
-        "Type": 3,
-        "Format": "0"
+        "Restatement": "Precio Promedio",
+        "Name": "MEDIDAS.Precio Promedio",
+        "Type": 1,
+        "Format": "\\$#,0.00;(\\$#,0.00);\\$#,0.00"
       },
       {
-        "Restatement": "Trimestre",
-        "Name": "Calendario.Jerarquía de Fecha.Trimestre",
-        "Type": 3,
-        "Format": "0"
-      },
-      {
-        "Restatement": "Nombre del mes",
-        "Name": "Calendario.Jerarquía de Fecha.Nombre del mes",
+        "Restatement": "CategoriaProducto",
+        "Name": "Categorias de Producto.CategoriaProducto",
         "Type": 2048
+      },
+      {
+        "Restatement": "SubcategoriaProducto",
+        "Name": "Subcategorias de Producto.SubcategoriaProducto",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Total Devoluciones",
+        "Name": "MEDIDAS.Total Devoluciones",
+        "Type": 3,
+        "Format": "#,0"
+      },
+      {
+        "Restatement": "Total Ventas",
+        "Name": "MEDIDAS.Total Ventas",
+        "Type": 3,
+        "Format": "#,0"
+      },
+      {
+        "Restatement": "Tasa de Devoluciones Op/",
+        "Name": "MEDIDAS.Tasa de Devoluciones Op/",
+        "Type": 1,
+        "Format": "0.00\\ %;-0.00\\ %;0.00\\ %"
+      },
+      {
+        "Restatement": "Tasa de Devoluciones DIVIDE",
+        "Name": "MEDIDAS.Tasa de Devoluciones DIVIDE",
+        "Type": 1,
+        "Format": "0.00\\ %;-0.00\\ %;0.00\\ %"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Cantidad Devoluciones"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Cantidad Vendida"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Precio Promedio"
+          }
+        }
+      },
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Categorias de Producto"
+              }
+            },
+            "Property": "CategoriaProducto"
+          }
+        }
+      },
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Subcategorias de Producto"
+              }
+            },
+            "Property": "SubcategoriaProducto"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Total Devoluciones"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Total Ventas"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Tasa de Devoluciones Op/"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Tasa de Devoluciones DIVIDE"
+          }
+        }
       }
     ]
   },
@@ -64,18 +206,38 @@
       "DataRoles": [
         {
           "Name": "Values",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 6,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
           "Projection": 0,
           "isActive": false
         },
         {
           "Name": "Values",
-          "Projection": 1,
+          "Projection": 5,
           "isActive": false
         },
         {
-          "Name": "Rows",
+          "Name": "Values",
           "Projection": 2,
-          "isActive": true
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 7,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 8,
+          "isActive": false
         },
         {
           "Name": "Rows",
@@ -92,9 +254,9 @@
   ],
   "selects": [
     {
-      "displayName": "Suma de CantidadOrden",
-      "format": "0",
-      "queryName": "Sum(Ventas.CantidadOrden)",
+      "displayName": "Cantidad Devoluciones",
+      "format": "#,0",
+      "queryName": "MEDIDAS.Cantidad Devoluciones",
       "roles": {
         "Values": true
       },
@@ -103,25 +265,20 @@
         "underlyingType": 260
       },
       "expr": {
-        "Aggregation": {
+        "Measure": {
           "Expression": {
-            "Column": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "Ventas"
-                }
-              },
-              "Property": "CantidadOrden"
+            "SourceRef": {
+              "Entity": "MEDIDAS"
             }
           },
-          "Function": 0
+          "Property": "Cantidad Devoluciones"
         }
       }
     },
     {
-      "displayName": "Suma de CantidadDevuelta",
-      "format": "0",
-      "queryName": "Sum(Devoluciones.CantidadDevuelta)",
+      "displayName": "Cantidad Vendida",
+      "format": "#,0",
+      "queryName": "MEDIDAS.Cantidad Ordenada",
       "roles": {
         "Values": true
       },
@@ -130,78 +287,41 @@
         "underlyingType": 260
       },
       "expr": {
-        "Aggregation": {
+        "Measure": {
           "Expression": {
-            "Column": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "Devoluciones"
-                }
-              },
-              "Property": "CantidadDevuelta"
+            "SourceRef": {
+              "Entity": "MEDIDAS"
             }
           },
-          "Function": 0
+          "Property": "Cantidad Vendida"
         }
       }
     },
     {
-      "displayName": "Año",
-      "format": "0",
-      "queryName": "Calendario.Jerarquía de Fecha.Año",
+      "displayName": "Precio Promedio",
+      "format": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+      "queryName": "MEDIDAS.Precio Promedio",
       "roles": {
-        "Rows": true
+        "Values": true
       },
       "type": {
         "category": null,
-        "underlyingType": 260
+        "underlyingType": 259
       },
       "expr": {
-        "HierarchyLevel": {
+        "Measure": {
           "Expression": {
-            "Hierarchy": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "Calendario"
-                }
-              },
-              "Hierarchy": "Jerarquía de Fecha"
+            "SourceRef": {
+              "Entity": "MEDIDAS"
             }
           },
-          "Level": "Año"
+          "Property": "Precio Promedio"
         }
       }
     },
     {
-      "displayName": "Trimestre",
-      "format": "0",
-      "queryName": "Calendario.Jerarquía de Fecha.Trimestre",
-      "roles": {
-        "Rows": true
-      },
-      "type": {
-        "category": null,
-        "underlyingType": 260
-      },
-      "expr": {
-        "HierarchyLevel": {
-          "Expression": {
-            "Hierarchy": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "Calendario"
-                }
-              },
-              "Hierarchy": "Jerarquía de Fecha"
-            }
-          },
-          "Level": "Trimestre"
-        }
-      }
-    },
-    {
-      "displayName": "Nombre del mes",
-      "queryName": "Calendario.Jerarquía de Fecha.Nombre del mes",
+      "displayName": "CategoriaProducto",
+      "queryName": "Categorias de Producto.CategoriaProducto",
       "roles": {
         "Rows": true
       },
@@ -210,18 +330,122 @@
         "underlyingType": 1
       },
       "expr": {
-        "HierarchyLevel": {
+        "Column": {
           "Expression": {
-            "Hierarchy": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "Calendario"
-                }
-              },
-              "Hierarchy": "Jerarquía de Fecha"
+            "SourceRef": {
+              "Entity": "Categorias de Producto"
             }
           },
-          "Level": "Nombre del mes"
+          "Property": "CategoriaProducto"
+        }
+      }
+    },
+    {
+      "displayName": "SubcategoriaProducto",
+      "queryName": "Subcategorias de Producto.SubcategoriaProducto",
+      "roles": {
+        "Rows": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Subcategorias de Producto"
+            }
+          },
+          "Property": "SubcategoriaProducto"
+        }
+      }
+    },
+    {
+      "displayName": "Total Devoluciones",
+      "format": "#,0",
+      "queryName": "MEDIDAS.Total Devoluciones",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Total Devoluciones"
+        }
+      }
+    },
+    {
+      "displayName": "Total Ventas",
+      "format": "#,0",
+      "queryName": "MEDIDAS.Total Ventas",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Total Ventas"
+        }
+      }
+    },
+    {
+      "displayName": "Tasa de Devoluciones Op/",
+      "format": "0.00\\ %;-0.00\\ %;0.00\\ %",
+      "queryName": "MEDIDAS.Tasa de Devoluciones Op/",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Tasa de Devoluciones Op/"
+        }
+      }
+    },
+    {
+      "displayName": "Tasa de Devoluciones DIVIDE",
+      "format": "0.00\\ %;-0.00\\ %;0.00\\ %",
+      "queryName": "MEDIDAS.Tasa de Devoluciones DIVIDE",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Tasa de Devoluciones DIVIDE"
         }
       }
     }
@@ -234,31 +458,13 @@
       "levels": [
         {
           "queryRefs": [
-            "Calendario.Jerarquía de Fecha.Año"
-          ],
-          "identityKeys": [
-            {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Calendario"
-                  }
-                },
-                "Property": "Año"
-              }
-            }
+            "Categorias de Producto.CategoriaProducto"
           ],
           "isPinned": true
         },
         {
           "queryRefs": [
-            "Calendario.Jerarquía de Fecha.Trimestre"
-          ],
-          "isPinned": true
-        },
-        {
-          "queryRefs": [
-            "Calendario.Jerarquía de Fecha.Nombre del mes"
+            "Subcategorias de Producto.SubcategoriaProducto"
           ],
           "isCollapsed": true,
           "isPinned": true

@@ -1,10 +1,40 @@
 ﻿table MEDIDAS
 
-	measure 'Cantidad Ordenada' = SUM(Ventas[CantidadOrden])
-		formatString: 0
-		displayFolder: Ventas
+	measure 'Cantidad Vendida' = SUM(Ventas[CantidadOrden])
+		formatString: #,0
 
 		changedProperty = IsHidden
+
+	measure 'Cantidad Devoluciones' = SUM(Devoluciones[CantidadDevuelta])
+		formatString: #,0
+
+	measure 'Precio Promedio' = ```
+			
+			    AVERAGE(
+			        Productos[Precio]
+			    )
+			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure 'Total Devoluciones' = COUNT(Devoluciones[CantidadDevuelta])
+		formatString: #,0
+
+	measure 'Total Ventas' = DISTINCTCOUNT(Ventas[IDOrden])
+		formatString: #,0
+
+	measure 'Tasa de Devoluciones Op/' = [Cantidad Devoluciones]/[Cantidad Vendida]
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+
+	measure 'Tasa de Devoluciones DIVIDE' =
+			
+			DIVIDE(
+			    [Cantidad Devoluciones],
+			    [Cantidad Vendida],
+			    "Denominador 0"
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
 
 	partition MEDIDAS = m
 		mode: import

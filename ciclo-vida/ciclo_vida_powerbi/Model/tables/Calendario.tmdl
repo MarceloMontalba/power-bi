@@ -63,6 +63,21 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column DíaSemana =
+			
+			SWITCH(Calendario[Nombre del día],
+			    "Domingo","1",
+			    "Lunes","2",
+			    "Martes","3",
+			    "Miércoles","4",
+			    "Jueves","5",
+			    "Viernes","6",
+			    "Sábado","7",
+			    "Día desconocido")
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy 'Jerarquía de Fecha'
 
 		level Año

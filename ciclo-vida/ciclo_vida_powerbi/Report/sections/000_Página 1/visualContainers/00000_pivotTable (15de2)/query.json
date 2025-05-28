@@ -6,118 +6,135 @@
           "Version": 2,
           "From": [
             {
-              "Name": "v",
-              "Entity": "Ventas",
-              "Type": 0
-            },
-            {
-              "Name": "d",
-              "Entity": "Devoluciones",
+              "Name": "m",
+              "Entity": "MEDIDAS",
               "Type": 0
             },
             {
               "Name": "c",
-              "Entity": "Calendario",
+              "Entity": "Categorias de Producto",
+              "Type": 0
+            },
+            {
+              "Name": "s",
+              "Entity": "Subcategorias de Producto",
               "Type": 0
             }
           ],
           "Select": [
             {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "v"
-                      }
-                    },
-                    "Property": "CantidadOrden"
+                  "SourceRef": {
+                    "Source": "m"
                   }
                 },
-                "Function": 0
+                "Property": "Cantidad Devoluciones"
               },
-              "Name": "Sum(Ventas.CantidadOrden)",
-              "NativeReferenceName": "Suma de CantidadOrden"
+              "Name": "MEDIDAS.Cantidad Devoluciones",
+              "NativeReferenceName": "Cantidad Devoluciones"
             },
             {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "d"
-                      }
-                    },
-                    "Property": "CantidadDevuelta"
+                  "SourceRef": {
+                    "Source": "m"
                   }
                 },
-                "Function": 0
+                "Property": "Cantidad Vendida"
               },
-              "Name": "Sum(Devoluciones.CantidadDevuelta)",
-              "NativeReferenceName": "Suma de CantidadDevuelta"
+              "Name": "MEDIDAS.Cantidad Ordenada",
+              "NativeReferenceName": "Cantidad Vendida"
             },
             {
-              "HierarchyLevel": {
+              "Measure": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "c"
-                      }
-                    },
-                    "Hierarchy": "Jerarquía de Fecha"
+                  "SourceRef": {
+                    "Source": "m"
                   }
                 },
-                "Level": "Año"
+                "Property": "Precio Promedio"
               },
-              "Name": "Calendario.Jerarquía de Fecha.Año",
-              "NativeReferenceName": "Jerarquía de Fecha Año"
+              "Name": "MEDIDAS.Precio Promedio",
+              "NativeReferenceName": "Precio Promedio"
             },
             {
-              "HierarchyLevel": {
+              "Column": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "c"
-                      }
-                    },
-                    "Hierarchy": "Jerarquía de Fecha"
+                  "SourceRef": {
+                    "Source": "c"
                   }
                 },
-                "Level": "Trimestre"
+                "Property": "CategoriaProducto"
               },
-              "Name": "Calendario.Jerarquía de Fecha.Trimestre",
-              "NativeReferenceName": "Jerarquía de Fecha Trimestre"
+              "Name": "Categorias de Producto.CategoriaProducto",
+              "NativeReferenceName": "CategoriaProducto"
             },
             {
-              "HierarchyLevel": {
+              "Column": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "c"
-                      }
-                    },
-                    "Hierarchy": "Jerarquía de Fecha"
+                  "SourceRef": {
+                    "Source": "s"
                   }
                 },
-                "Level": "Nombre del mes"
+                "Property": "SubcategoriaProducto"
               },
-              "Name": "Calendario.Jerarquía de Fecha.Nombre del mes",
-              "NativeReferenceName": "Jerarquía de Fecha Nombre del mes"
+              "Name": "Subcategorias de Producto.SubcategoriaProducto",
+              "NativeReferenceName": "SubcategoriaProducto"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Total Devoluciones"
+              },
+              "Name": "MEDIDAS.Total Devoluciones",
+              "NativeReferenceName": "Total Devoluciones"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Total Ventas"
+              },
+              "Name": "MEDIDAS.Total Ventas",
+              "NativeReferenceName": "Total Ventas"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Tasa de Devoluciones Op/"
+              },
+              "Name": "MEDIDAS.Tasa de Devoluciones Op/",
+              "NativeReferenceName": "Tasa de Devoluciones Op/"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Tasa de Devoluciones DIVIDE"
+              },
+              "Name": "MEDIDAS.Tasa de Devoluciones DIVIDE",
+              "NativeReferenceName": "Tasa de Devoluciones DIVIDE"
             }
           ]
         },
         "Binding": {
           "Primary": {
             "Groupings": [
-              {
-                "Projections": [
-                  2
-                ],
-                "Subtotal": 1
-              },
               {
                 "Projections": [
                   3
@@ -128,7 +145,12 @@
                 "Projections": [
                   0,
                   1,
-                  4
+                  2,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
                 ],
                 "Subtotal": 1
               }
