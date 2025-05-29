@@ -122,6 +122,21 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'SKU Aislado' = ```
+			
+			    // Se extrae el texto despues del primer guión hasta el segundo si esque existe
+			    MID(
+			        Productos[SKU],
+			        SEARCH("-",Productos[SKU],1)+1,
+			        //Esta sección busca el segundo guión si esque existe, si existe pondrá como limite el numero de caracteres
+			        //hasta llegar al segundo guion, de lo contrario llegará al final de la cadena.
+			        LEN(Productos[SKU])
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Productos = m
 		mode: import
 		source =

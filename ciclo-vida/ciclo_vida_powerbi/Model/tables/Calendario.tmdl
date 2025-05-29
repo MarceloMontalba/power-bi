@@ -78,6 +78,30 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'DíaSemana (Weekday)' = ```
+			
+			    WEEKDAY(
+			        Calendario[Fecha],
+			        2
+			    )
+			```
+		formatString: 0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinDeSemana = ```
+			
+			    IF(
+			        Calendario[DíaSemana (Weekday)] IN {6,7},
+			        "Fin de Semana",
+			        "Día Semana"
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy 'Jerarquía de Fecha'
 
 		level Año
