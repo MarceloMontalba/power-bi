@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 10.190271475201019,
+        "x": 10,
         "y": 0,
         "z": 0,
-        "width": 1148.1039195393148,
-        "height": 891.64875408008913,
+        "width": 723.75,
+        "height": 152.5,
         "tabOrder": 0
       }
     }
@@ -16,24 +16,18 @@
   "singleVisual": {
     "visualType": "pivotTable",
     "projections": {
-      "Values": [
-        {
-          "queryRef": "MEDIDAS.Cantidad Ordenada"
-        },
-        {
-          "queryRef": "MEDIDAS.Total Ventas"
-        },
-        {
-          "queryRef": "MEDIDAS.Ordenes Multiples"
-        }
-      ],
       "Rows": [
         {
           "queryRef": "Categorias de Producto.CategoriaProducto",
           "active": true
+        }
+      ],
+      "Values": [
+        {
+          "queryRef": "MEDIDAS.Total Devoluciones"
         },
         {
-          "queryRef": "Subcategorias de Producto.SubcategoriaProducto"
+          "queryRef": "MEDIDAS.% del Total de Devoluciones"
         }
       ]
     },
@@ -41,34 +35,17 @@
       "Version": 2,
       "From": [
         {
-          "Name": "m",
-          "Entity": "MEDIDAS",
-          "Type": 0
-        },
-        {
           "Name": "c",
           "Entity": "Categorias de Producto",
           "Type": 0
         },
         {
-          "Name": "s",
-          "Entity": "Subcategorias de Producto",
+          "Name": "m",
+          "Entity": "MEDIDAS",
           "Type": 0
         }
       ],
       "Select": [
-        {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "m"
-              }
-            },
-            "Property": "Cantidad Vendida"
-          },
-          "Name": "MEDIDAS.Cantidad Ordenada",
-          "NativeReferenceName": "Cantidad Vendida"
-        },
         {
           "Column": {
             "Expression": {
@@ -82,16 +59,16 @@
           "NativeReferenceName": "CategoriaProducto"
         },
         {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
-                "Source": "s"
+                "Source": "m"
               }
             },
-            "Property": "SubcategoriaProducto"
+            "Property": "% del Total de Devoluciones"
           },
-          "Name": "Subcategorias de Producto.SubcategoriaProducto",
-          "NativeReferenceName": "SubcategoriaProducto"
+          "Name": "MEDIDAS.% del Total de Devoluciones",
+          "NativeReferenceName": "% del Total de Devoluciones"
         },
         {
           "Measure": {
@@ -100,22 +77,25 @@
                 "Source": "m"
               }
             },
-            "Property": "Total Ventas"
+            "Property": "Total Devoluciones"
           },
-          "Name": "MEDIDAS.Total Ventas",
-          "NativeReferenceName": "Total Ventas"
-        },
+          "Name": "MEDIDAS.Total Devoluciones",
+          "NativeReferenceName": "Total Devoluciones"
+        }
+      ],
+      "OrderBy": [
         {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "m"
-              }
-            },
-            "Property": "Total Ventas Multiples"
-          },
-          "Name": "MEDIDAS.Ordenes Multiples",
-          "NativeReferenceName": "Total Ventas Multiples"
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "m"
+                }
+              },
+              "Property": "Total Devoluciones"
+            }
+          }
         }
       ]
     },
@@ -131,13 +111,6 @@
             ],
             "isCollapsed": true,
             "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Subcategorias de Producto.SubcategoriaProducto"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
           }
         ],
         "root": {
@@ -145,6 +118,24 @@
         }
       }
     ],
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129.49999953097986D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Categorias de Producto.CategoriaProducto"
+          }
+        }
+      ]
+    }
   }
 }

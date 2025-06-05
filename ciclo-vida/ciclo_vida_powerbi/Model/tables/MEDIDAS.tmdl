@@ -1,6 +1,6 @@
 ﻿table MEDIDAS
 
-	measure 'Cantidad Vendida' = SUM(Ventas[CantidadOrden])
+	measure 'Cantidad Ventas' = SUM(Ventas[CantidadOrden])
 		formatString: #,0
 
 		changedProperty = IsHidden
@@ -24,14 +24,14 @@
 	measure 'Total Ventas' = DISTINCTCOUNT(Ventas[IDOrden])
 		formatString: #,0
 
-	measure 'Tasa de Devoluciones Op/' = [Cantidad Devoluciones]/[Cantidad Vendida]
+	measure 'Tasa de Devoluciones Op/' = [Cantidad Devoluciones]/[Cantidad Ventas]
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 
 	measure 'Tasa de Devoluciones DIVIDE' =
 			
 			DIVIDE(
 			    [Cantidad Devoluciones],
-			    [Cantidad Vendida],
+			    [Cantidad Ventas],
 			    "Denominador 0"
 			)
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
@@ -46,6 +46,70 @@
 		formatString: #,0
 
 		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Total Ventas de Fin de Semana' = ```
+			
+			    CALCULATE(
+			        [Total Ventas],
+			        Calendario[Tipo de día]="Fin de Semana"
+			    )
+			```
+		formatString: #,0
+
+	measure 'Total de Devoluciones de Accesorios' = ```
+			
+			    CALCULATE(
+			        [Total Devoluciones],
+			        'Categorias de Producto'[CategoriaProducto]="Accesorios"
+			    )
+			```
+		formatString: #,0
+
+	measure 'Total de Ventas de Accesorios' = ```
+			
+			    CALCULATE(
+			        [Cantidad Ventas],
+			        'Categorias de Producto'[CategoriaProducto]="Accesorios"
+			    )
+			```
+		formatString: #,0
+
+	measure 'Tasa de Devoluciones de Accesorios' = DIVIDE([Total de Devoluciones de Accesorios],[Total de Ventas de Accesorios])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+
+	measure 'Todas las Devoluciones' = ```
+			
+			    CALCULATE(
+			        [Total Devoluciones],
+			        ALL(Devoluciones)
+			    )
+			```
+		formatString: 0
+
+	measure '% del Total de Devoluciones' = DIVIDE([Total Devoluciones], [Todas las Devoluciones], "No hubo devoluciones")
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+
+	measure 'Precio Promedio Global' = ```
+			
+			    CALCULATE(
+			        [Precio Promedio],
+			        ALL(
+			            Productos
+			        )
+			    )
+			```
+		formatString: #,0.00
+
+	measure 'Ordenes con alto precio' =
+			
+			CALCULATE(
+			    [Total Ventas],
+			    FILTER(
+			        Productos,
+			        Productos[Precio]>[Precio Promedio Global]
+			    )
+			)
+		formatString: #,0
 
 	partition MEDIDAS = m
 		mode: import

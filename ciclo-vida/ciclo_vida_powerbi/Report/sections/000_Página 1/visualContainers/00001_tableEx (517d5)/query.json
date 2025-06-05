@@ -36,10 +36,10 @@
                     "Source": "m"
                   }
                 },
-                "Property": "% del Total de Devoluciones"
+                "Property": "Precio Promedio"
               },
-              "Name": "MEDIDAS.% del Total de Devoluciones",
-              "NativeReferenceName": "% del Total de Devoluciones"
+              "Name": "MEDIDAS.Precio Promedio",
+              "NativeReferenceName": "Precio Promedio"
             },
             {
               "Measure": {
@@ -48,10 +48,34 @@
                     "Source": "m"
                   }
                 },
-                "Property": "Total Devoluciones"
+                "Property": "Precio Promedio Global"
               },
-              "Name": "MEDIDAS.Total Devoluciones",
-              "NativeReferenceName": "Total Devoluciones"
+              "Name": "MEDIDAS.Precio Promedio Global",
+              "NativeReferenceName": "Precio Promedio Global"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Ordenes con alto precio"
+              },
+              "Name": "MEDIDAS.Ordenes con alto precio",
+              "NativeReferenceName": "Ordenes con alto precio"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Total Ventas"
+              },
+              "Name": "MEDIDAS.Total Ventas",
+              "NativeReferenceName": "Total Ventas"
             }
           ],
           "OrderBy": [
@@ -64,7 +88,7 @@
                       "Source": "m"
                     }
                   },
-                  "Property": "Total Devoluciones"
+                  "Property": "Precio Promedio"
                 }
               }
             }
@@ -77,7 +101,9 @@
                 "Projections": [
                   0,
                   1,
-                  2
+                  2,
+                  3,
+                  4
                 ],
                 "Subtotal": 1
               }

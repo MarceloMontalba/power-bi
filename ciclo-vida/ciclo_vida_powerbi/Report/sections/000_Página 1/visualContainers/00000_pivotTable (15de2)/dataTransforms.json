@@ -1,13 +1,29 @@
 {
+  "objects": {
+    "columnWidth": [
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "129.49999953097986D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Categorias de Producto.CategoriaProducto"
+        }
+      }
+    ]
+  },
   "projectionOrdering": {
-    "Values": [
-      0,
-      3,
-      4
-    ],
     "Rows": [
-      1,
-      2
+      0
+    ],
+    "Values": [
+      2,
+      1
     ]
   },
   "projectionActiveItems": {
@@ -21,48 +37,24 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Cantidad Vendida",
-        "Name": "MEDIDAS.Cantidad Ordenada",
-        "Type": 3,
-        "Format": "#,0"
-      },
-      {
         "Restatement": "CategoriaProducto",
         "Name": "Categorias de Producto.CategoriaProducto",
         "Type": 2048
       },
       {
-        "Restatement": "SubcategoriaProducto",
-        "Name": "Subcategorias de Producto.SubcategoriaProducto",
-        "Type": 2048
+        "Restatement": "% del Total de Devoluciones",
+        "Name": "MEDIDAS.% del Total de Devoluciones",
+        "Type": 1,
+        "Format": "0.00\\ %;-0.00\\ %;0.00\\ %"
       },
       {
-        "Restatement": "Total Ventas",
-        "Name": "MEDIDAS.Total Ventas",
-        "Type": 3,
-        "Format": "#,0"
-      },
-      {
-        "Restatement": "Total Ventas Multiples",
-        "Name": "MEDIDAS.Ordenes Multiples",
+        "Restatement": "Total Devoluciones",
+        "Name": "MEDIDAS.Total Devoluciones",
         "Type": 3,
         "Format": "#,0"
       }
     ],
     "Filters": [
-      {
-        "type": 2,
-        "expression": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MEDIDAS"
-              }
-            },
-            "Property": "Cantidad Vendida"
-          }
-        }
-      },
       {
         "type": 0,
         "expression": {
@@ -77,15 +69,15 @@
         }
       },
       {
-        "type": 0,
+        "type": 2,
         "expression": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Subcategorias de Producto"
+                "Entity": "MEDIDAS"
               }
             },
-            "Property": "SubcategoriaProducto"
+            "Property": "% del Total de Devoluciones"
           }
         }
       },
@@ -98,20 +90,7 @@
                 "Entity": "MEDIDAS"
               }
             },
-            "Property": "Total Ventas"
-          }
-        }
-      },
-      {
-        "type": 2,
-        "expression": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "MEDIDAS"
-              }
-            },
-            "Property": "Total Ventas Multiples"
+            "Property": "Total Devoluciones"
           }
         }
       }
@@ -121,56 +100,24 @@
     {
       "DataRoles": [
         {
-          "Name": "Values",
-          "Projection": 0,
-          "isActive": false
-        },
-        {
-          "Name": "Values",
-          "Projection": 3,
-          "isActive": false
-        },
-        {
-          "Name": "Values",
-          "Projection": 4,
-          "isActive": false
-        },
-        {
           "Name": "Rows",
-          "Projection": 1,
+          "Projection": 0,
           "isActive": true
         },
         {
-          "Name": "Rows",
+          "Name": "Values",
           "Projection": 2,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 1,
           "isActive": false
         }
       ]
     }
   ],
   "selects": [
-    {
-      "displayName": "Cantidad Vendida",
-      "format": "#,0",
-      "queryName": "MEDIDAS.Cantidad Ordenada",
-      "roles": {
-        "Values": true
-      },
-      "type": {
-        "category": null,
-        "underlyingType": 260
-      },
-      "expr": {
-        "Measure": {
-          "Expression": {
-            "SourceRef": {
-              "Entity": "MEDIDAS"
-            }
-          },
-          "Property": "Cantidad Vendida"
-        }
-      }
-    },
     {
       "displayName": "CategoriaProducto",
       "queryName": "Categorias de Producto.CategoriaProducto",
@@ -193,33 +140,36 @@
       }
     },
     {
-      "displayName": "SubcategoriaProducto",
-      "queryName": "Subcategorias de Producto.SubcategoriaProducto",
+      "displayName": "% del Total de Devoluciones",
+      "format": "0.00\\ %;-0.00\\ %;0.00\\ %",
+      "queryName": "MEDIDAS.% del Total de Devoluciones",
       "roles": {
-        "Rows": true
+        "Values": true
       },
       "type": {
         "category": null,
-        "underlyingType": 1
+        "underlyingType": 259
       },
       "expr": {
-        "Column": {
+        "Measure": {
           "Expression": {
             "SourceRef": {
-              "Entity": "Subcategorias de Producto"
+              "Entity": "MEDIDAS"
             }
           },
-          "Property": "SubcategoriaProducto"
+          "Property": "% del Total de Devoluciones"
         }
       }
     },
     {
-      "displayName": "Total Ventas",
+      "displayName": "Total Devoluciones",
       "format": "#,0",
-      "queryName": "MEDIDAS.Total Ventas",
+      "queryName": "MEDIDAS.Total Devoluciones",
       "roles": {
         "Values": true
       },
+      "sort": 2,
+      "sortOrder": 0,
       "type": {
         "category": null,
         "underlyingType": 260
@@ -231,29 +181,7 @@
               "Entity": "MEDIDAS"
             }
           },
-          "Property": "Total Ventas"
-        }
-      }
-    },
-    {
-      "displayName": "Total Ventas Multiples",
-      "format": "#,0",
-      "queryName": "MEDIDAS.Ordenes Multiples",
-      "roles": {
-        "Values": true
-      },
-      "type": {
-        "category": null,
-        "underlyingType": 260
-      },
-      "expr": {
-        "Measure": {
-          "Expression": {
-            "SourceRef": {
-              "Entity": "MEDIDAS"
-            }
-          },
-          "Property": "Total Ventas Multiples"
+          "Property": "Total Devoluciones"
         }
       }
     }
@@ -267,13 +195,6 @@
         {
           "queryRefs": [
             "Categorias de Producto.CategoriaProducto"
-          ],
-          "isCollapsed": true,
-          "isPinned": true
-        },
-        {
-          "queryRefs": [
-            "Subcategorias de Producto.SubcategoriaProducto"
           ],
           "isCollapsed": true,
           "isPinned": true

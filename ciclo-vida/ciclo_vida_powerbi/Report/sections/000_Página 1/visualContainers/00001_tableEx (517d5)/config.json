@@ -1,0 +1,131 @@
+{
+  "name": "517d58e5009644f5c40b",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 333.75,
+        "y": 405,
+        "z": 1,
+        "width": 723.75,
+        "height": 153.75,
+        "tabOrder": 1
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Categorias de Producto.CategoriaProducto"
+        },
+        {
+          "queryRef": "MEDIDAS.Precio Promedio"
+        },
+        {
+          "queryRef": "MEDIDAS.Precio Promedio Global"
+        },
+        {
+          "queryRef": "MEDIDAS.Ordenes con alto precio"
+        },
+        {
+          "queryRef": "MEDIDAS.Total Ventas"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "c",
+          "Entity": "Categorias de Producto",
+          "Type": 0
+        },
+        {
+          "Name": "m",
+          "Entity": "MEDIDAS",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "c"
+              }
+            },
+            "Property": "CategoriaProducto"
+          },
+          "Name": "Categorias de Producto.CategoriaProducto",
+          "NativeReferenceName": "CategoriaProducto"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Precio Promedio"
+          },
+          "Name": "MEDIDAS.Precio Promedio",
+          "NativeReferenceName": "Precio Promedio"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Precio Promedio Global"
+          },
+          "Name": "MEDIDAS.Precio Promedio Global",
+          "NativeReferenceName": "Precio Promedio Global"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Ordenes con alto precio"
+          },
+          "Name": "MEDIDAS.Ordenes con alto precio",
+          "NativeReferenceName": "Ordenes con alto precio"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Total Ventas"
+          },
+          "Name": "MEDIDAS.Total Ventas",
+          "NativeReferenceName": "Total Ventas"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "m"
+                }
+              },
+              "Property": "Precio Promedio"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

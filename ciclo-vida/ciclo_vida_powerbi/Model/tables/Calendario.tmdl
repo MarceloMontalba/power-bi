@@ -90,7 +90,7 @@
 
 		annotation SummarizationSetBy = Automatic
 
-	column FinDeSemana = ```
+	column 'Tipo de día' = ```
 			
 			    IF(
 			        Calendario[DíaSemana (Weekday)] IN {6,7},
