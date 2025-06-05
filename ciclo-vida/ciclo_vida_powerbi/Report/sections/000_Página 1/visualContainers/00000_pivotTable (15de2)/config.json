@@ -24,19 +24,7 @@
           "queryRef": "MEDIDAS.Total Ventas"
         },
         {
-          "queryRef": "MEDIDAS.Cantidad Devoluciones"
-        },
-        {
-          "queryRef": "MEDIDAS.Total Devoluciones"
-        },
-        {
-          "queryRef": "MEDIDAS.Precio Promedio"
-        },
-        {
-          "queryRef": "MEDIDAS.Tasa de Devoluciones Op/"
-        },
-        {
-          "queryRef": "MEDIDAS.Tasa de Devoluciones DIVIDE"
+          "queryRef": "MEDIDAS.Ordenes Multiples"
         }
       ],
       "Rows": [
@@ -45,8 +33,7 @@
           "active": true
         },
         {
-          "queryRef": "Subcategorias de Producto.SubcategoriaProducto",
-          "active": true
+          "queryRef": "Subcategorias de Producto.SubcategoriaProducto"
         }
       ]
     },
@@ -77,34 +64,10 @@
                 "Source": "m"
               }
             },
-            "Property": "Cantidad Devoluciones"
-          },
-          "Name": "MEDIDAS.Cantidad Devoluciones",
-          "NativeReferenceName": "Cantidad Devoluciones"
-        },
-        {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "m"
-              }
-            },
             "Property": "Cantidad Vendida"
           },
           "Name": "MEDIDAS.Cantidad Ordenada",
           "NativeReferenceName": "Cantidad Vendida"
-        },
-        {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "m"
-              }
-            },
-            "Property": "Precio Promedio"
-          },
-          "Name": "MEDIDAS.Precio Promedio",
-          "NativeReferenceName": "Precio Promedio"
         },
         {
           "Column": {
@@ -137,18 +100,6 @@
                 "Source": "m"
               }
             },
-            "Property": "Total Devoluciones"
-          },
-          "Name": "MEDIDAS.Total Devoluciones",
-          "NativeReferenceName": "Total Devoluciones"
-        },
-        {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "m"
-              }
-            },
             "Property": "Total Ventas"
           },
           "Name": "MEDIDAS.Total Ventas",
@@ -161,22 +112,10 @@
                 "Source": "m"
               }
             },
-            "Property": "Tasa de Devoluciones Op/"
+            "Property": "Total Ventas Multiples"
           },
-          "Name": "MEDIDAS.Tasa de Devoluciones Op/",
-          "NativeReferenceName": "Tasa de Devoluciones Op/"
-        },
-        {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Source": "m"
-              }
-            },
-            "Property": "Tasa de Devoluciones DIVIDE"
-          },
-          "Name": "MEDIDAS.Tasa de Devoluciones DIVIDE",
-          "NativeReferenceName": "Tasa de Devoluciones DIVIDE"
+          "Name": "MEDIDAS.Ordenes Multiples",
+          "NativeReferenceName": "Total Ventas Multiples"
         }
       ]
     },
@@ -190,6 +129,7 @@
             "queryRefs": [
               "Categorias de Producto.CategoriaProducto"
             ],
+            "isCollapsed": true,
             "isPinned": true
           },
           {

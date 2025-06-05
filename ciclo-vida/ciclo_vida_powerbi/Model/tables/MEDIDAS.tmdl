@@ -36,6 +36,17 @@
 			)
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 
+	measure 'Total Ventas Multiples' = ```
+			
+			    CALCULATE(
+			        [Total Ventas],
+			        Ventas[CantidadOrden]>1
+			    )
+			```
+		formatString: #,0
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
 	partition MEDIDAS = m
 		mode: import
 		source =
