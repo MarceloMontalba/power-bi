@@ -1,0 +1,47 @@
+﻿table PosicionRanking
+
+	column 'Codigo Posicion'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Posicion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posicion Ranking'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Posicion Ranking
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PosicionRanking = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_db),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Filas filtradas" = Table.SelectRows(#"Encabezados promovidos", each true),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Filas filtradas",{"RANK_2025", "RANK_2024"}),
+				    #"Columna de anulación de dinamización" = Table.UnpivotOtherColumns(#"Otras columnas quitadas", {}, "Atributo", "Valor"),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Columna de anulación de dinamización",{"Atributo"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Columnas quitadas"),
+				    #"Columna duplicada" = Table.DuplicateColumn(#"Duplicados quitados", "Valor", "Valor - Copia"),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(#"Columna duplicada", "Valor - Copia", Splitter.SplitTextByDelimiter("-", QuoteStyle.Csv), {"Valor - Copia.1", "Valor - Copia.2"}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Dividir columna por delimitador",null,"",Replacer.ReplaceValue,{"Valor - Copia.2"}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Valor reemplazado",{"Valor - Copia.2"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columnas quitadas1",{{"Valor - Copia.1", Int64.Type}}),
+				    #"Filas ordenadas" = Table.Sort(#"Tipo cambiado",{{"Valor - Copia.1", Order.Ascending}}),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Filas ordenadas", "Índice", 1, 1, Int64.Type),
+				    #"Columnas quitadas2" = Table.RemoveColumns(#"Índice agregado",{"Valor - Copia.1"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas2",{{"Valor", "Lugar"}}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas con nombre cambiado",{"Índice", "Lugar"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"Índice", "Codigo Posicion"}, {"Lugar", "Posicion Ranking"}}),
+				    #"Filas ordenadas1" = Table.Sort(#"Columnas con nombre cambiado1",{{"Codigo Posicion", Order.Ascending}})
+				in
+				    #"Filas ordenadas1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

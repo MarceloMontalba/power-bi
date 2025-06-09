@@ -1,0 +1,8 @@
+﻿/// Base de datos
+expression url_db = "C:\Users\Admin\Documents\Git\power-bi\universidades_mundo\QS World University Rankings 2025 (Top global universities).csv" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=false]
+	queryGroup: Datos
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,47 @@
+﻿table Pais
+
+	column 'Codigo Pais'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pais
+		dataType: string
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Continente'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Continente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pais = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_db),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Encabezados promovidos",{"Location", "Region"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Otras columnas quitadas"),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Duplicados quitados", {"Region"}, Continente, {"Continente"}, "Continente", JoinKind.LeftOuter),
+				    #"Se expandió Continente" = Table.ExpandTableColumn(#"Consultas combinadas", "Continente", {"Codigo Continente"}, {"Codigo Continente"}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Se expandió Continente",{"Region"}),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Columnas quitadas", "Índice", 1, 1, Int64.Type),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Índice agregado",{"Índice", "Location", "Codigo Continente"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas reordenadas",{{"Índice", "Codigo Pais"}, {"Location", "Pais"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

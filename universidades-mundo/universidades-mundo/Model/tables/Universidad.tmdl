@@ -1,0 +1,226 @@
+﻿table Universidad
+
+	column 'Codigo Intitucion'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Intitucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Institucion'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre Institucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Pais'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Dimension'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Enfoque'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Enfoque
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Intensidad'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Intensidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Tipo Institucion'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Tipo Institucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Academic_Reputation_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Academic_Reputation_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Academic_Reputation_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Academic_Reputation_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employer_Reputation_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Employer_Reputation_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employer_Reputation_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Employer_Reputation_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Faculty_Student_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Faculty_Student_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Faculty_Student_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Faculty_Student_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Citations_per_Faculty_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Citations_per_Faculty_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Citations_per_Faculty_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Citations_per_Faculty_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Faculty_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: International_Faculty_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Faculty_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: International_Faculty_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Students_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: International_Students_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Students_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: International_Students_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Research_Network_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: International_Research_Network_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Research_Network_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: International_Research_Network_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employment_Outcomes_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Employment_Outcomes_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employment_Outcomes_Rank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Employment_Outcomes_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sustainability_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Sustainability_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sustainability_Rank
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Sustainability_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Overall_Score
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Overall_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Universidad = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_db),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Filas filtradas" = Table.SelectRows(#"Encabezados promovidos", each true),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas","=","",Replacer.ReplaceText,{"Sustainability_Rank"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","+","",Replacer.ReplaceText,{"Sustainability_Rank"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","-","",Replacer.ReplaceText,{"Sustainability_Rank"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Valor reemplazado2",{{"Sustainability_Rank", Int64.Type}}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Tipo cambiado","+","",Replacer.ReplaceText,{"Overall_Score"}),
+				    #"Valor reemplazado4" = Table.ReplaceValue(#"Valor reemplazado3","-","",Replacer.ReplaceText,{"Overall_Score"}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Valor reemplazado4", {"Location"}, Pais, {"Pais"}, "Pais", JoinKind.LeftOuter),
+				    #"Consultas combinadas1" = Table.NestedJoin(#"Consultas combinadas", {"SIZE"}, DimensionInstitucion, {"Dimension Institucion"}, "DimensionInstitucion", JoinKind.LeftOuter),
+				    #"Consultas combinadas2" = Table.NestedJoin(#"Consultas combinadas1", {"FOCUS"}, Enfoque, {"Enfoque"}, "Enfoque", JoinKind.LeftOuter),
+				    #"Consultas combinadas3" = Table.NestedJoin(#"Consultas combinadas2", {"RES."}, IntensidadInvestigacion, {"Intensidad Investigacion"}, "IntensidadInvestigacion", JoinKind.LeftOuter),
+				    #"Consultas combinadas4" = Table.NestedJoin(#"Consultas combinadas3", {"STATUS"}, TipoInstitucion, {"Tipo Institucion"}, "TipoInstitucion", JoinKind.LeftOuter),
+				    #"Se expandió TipoInstitucion" = Table.ExpandTableColumn(#"Consultas combinadas4", "TipoInstitucion", {"Codigo Tipo Institucion"}, {"Codigo Tipo Institucion"}),
+				    #"Se expandió IntensidadInvestigacion" = Table.ExpandTableColumn(#"Se expandió TipoInstitucion", "IntensidadInvestigacion", {"Codigo Intensidad"}, {"Codigo Intensidad"}),
+				    #"Se expandió Enfoque" = Table.ExpandTableColumn(#"Se expandió IntensidadInvestigacion", "Enfoque", {"Codigo Enfoque"}, {"Codigo Enfoque"}),
+				    #"Se expandió DimensionInstitucion" = Table.ExpandTableColumn(#"Se expandió Enfoque", "DimensionInstitucion", {"Codigo Dimension"}, {"Codigo Dimension"}),
+				    #"Se expandió Pais" = Table.ExpandTableColumn(#"Se expandió DimensionInstitucion", "Pais", {"Codigo Pais"}, {"Codigo Pais"}),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Se expandió Pais",{"Institution_Name", "Academic_Reputation_Score", "Academic_Reputation_Rank", "Employer_Reputation_Score", "Employer_Reputation_Rank", "Faculty_Student_Score", "Faculty_Student_Rank", "Citations_per_Faculty_Score", "Citations_per_Faculty_Rank", "International_Faculty_Score", "International_Faculty_Rank", "International_Students_Score", "International_Students_Rank", "International_Research_Network_Score", "International_Research_Network_Rank", "Employment_Outcomes_Score", "Employment_Outcomes_Rank", "Sustainability_Score", "Sustainability_Rank", "Overall_Score", "Codigo Pais", "Codigo Dimension", "Codigo Enfoque", "Codigo Intensidad", "Codigo Tipo Institucion"}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Otras columnas quitadas",{"Institution_Name", "Codigo Pais", "Codigo Dimension", "Codigo Enfoque", "Codigo Intensidad", "Codigo Tipo Institucion", "Academic_Reputation_Score", "Academic_Reputation_Rank", "Employer_Reputation_Score", "Employer_Reputation_Rank", "Faculty_Student_Score", "Faculty_Student_Rank", "Citations_per_Faculty_Score", "Citations_per_Faculty_Rank", "International_Faculty_Score", "International_Faculty_Rank", "International_Students_Score", "International_Students_Rank", "International_Research_Network_Score", "International_Research_Network_Rank", "Employment_Outcomes_Score", "Employment_Outcomes_Rank", "Sustainability_Score", "Sustainability_Rank", "Overall_Score"}),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Columnas reordenadas", "Índice", 1, 1, Int64.Type),
+				    #"Columnas reordenadas1" = Table.ReorderColumns(#"Índice agregado",{"Índice", "Institution_Name", "Codigo Pais", "Codigo Dimension", "Codigo Enfoque", "Codigo Intensidad", "Codigo Tipo Institucion", "Academic_Reputation_Score", "Academic_Reputation_Rank", "Employer_Reputation_Score", "Employer_Reputation_Rank", "Faculty_Student_Score", "Faculty_Student_Rank", "Citations_per_Faculty_Score", "Citations_per_Faculty_Rank", "International_Faculty_Score", "International_Faculty_Rank", "International_Students_Score", "International_Students_Rank", "International_Research_Network_Score", "International_Research_Network_Rank", "Employment_Outcomes_Score", "Employment_Outcomes_Rank", "Sustainability_Score", "Sustainability_Rank", "Overall_Score"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas reordenadas1",{{"Índice", "Codigo Intitucion"}, {"Institution_Name", "Nombre Institucion"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,32 @@
+﻿model Model
+	culture: es-CL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Datos
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.143.1378.0 (25.05)+4e1de9c957866bc5336e0d250838314aa54ff3a8
+
+annotation PBI_QueryOrder = ["url_db","QS World University Rankings 2025 (Top global universities)","Continente","Pais","DimensionInstitucion","Enfoque","IntensidadInvestigacion","TipoInstitucion","PosicionRanking","Ranking2024","Ranking2025","Universidad"]
+
+ref table 'QS World University Rankings 2025 (Top global universities)'
+ref table Continente
+ref table Pais
+ref table DimensionInstitucion
+ref table Enfoque
+ref table IntensidadInvestigacion
+ref table TipoInstitucion
+ref table PosicionRanking
+ref table Ranking2024
+ref table Ranking2025
+ref table Universidad
+
+ref cultureInfo es-CL
+

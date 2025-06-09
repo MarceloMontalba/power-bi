@@ -1,0 +1,307 @@
+﻿table 'QS World University Rankings 2025 (Top global universities)'
+	isHidden
+
+	column RANK_2025
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: RANK_2025
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RANK_2024
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: RANK_2024
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Institution_Name
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Institution_Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Region
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SIZE
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: SIZE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FOCUS
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: FOCUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RES.'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: RES.
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Academic_Reputation_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Academic_Reputation_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Academic_Reputation_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Academic_Reputation_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employer_Reputation_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Employer_Reputation_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employer_Reputation_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Employer_Reputation_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Faculty_Student_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Faculty_Student_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Faculty_Student_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Faculty_Student_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Citations_per_Faculty_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Citations_per_Faculty_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Citations_per_Faculty_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Citations_per_Faculty_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Faculty_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: International_Faculty_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Faculty_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: International_Faculty_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Students_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: International_Students_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Students_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: International_Students_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Research_Network_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: International_Research_Network_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column International_Research_Network_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: International_Research_Network_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employment_Outcomes_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Employment_Outcomes_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employment_Outcomes_Rank
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Employment_Outcomes_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sustainability_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Sustainability_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sustainability_Rank
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Sustainability_Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Overall_Score
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Overall_Score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'QS World University Rankings 2025 (Top global universities)' = m
+		mode: import
+		queryGroup: Datos
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_db),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Filas filtradas" = Table.SelectRows(#"Encabezados promovidos", each true),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas","=","",Replacer.ReplaceText,{"Sustainability_Rank"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","+","",Replacer.ReplaceText,{"Sustainability_Rank"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","-","",Replacer.ReplaceText,{"Sustainability_Rank"}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Valor reemplazado2",{{"Sustainability_Rank", Int64.Type}}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Tipo cambiado","+","",Replacer.ReplaceText,{"Overall_Score"}),
+				    #"Valor reemplazado4" = Table.ReplaceValue(#"Valor reemplazado3","-","",Replacer.ReplaceText,{"Overall_Score"})
+				in
+				    #"Valor reemplazado4"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

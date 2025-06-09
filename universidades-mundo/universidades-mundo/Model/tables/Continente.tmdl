@@ -1,0 +1,36 @@
+﻿table Continente
+
+	column 'Codigo Continente'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Continente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Continente
+		dataType: string
+		dataCategory: Continent
+		summarizeBy: none
+		sourceColumn: Continente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Continente = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_db),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Encabezados promovidos",{"Region"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Otras columnas quitadas"),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Duplicados quitados", "Índice", 1, 1, Int64.Type),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Índice agregado",{"Índice", "Region"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas reordenadas",{{"Índice", "Codigo Continente"}, {"Region", "Continente"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,45 @@
+﻿relationship AutoDetected_f51cf658-fb74-4746-9ead-dc1b64d35028
+	fromColumn: Pais.'Codigo Continente'
+	toColumn: Continente.'Codigo Continente'
+
+relationship AutoDetected_a8e4b181-5e21-4a59-bb09-7b8862ee86b9
+	fromColumn: Universidad.'Codigo Pais'
+	toColumn: Pais.'Codigo Pais'
+
+relationship AutoDetected_7d0f0347-b40a-4fc4-a95c-4ce4c2869c82
+	fromColumn: Universidad.'Codigo Dimension'
+	toColumn: DimensionInstitucion.'Codigo Dimension'
+
+relationship AutoDetected_ec17a787-fac9-4886-833d-e9f530920c9d
+	fromColumn: Universidad.'Codigo Enfoque'
+	toColumn: Enfoque.'Codigo Enfoque'
+
+relationship AutoDetected_62c969f5-25ab-4440-b6bb-149fc8d4daf0
+	fromColumn: Universidad.'Codigo Intensidad'
+	toColumn: IntensidadInvestigacion.'Codigo Intensidad'
+
+relationship AutoDetected_03dfc5ba-0e73-4594-b3d5-dcb03641b039
+	fromColumn: Universidad.'Codigo Tipo Institucion'
+	toColumn: TipoInstitucion.'Codigo Tipo Institucion'
+
+relationship AutoDetected_62edc03d-18a4-4b92-be5e-937b934a74f3
+	fromColumn: Ranking2024.'Codigo Posicion'
+	toColumn: PosicionRanking.'Codigo Posicion'
+
+relationship AutoDetected_0f9a472b-187b-42ab-94cf-7daaa8ff0ac3
+	fromColumn: Ranking2025.'Codigo Posicion'
+	toColumn: PosicionRanking.'Codigo Posicion'
+
+relationship AutoDetected_89523442-0bfd-42e6-9c07-ac9319056ed9
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Universidad.'Codigo Intitucion'
+	toColumn: Ranking2024.'Codigo Intitucion'
+
+relationship AutoDetected_8539dbda-d468-4c3a-9f7b-3df2c321ded3
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Universidad.'Codigo Intitucion'
+	toColumn: Ranking2025.'Codigo Intitucion'
+

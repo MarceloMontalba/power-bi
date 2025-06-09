@@ -1,0 +1,41 @@
+﻿table Ranking2024
+
+	column 'Codigo Intitucion'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Intitucion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Posicion'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Codigo Posicion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Ranking2024 = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_db),[Delimiter=",", Columns=28, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Filas filtradas" = Table.SelectRows(#"Encabezados promovidos", each true),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Filas filtradas",{"RANK_2024", "Institution_Name"}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Otras columnas quitadas", {"Institution_Name"}, Universidad, {"Nombre Institucion"}, "Universidad", JoinKind.LeftOuter),
+				    #"Se expandió Universidad" = Table.ExpandTableColumn(#"Consultas combinadas", "Universidad", {"Codigo Intitucion"}, {"Codigo Intitucion"}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Se expandió Universidad",{"RANK_2024", "Codigo Intitucion", "Institution_Name"}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas reordenadas",{"Institution_Name"}),
+				    #"Consultas combinadas1" = Table.NestedJoin(#"Columnas quitadas", {"RANK_2024"}, PosicionRanking, {"Posicion Ranking"}, "PosicionRanking", JoinKind.LeftOuter),
+				    #"Se expandió PosicionRanking" = Table.ExpandTableColumn(#"Consultas combinadas1", "PosicionRanking", {"Codigo Posicion"}, {"Codigo Posicion"}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Se expandió PosicionRanking",{"RANK_2024"}),
+				    #"Filas ordenadas" = Table.Sort(#"Columnas quitadas1",{{"Codigo Intitucion", Order.Ascending}})
+				in
+				    #"Filas ordenadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
