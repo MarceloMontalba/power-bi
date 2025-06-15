@@ -24,10 +24,13 @@
       ],
       "Values": [
         {
-          "queryRef": "MEDIDAS.Total Devoluciones"
+          "queryRef": "MEDIDAS.Total Ingresos"
         },
         {
-          "queryRef": "MEDIDAS.% del Total de Devoluciones"
+          "queryRef": "MEDIDAS.Total Costos"
+        },
+        {
+          "queryRef": "MEDIDAS.Utilidad Bruta"
         }
       ]
     },
@@ -65,10 +68,10 @@
                 "Source": "m"
               }
             },
-            "Property": "% del Total de Devoluciones"
+            "Property": "Total Ingresos"
           },
-          "Name": "MEDIDAS.% del Total de Devoluciones",
-          "NativeReferenceName": "% del Total de Devoluciones"
+          "Name": "MEDIDAS.Total Ingresos",
+          "NativeReferenceName": "Total Ingresos"
         },
         {
           "Measure": {
@@ -77,25 +80,22 @@
                 "Source": "m"
               }
             },
-            "Property": "Total Devoluciones"
+            "Property": "Total Costos"
           },
-          "Name": "MEDIDAS.Total Devoluciones",
-          "NativeReferenceName": "Total Devoluciones"
-        }
-      ],
-      "OrderBy": [
+          "Name": "MEDIDAS.Total Costos",
+          "NativeReferenceName": "Total Costos"
+        },
         {
-          "Direction": 2,
-          "Expression": {
-            "Measure": {
-              "Expression": {
-                "SourceRef": {
-                  "Source": "m"
-                }
-              },
-              "Property": "Total Devoluciones"
-            }
-          }
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Utilidad Bruta"
+          },
+          "Name": "MEDIDAS.Utilidad Bruta",
+          "NativeReferenceName": "Utilidad Bruta"
         }
       ]
     },

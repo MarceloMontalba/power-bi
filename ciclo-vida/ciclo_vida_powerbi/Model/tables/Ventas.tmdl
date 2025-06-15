@@ -88,13 +88,6 @@
 
 		annotation SummarizationSetBy = Automatic
 
-	column Ingresos = RELATED(Productos[Precio])*Ventas[CantidadOrden]
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	partition Ventas = m
 		mode: import
 		source =

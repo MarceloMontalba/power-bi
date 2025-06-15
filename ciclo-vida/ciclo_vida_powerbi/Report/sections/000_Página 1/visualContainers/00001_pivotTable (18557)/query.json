@@ -7,7 +7,7 @@
           "From": [
             {
               "Name": "c",
-              "Entity": "Categorias de Producto",
+              "Entity": "Calendario",
               "Type": 0
             },
             {
@@ -24,34 +24,10 @@
                     "Source": "c"
                   }
                 },
-                "Property": "CategoriaProducto"
+                "Property": "Año"
               },
-              "Name": "Categorias de Producto.CategoriaProducto",
-              "NativeReferenceName": "CategoriaProducto"
-            },
-            {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "m"
-                  }
-                },
-                "Property": "Total Ingresos"
-              },
-              "Name": "MEDIDAS.Total Ingresos",
-              "NativeReferenceName": "Total Ingresos"
-            },
-            {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "m"
-                  }
-                },
-                "Property": "Total Costos"
-              },
-              "Name": "MEDIDAS.Total Costos",
-              "NativeReferenceName": "Total Costos"
+              "Name": "Calendario.Año",
+              "NativeReferenceName": "Año"
             },
             {
               "Measure": {
@@ -73,9 +49,7 @@
               {
                 "Projections": [
                   0,
-                  1,
-                  2,
-                  3
+                  1
                 ],
                 "Subtotal": 1
               }

@@ -72,7 +72,9 @@
 			        'Categorias de Producto'[CategoriaProducto]="Accesorios"
 			    )
 			```
-		formatString: #,0
+		formatString: \$#,0;(\$#,0);\$#,0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	measure 'Tasa de Devoluciones de Accesorios' = DIVIDE([Total de Devoluciones de Accesorios],[Total de Ventas de Accesorios])
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
@@ -110,6 +112,30 @@
 			    )
 			)
 		formatString: #,0
+
+	measure 'Total Ingresos' = ```
+			
+			    SUMX(
+			        Ventas,
+			        Ventas[CantidadOrden]*RELATED(Productos[Precio])
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Costos' = ```
+			
+			    SUMX(
+			        Ventas,
+			        Ventas[CantidadOrden]*
+			        RELATED(Productos[Costo])
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+
+	measure 'Utilidad Bruta' = [Total Ingresos] - [Total Costos]
+		formatString: \$#,0;(\$#,0);\$#,0
 
 	partition MEDIDAS = m
 		mode: import
