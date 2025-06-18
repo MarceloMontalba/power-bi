@@ -1,0 +1,124 @@
+{
+  "projectionOrdering": {
+    "Values": [
+      0
+    ],
+    "Columns": [
+      1
+    ]
+  },
+  "projectionActiveItems": {
+    "Columns": [
+      {
+        "queryRef": "Calendario.Fecha",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Utilidad Bruta últimos 90 Días",
+        "Name": "MEDIDAS.Utilidad Bruta últimos 90 Días",
+        "Type": 1,
+        "Format": "\\$#,0;(\\$#,0);\\$#,0"
+      },
+      {
+        "Restatement": "Fecha",
+        "Name": "Calendario.Fecha",
+        "Type": 4,
+        "Format": "d"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Utilidad Bruta últimos 90 Días"
+          }
+        }
+      },
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendario"
+              }
+            },
+            "Property": "Fecha"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Columns",
+          "Projection": 1,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Utilidad Bruta últimos 90 Días",
+      "format": "\\$#,0;(\\$#,0);\\$#,0",
+      "queryName": "MEDIDAS.Utilidad Bruta últimos 90 Días",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Utilidad Bruta últimos 90 Días"
+        }
+      }
+    },
+    {
+      "displayName": "Fecha",
+      "format": "d",
+      "queryName": "Calendario.Fecha",
+      "roles": {
+        "Columns": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 519
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Calendario"
+            }
+          },
+          "Property": "Fecha"
+        }
+      }
+    }
+  ]
+}

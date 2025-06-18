@@ -7,7 +7,7 @@
           "From": [
             {
               "Name": "c",
-              "Entity": "Categorias de Producto",
+              "Entity": "Calendario",
               "Type": 0
             },
             {
@@ -24,10 +24,10 @@
                     "Source": "c"
                   }
                 },
-                "Property": "CategoriaProducto"
+                "Property": "Inicio del mes"
               },
-              "Name": "Categorias de Producto.CategoriaProducto",
-              "NativeReferenceName": "CategoriaProducto"
+              "Name": "Calendario.Inicio del mes",
+              "NativeReferenceName": "Inicio del mes"
             },
             {
               "Measure": {
@@ -36,10 +36,10 @@
                     "Source": "m"
                   }
                 },
-                "Property": "Total Ingresos"
+                "Property": "Devoluciones del Mes Anterior"
               },
-              "Name": "MEDIDAS.Total Ingresos",
-              "NativeReferenceName": "Total Ingresos"
+              "Name": "MEDIDAS.Devoluciones del Mes Anterior",
+              "NativeReferenceName": "Devoluciones del Mes Anterior"
             },
             {
               "Measure": {
@@ -48,10 +48,10 @@
                     "Source": "m"
                   }
                 },
-                "Property": "Total Costos"
+                "Property": "Órdenes del Mes Anterior"
               },
-              "Name": "MEDIDAS.Total Costos",
-              "NativeReferenceName": "Total Costos"
+              "Name": "MEDIDAS.Órdenes del Mes Anterior",
+              "NativeReferenceName": "Órdenes del Mes Anterior"
             },
             {
               "Measure": {
@@ -60,10 +60,34 @@
                     "Source": "m"
                   }
                 },
-                "Property": "Utilidad Bruta"
+                "Property": "Utilidad Bruta Mes Anterior"
               },
-              "Name": "MEDIDAS.Utilidad Bruta",
-              "NativeReferenceName": "Utilidad Bruta"
+              "Name": "MEDIDAS.Utilidad Bruta Mes Anterior",
+              "NativeReferenceName": "Utilidad Bruta Mes Anterior"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Meta de Órdenes"
+              },
+              "Name": "MEDIDAS.Meta de Órdenes",
+              "NativeReferenceName": "Meta de Órdenes"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Meta Utilidad Bruta"
+              },
+              "Name": "MEDIDAS.Meta Utilidad Bruta",
+              "NativeReferenceName": "Meta Utilidad Bruta"
             }
           ]
         },
@@ -75,7 +99,9 @@
                   0,
                   1,
                   2,
-                  3
+                  3,
+                  4,
+                  5
                 ],
                 "Subtotal": 1
               }

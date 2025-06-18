@@ -22,7 +22,8 @@
 		formatString: #,0
 
 	measure 'Total Ventas' = DISTINCTCOUNT(Ventas[IDOrden])
-		formatString: #,0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Tasa de Devoluciones Op/' = [Cantidad Devoluciones]/[Cantidad Ventas]
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
@@ -135,6 +136,101 @@
 		formatString: \$#,0;(\$#,0);\$#,0
 
 	measure 'Utilidad Bruta' = [Total Ingresos] - [Total Costos]
+		formatString: \$#,0;(\$#,0);\$#,0
+
+	measure 'Ingresos ultimos 5 días' =
+			
+			CALCULATE(
+			    [Total Ingresos],
+			    DATESINPERIOD(
+			        Calendario[Fecha],
+			        MAX(Calendario[Fecha]),
+			        -5,
+			        DAY
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+
+	measure 'Ingresos acumulados año' =
+			
+			CALCULATE(
+			    [Total Ingresos],
+			    DATESYTD(
+			        Calendario[Fecha]
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+
+	measure 'Ingresos del mes anterior' =
+			
+			CALCULATE(
+			    [Total Ingresos],
+			    DATEADD(
+			        Calendario[Fecha],
+			        -1,
+			        MONTH
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+
+	measure 'Devoluciones del Mes Anterior' =
+			
+			CALCULATE(
+			    [Total Devoluciones],
+			    DATEADD(
+			        Calendario[Fecha],
+			        -1,
+			        MONTH
+			    )
+			)
+		formatString: 0
+
+	measure 'Órdenes del Mes Anterior' =
+			
+			CALCULATE(
+			    [Total Ventas],
+			    DATEADD(
+			        Calendario[Fecha],
+			        -1,
+			        MONTH
+			    )
+			)
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Utilidad Bruta Mes Anterior' =
+			
+			CALCULATE(
+			    [Utilidad Bruta],
+			    DATEADD(
+			        Calendario[Fecha],
+			        -1,
+			        MONTH
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+
+	measure 'Meta de Órdenes' =
+			
+			[Órdenes del Mes Anterior] + [Órdenes del Mes Anterior] * 0.05
+		formatString: 0
+
+	measure 'Meta Utilidad Bruta' =
+			
+			[Utilidad Bruta Mes Anterior] * 1.05
+		formatString: \$#,0;(\$#,0);\$#,0
+
+	measure 'Utilidad Bruta últimos 90 Días' =
+			
+			CALCULATE(
+			    [Utilidad Bruta],
+			    DATESINPERIOD(
+			        Calendario[Fecha],
+			        MAX(Calendario[Fecha]),
+			        -90,
+			        DAY
+			    )
+			)
 		formatString: \$#,0;(\$#,0);\$#,0
 
 	partition MEDIDAS = m

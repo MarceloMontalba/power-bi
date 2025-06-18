@@ -1,0 +1,310 @@
+{
+  "projectionOrdering": {
+    "Rows": [
+      0
+    ],
+    "Values": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "projectionActiveItems": {
+    "Rows": [
+      {
+        "queryRef": "Calendario.Inicio del mes",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Inicio del mes",
+        "Name": "Calendario.Inicio del mes",
+        "Type": 4,
+        "Format": "d"
+      },
+      {
+        "Restatement": "Devoluciones del Mes Anterior",
+        "Name": "MEDIDAS.Devoluciones del Mes Anterior",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Órdenes del Mes Anterior",
+        "Name": "MEDIDAS.Órdenes del Mes Anterior",
+        "Type": 3
+      },
+      {
+        "Restatement": "Utilidad Bruta Mes Anterior",
+        "Name": "MEDIDAS.Utilidad Bruta Mes Anterior",
+        "Type": 1,
+        "Format": "\\$#,0;(\\$#,0);\\$#,0"
+      },
+      {
+        "Restatement": "Meta de Órdenes",
+        "Name": "MEDIDAS.Meta de Órdenes",
+        "Type": 1,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Meta Utilidad Bruta",
+        "Name": "MEDIDAS.Meta Utilidad Bruta",
+        "Type": 1,
+        "Format": "\\$#,0;(\\$#,0);\\$#,0"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendario"
+              }
+            },
+            "Property": "Inicio del mes"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Devoluciones del Mes Anterior"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Órdenes del Mes Anterior"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Utilidad Bruta Mes Anterior"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Meta de Órdenes"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MEDIDAS"
+              }
+            },
+            "Property": "Meta Utilidad Bruta"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Rows",
+          "Projection": 0,
+          "isActive": true
+        },
+        {
+          "Name": "Values",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 2,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 3,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 4,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 5,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Inicio del mes",
+      "format": "d",
+      "queryName": "Calendario.Inicio del mes",
+      "roles": {
+        "Rows": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 519
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Calendario"
+            }
+          },
+          "Property": "Inicio del mes"
+        }
+      }
+    },
+    {
+      "displayName": "Devoluciones del Mes Anterior",
+      "format": "0",
+      "queryName": "MEDIDAS.Devoluciones del Mes Anterior",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Devoluciones del Mes Anterior"
+        }
+      }
+    },
+    {
+      "displayName": "Órdenes del Mes Anterior",
+      "queryName": "MEDIDAS.Órdenes del Mes Anterior",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Órdenes del Mes Anterior"
+        }
+      }
+    },
+    {
+      "displayName": "Utilidad Bruta Mes Anterior",
+      "format": "\\$#,0;(\\$#,0);\\$#,0",
+      "queryName": "MEDIDAS.Utilidad Bruta Mes Anterior",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Utilidad Bruta Mes Anterior"
+        }
+      }
+    },
+    {
+      "displayName": "Meta de Órdenes",
+      "format": "0",
+      "queryName": "MEDIDAS.Meta de Órdenes",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Meta de Órdenes"
+        }
+      }
+    },
+    {
+      "displayName": "Meta Utilidad Bruta",
+      "format": "\\$#,0;(\\$#,0);\\$#,0",
+      "queryName": "MEDIDAS.Meta Utilidad Bruta",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "MEDIDAS"
+            }
+          },
+          "Property": "Meta Utilidad Bruta"
+        }
+      }
+    }
+  ]
+}

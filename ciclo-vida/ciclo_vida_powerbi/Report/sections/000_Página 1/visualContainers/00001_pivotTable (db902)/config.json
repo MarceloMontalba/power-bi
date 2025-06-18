@@ -1,0 +1,74 @@
+{
+  "name": "db90273a3945881dd6b9",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 9.9502487562189046,
+        "y": 634.32835820895514,
+        "z": 1,
+        "width": 1236.318407960199,
+        "height": 85.820895522388057,
+        "tabOrder": 1
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "pivotTable",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "MEDIDAS.Utilidad Bruta últimos 90 Días"
+        }
+      ],
+      "Columns": [
+        {
+          "queryRef": "Calendario.Fecha",
+          "active": true
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "m",
+          "Entity": "MEDIDAS",
+          "Type": 0
+        },
+        {
+          "Name": "c",
+          "Entity": "Calendario",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Utilidad Bruta últimos 90 Días"
+          },
+          "Name": "MEDIDAS.Utilidad Bruta últimos 90 Días",
+          "NativeReferenceName": "Utilidad Bruta últimos 90 Días"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "c"
+              }
+            },
+            "Property": "Fecha"
+          },
+          "Name": "Calendario.Fecha",
+          "NativeReferenceName": "Fecha"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "name": "2b3908f9c985b5487ec9",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 9.9502487562189046,
+        "y": 0,
+        "z": 0,
+        "width": 905.4726368159204,
+        "height": 624.37810945273623,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "pivotTable",
+    "projections": {
+      "Rows": [
+        {
+          "queryRef": "Calendario.Inicio del mes",
+          "active": true
+        }
+      ],
+      "Values": [
+        {
+          "queryRef": "MEDIDAS.Devoluciones del Mes Anterior"
+        },
+        {
+          "queryRef": "MEDIDAS.Órdenes del Mes Anterior"
+        },
+        {
+          "queryRef": "MEDIDAS.Utilidad Bruta Mes Anterior"
+        },
+        {
+          "queryRef": "MEDIDAS.Meta de Órdenes"
+        },
+        {
+          "queryRef": "MEDIDAS.Meta Utilidad Bruta"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "c",
+          "Entity": "Calendario",
+          "Type": 0
+        },
+        {
+          "Name": "m",
+          "Entity": "MEDIDAS",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "c"
+              }
+            },
+            "Property": "Inicio del mes"
+          },
+          "Name": "Calendario.Inicio del mes",
+          "NativeReferenceName": "Inicio del mes"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Devoluciones del Mes Anterior"
+          },
+          "Name": "MEDIDAS.Devoluciones del Mes Anterior",
+          "NativeReferenceName": "Devoluciones del Mes Anterior"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Órdenes del Mes Anterior"
+          },
+          "Name": "MEDIDAS.Órdenes del Mes Anterior",
+          "NativeReferenceName": "Órdenes del Mes Anterior"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Utilidad Bruta Mes Anterior"
+          },
+          "Name": "MEDIDAS.Utilidad Bruta Mes Anterior",
+          "NativeReferenceName": "Utilidad Bruta Mes Anterior"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Meta de Órdenes"
+          },
+          "Name": "MEDIDAS.Meta de Órdenes",
+          "NativeReferenceName": "Meta de Órdenes"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "m"
+              }
+            },
+            "Property": "Meta Utilidad Bruta"
+          },
+          "Name": "MEDIDAS.Meta Utilidad Bruta",
+          "NativeReferenceName": "Meta Utilidad Bruta"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

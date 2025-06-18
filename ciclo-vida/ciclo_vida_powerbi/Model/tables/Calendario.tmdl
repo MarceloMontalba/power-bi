@@ -60,6 +60,9 @@
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Nombre del mes
+		sortByColumn: 'Numero Mes'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -102,6 +105,18 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column Día = DAY(Calendario[Fecha])
+		formatString: 0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero Mes' = MONTH(Calendario[Fecha])
+		formatString: 0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy 'Jerarquía de Fecha'
 
 		level Año
@@ -112,6 +127,9 @@
 
 		level 'Nombre del mes'
 			column: 'Nombre del mes'
+
+		level Día
+			column: Día
 
 	partition Calendario = m
 		mode: import
