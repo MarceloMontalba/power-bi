@@ -1,0 +1,174 @@
+﻿table registro_acidente
+
+	column id
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column hora
+		dataType: dateTime
+		formatString: General Date
+		summarizeBy: none
+		sourceColumn: hora
+
+		annotation SummarizationSetBy = Automatic
+
+	column uf
+		dataType: string
+		summarizeBy: none
+		sourceColumn: uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column municipio
+		dataType: string
+		summarizeBy: none
+		sourceColumn: municipio
+
+		annotation SummarizationSetBy = Automatic
+
+	column causa_accidente
+		dataType: string
+		summarizeBy: none
+		sourceColumn: causa_accidente
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_acidente
+		dataType: string
+		summarizeBy: none
+		sourceColumn: tipo_acidente
+
+		annotation SummarizationSetBy = Automatic
+
+	column clasificación_accidente
+		dataType: string
+		summarizeBy: none
+		sourceColumn: clasificación_accidente
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentido_via
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sentido_via
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_pista
+		dataType: string
+		summarizeBy: none
+		sourceColumn: tipo_pista
+
+		annotation SummarizationSetBy = Automatic
+
+	column Personas
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Personas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Muertos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Muertos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Herido_Leves
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Herido_Leves
+
+		annotation SummarizationSetBy = Automatic
+
+	column Heridos_graves
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Heridos_graves
+
+		annotation SummarizationSetBy = Automatic
+
+	column ilesos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: ilesos
+
+		annotation SummarizationSetBy = Automatic
+
+	column ignorados
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: ignorados
+
+		annotation SummarizationSetBy = Automatic
+
+	column Heridos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Heridos
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehículos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: vehículos
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition registro_acidente = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents(url_db), null, true),
+				    registro_acidente_Sheet = Origen{[Item="registro_acidente",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(registro_acidente_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Fecha", type date}, {"hora", type datetime}, {"uf", type text}, {"municipio", type text}, {"causa_accidente", type text}, {"tipo_acidente", type text}, {"clasificación_accidente", type text}, {"sentido_via", type text}, {"tipo_pista", type text}, {"Personas", Int64.Type}, {"Muertos", Int64.Type}, {"Herido_Leves", Int64.Type}, {"Heridos_graves", Int64.Type}, {"ilesos", Int64.Type}, {"ignorados", Int64.Type}, {"Heridos", Int64.Type}, {"vehículos", Int64.Type}, {"latitude", type number}, {"longitude", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
