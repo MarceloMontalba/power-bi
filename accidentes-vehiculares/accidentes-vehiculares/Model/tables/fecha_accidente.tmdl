@@ -24,6 +24,9 @@
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Nombre del día
+		sortByColumn: 'Día de la semana'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -39,6 +42,9 @@
 		dataType: string
 		summarizeBy: none
 		sourceColumn: Nombre del mes
+		sortByColumn: Mes
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 

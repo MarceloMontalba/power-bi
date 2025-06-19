@@ -21,11 +21,11 @@
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column Hora
+	column 'Hora Completa'
 		dataType: dateTime
 		formatString: Long Time
 		summarizeBy: none
-		sourceColumn: Hora
+		sourceColumn: Hora Completa
 
 		annotation SummarizationSetBy = Automatic
 
@@ -192,6 +192,16 @@
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column Hora
+		dataType: dateTime
+		formatString: Long Time
+		summarizeBy: none
+		sourceColumn: Hora
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
 	partition accidente = m
 		mode: import
 		queryGroup: Hechos
@@ -223,9 +233,13 @@
 				    #"Se expandió clasificacion_accidente" = Table.ExpandTableColumn(#"Se expandió municipio.1", "clasificacion_accidente", {"Código Clasificación Accidente"}, {"Código Clasificación Accidente"}),
 				    #"Se expandió causa_accidente.1" = Table.ExpandTableColumn(#"Se expandió clasificacion_accidente", "causa_accidente.1", {"Código Causa Accidente"}, {"Código Causa Accidente"}),
 				    #"Otras columnas quitadas" = Table.SelectColumns(#"Se expandió causa_accidente.1",{"Código Accidente", "Fecha", "Hora", "Personas", "Muertos", "Herido Leves", "Heridos Graves", "Ilesos", "Ignorados", "Heridos", "Vehículos", "Latitud", "Longitud", "Código Causa Accidente", "Código Clasificación Accidente", "Código Municipio", "Código Sentido Via", "Código Tipo Accidente", "Código Tipo Pista", "Código UF"}),
-				    #"Columnas reordenadas" = Table.ReorderColumns(#"Otras columnas quitadas",{"Código Accidente", "Fecha", "Hora", "Código UF", "Código Tipo Pista", "Código Tipo Accidente", "Código Municipio", "Código Sentido Via", "Código Clasificación Accidente", "Código Causa Accidente", "Personas", "Muertos", "Herido Leves", "Heridos Graves", "Ilesos", "Ignorados", "Heridos", "Vehículos", "Latitud", "Longitud"})
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Otras columnas quitadas",{"Código Accidente", "Fecha", "Hora", "Código UF", "Código Tipo Pista", "Código Tipo Accidente", "Código Municipio", "Código Sentido Via", "Código Clasificación Accidente", "Código Causa Accidente", "Personas", "Muertos", "Herido Leves", "Heridos Graves", "Ilesos", "Ignorados", "Heridos", "Vehículos", "Latitud", "Longitud"}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas reordenadas", "Personalizado", each Text.From(Time.Hour([Hora]))&":00:00"),
+				    #"Columnas reordenadas1" = Table.ReorderColumns(#"Personalizada agregada",{"Código Accidente", "Fecha", "Hora", "Personalizado", "Código UF", "Código Tipo Pista", "Código Tipo Accidente", "Código Municipio", "Código Sentido Via", "Código Clasificación Accidente", "Código Causa Accidente", "Personas", "Muertos", "Herido Leves", "Heridos Graves", "Ilesos", "Ignorados", "Heridos", "Vehículos", "Latitud", "Longitud"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas1",{{"Hora", "Hora Completa"}, {"Personalizado", "Hora"}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado1",{{"Hora", type time}})
 				in
-				    #"Columnas reordenadas"
+				    #"Tipo cambiado1"
 
 	annotation PBI_NavigationStepName = Navegación
 

@@ -124,6 +124,19 @@
             "width": 234
           },
           "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1101.5016103397111,
+            "y": 205.38243941531925
+          },
+          "nodeIndex": "MEDIDAS",
+          "nodeLineageTag": "d6329938-8601-4f39-ab10-26c9da64da2b",
+          "size": {
+            "height": 155.53785046658516,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",

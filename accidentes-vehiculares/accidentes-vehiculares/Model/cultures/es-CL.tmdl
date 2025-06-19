@@ -2,8 +2,2880 @@
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.código_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Fecha"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "fecha": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "accidente.hora_completa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Hora Completa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hora completa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "time": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "accidente.código_UF": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código UF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código UF": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.código_tipo_pista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código Tipo Pista"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código tipo pista": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.código_tipo_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código Tipo Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código tipo accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.código_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código Municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código municipio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.código_sentido_via": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código Sentido Via"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código sentido via": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.código_clasificación_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código Clasificación Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código clasificación accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.código_causa_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Código Causa Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código causa accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.persona": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Personas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "persona": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "facade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "façade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "personality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "role": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "person": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "personage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "character": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "guise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "front": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.muerto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Muertos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "muerto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.herido_leve": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Herido Leves"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "herido leve": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.heridos_graves": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Heridos Graves"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "heridos graves": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "herido graves": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "herido crypt": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "herido mausoleum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "herido tomb": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "herido vault": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "herido sepulcher": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.ileso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Ilesos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ileso": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.ignorado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Ignorados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ignorado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.herido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Heridos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "herido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.vehículo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Vehículos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vehículo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.latitud": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Latitud"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "latitud": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.longitud": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Longitud"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "longitud": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "unidad_federacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "unidad_federacion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unidad federacion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "unidad_federacion": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "unidad_federacion.código_UF": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "unidad_federacion",
+			          "ConceptualProperty": "Código UF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código UF": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "unidad_federacion.uf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "unidad_federacion",
+			          "ConceptualProperty": "UF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "uf": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Estado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "municipio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.código_municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipio",
+			          "ConceptualProperty": "Código Municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código municipio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "municipio.municipio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "municipio",
+			          "ConceptualProperty": "Municipio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "municipio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "municipio name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "causa_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "causa_accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "causa accidente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "causa_accidente": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "causa_accidente.código_causa_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "causa_accidente",
+			          "ConceptualProperty": "Código Causa Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código causa accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "causa_accidente.causa_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "causa_accidente",
+			          "ConceptualProperty": "Causa Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "causa accidente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "causa accidente name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "tipo_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo accidente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tipo_accidente": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "tipo_accidente.código_tipo_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_accidente",
+			          "ConceptualProperty": "Código Tipo Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código tipo accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "tipo_accidente.tipo_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_accidente",
+			          "ConceptualProperty": "Tipo Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo accidente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tipo accidente name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "clasificacion_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "clasificacion_accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "clasificacion accidente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "clasificacion_accidente": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "clasificacion_accidente.código_clasificación_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "clasificacion_accidente",
+			          "ConceptualProperty": "Código Clasificación Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código clasificación accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "clasificacion_accidente.clasificación_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "clasificacion_accidente",
+			          "ConceptualProperty": "Clasificación Accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "clasificación accidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "sentido_via": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "sentido_via"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sentido via": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sentido_via": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "sentido_via.código_sentido_via": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "sentido_via",
+			          "ConceptualProperty": "Código Sentido Via"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código sentido via": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "sentido_via.sentido_via": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "sentido_via",
+			          "ConceptualProperty": "Sentido Via"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sentido via": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sentido via name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "tipo_pista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_pista"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo pista": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tipo_pista": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "tipo_pista.código_tipo_pista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_pista",
+			          "ConceptualProperty": "Código Tipo Pista"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código tipo pista": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "tipo_pista.tipo_pista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_pista",
+			          "ConceptualProperty": "Tipo Pista"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo pista": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tipo pista name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "fecha_accidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_accidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha accidente": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fecha_accidente": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_accidente.fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_accidente",
+			          "ConceptualProperty": "Fecha"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fecha_accidente.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_accidente",
+			          "ConceptualProperty": "Año"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_accidente.nombre_del_día": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_accidente",
+			          "ConceptualProperty": "Nombre del día"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre del día": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_accidente.día_de_la_semana": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_accidente",
+			          "ConceptualProperty": "Día de la semana"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "día de la semana": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_accidente.nombre_del_me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_accidente",
+			          "ConceptualProperty": "Nombre del mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre del me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_accidente.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_accidente",
+			          "ConceptualProperty": "Mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.total_accidentes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Total Accidentes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total accidentes": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate accidente": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall accidente": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Accidentes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medida.total_heridos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Total Heridos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total heridos": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate herido": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall herido": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Heridos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medida.total_muertos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Total Muertos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total muertos": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate muerto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall muerto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "Muertos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "accidente.hora": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "accidente",
+			          "ConceptualProperty": "Hora"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hora": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "time": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    }
+			  },
+			  "Relationships": {
+			    "accidente_has_tipo_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "tipo_accidente": {
+			          "Target": {
+			            "Entity": "tipo_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "tipo_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_tipo_accidentes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_accidentes_have_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_tipo_pista": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "tipo_pista": {
+			          "Target": {
+			            "Entity": "tipo_pista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "tipo_pista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_tipo_pistas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_pista"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_pistas_have_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_unidad_federacion": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "unidad_federacion": {
+			          "Target": {
+			            "Entity": "unidad_federacion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "unidad_federacion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_unidad_federacions"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unidad_federacion"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unidad_federacions_have_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_hora": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.hora": {
+			          "Target": {
+			            "Entity": "accidente.hora"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.hora"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_horas"
+			        }
+			      ]
+			    },
+			    "accidente_has_medida_total_muertos": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "medida.total_muertos": {
+			          "Target": {
+			            "Entity": "medida.total_muertos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "medida.total_muertos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_total_muertos"
+			        }
+			      ]
+			    },
+			    "accidente_has_medida_total_heridos": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "medida.total_heridos": {
+			          "Target": {
+			            "Entity": "medida.total_heridos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "medida.total_heridos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_total_heridos"
+			        }
+			      ]
+			    },
+			    "accidente_has_medida_total_accidentes": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "medida.total_accidentes": {
+			          "Target": {
+			            "Entity": "medida.total_accidentes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "medida.total_accidentes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_total_accidentes"
+			        }
+			      ]
+			    },
+			    "fecha_accidente_has_me": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_accidente": {
+			          "Target": {
+			            "Entity": "fecha_accidente"
+			          }
+			        },
+			        "fecha_accidente.me": {
+			          "Target": {
+			            "Entity": "fecha_accidente.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_accidente"
+			            },
+			            "Object": {
+			              "Role": "fecha_accidente.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_accidentes_have_me"
+			        }
+			      ]
+			    },
+			    "fecha_accidente_has_nombre_del_me": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_accidente": {
+			          "Target": {
+			            "Entity": "fecha_accidente"
+			          }
+			        },
+			        "fecha_accidente.nombre_del_me": {
+			          "Target": {
+			            "Entity": "fecha_accidente.nombre_del_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_accidente"
+			            },
+			            "Object": {
+			              "Role": "fecha_accidente.nombre_del_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_accidentes_have_nombre_del_me"
+			        }
+			      ]
+			    },
+			    "fecha_accidente_has_día_de_la_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_accidente": {
+			          "Target": {
+			            "Entity": "fecha_accidente"
+			          }
+			        },
+			        "fecha_accidente.día_de_la_semana": {
+			          "Target": {
+			            "Entity": "fecha_accidente.día_de_la_semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_accidente"
+			            },
+			            "Object": {
+			              "Role": "fecha_accidente.día_de_la_semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_accidentes_have_día_de_la_semanas"
+			        }
+			      ]
+			    },
+			    "fecha_accidente_has_nombre_del_día": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_accidente": {
+			          "Target": {
+			            "Entity": "fecha_accidente"
+			          }
+			        },
+			        "fecha_accidente.nombre_del_día": {
+			          "Target": {
+			            "Entity": "fecha_accidente.nombre_del_día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_accidente"
+			            },
+			            "Object": {
+			              "Role": "fecha_accidente.nombre_del_día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_accidentes_have_nombre_del_días"
+			        }
+			      ]
+			    },
+			    "fecha_accidente_has_año": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_accidente": {
+			          "Target": {
+			            "Entity": "fecha_accidente"
+			          }
+			        },
+			        "fecha_accidente.año": {
+			          "Target": {
+			            "Entity": "fecha_accidente.año"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_accidente"
+			            },
+			            "Object": {
+			              "Role": "fecha_accidente.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_accidentes_have_años"
+			        }
+			      ]
+			    },
+			    "fecha_accidente_has_fecha": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_accidente": {
+			          "Target": {
+			            "Entity": "fecha_accidente"
+			          }
+			        },
+			        "fecha_accidente.fecha": {
+			          "Target": {
+			            "Entity": "fecha_accidente.fecha"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_accidente"
+			            },
+			            "Object": {
+			              "Role": "fecha_accidente.fecha"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_accidentes_have_fechas"
+			        }
+			      ]
+			    },
+			    "tipo_pista_has_tipo_pista": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo_pista"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo_pista": {
+			          "Target": {
+			            "Entity": "tipo_pista"
+			          }
+			        },
+			        "tipo_pista.tipo_pista": {
+			          "Target": {
+			            "Entity": "tipo_pista.tipo_pista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_pista"
+			            },
+			            "Object": {
+			              "Role": "tipo_pista.tipo_pista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_pistas_have_tipo_pistas"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "tipo_pista"
+			            },
+			            "Name": {
+			              "Role": "tipo_pista.tipo_pista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_pistas_are_names_IDs_of_tipo_pistas"
+			        }
+			      ]
+			    },
+			    "tipo_pista_has_código_tipo_pista": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo_pista"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo_pista": {
+			          "Target": {
+			            "Entity": "tipo_pista"
+			          }
+			        },
+			        "tipo_pista.código_tipo_pista": {
+			          "Target": {
+			            "Entity": "tipo_pista.código_tipo_pista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_pista"
+			            },
+			            "Object": {
+			              "Role": "tipo_pista.código_tipo_pista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_pistas_have_código_tipo_pistas"
+			        }
+			      ]
+			    },
+			    "sentido_via_has_sentido_via": {
+			      "Binding": {
+			        "ConceptualEntity": "sentido_via"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sentido_via": {
+			          "Target": {
+			            "Entity": "sentido_via"
+			          }
+			        },
+			        "sentido_via.sentido_via": {
+			          "Target": {
+			            "Entity": "sentido_via.sentido_via"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sentido_via"
+			            },
+			            "Object": {
+			              "Role": "sentido_via.sentido_via"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sentido_via_have_sentido_via"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "sentido_via"
+			            },
+			            "Name": {
+			              "Role": "sentido_via.sentido_via"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sentido_via_are_names_IDs_of_sentido_via"
+			        }
+			      ]
+			    },
+			    "sentido_via_has_código_sentido_via": {
+			      "Binding": {
+			        "ConceptualEntity": "sentido_via"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "sentido_via": {
+			          "Target": {
+			            "Entity": "sentido_via"
+			          }
+			        },
+			        "sentido_via.código_sentido_via": {
+			          "Target": {
+			            "Entity": "sentido_via.código_sentido_via"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sentido_via"
+			            },
+			            "Object": {
+			              "Role": "sentido_via.código_sentido_via"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sentido_via_have_código_sentido_via"
+			        }
+			      ]
+			    },
+			    "clasificacion_accidente_has_clasificación_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "clasificacion_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "clasificacion_accidente": {
+			          "Target": {
+			            "Entity": "clasificacion_accidente"
+			          }
+			        },
+			        "clasificacion_accidente.clasificación_accidente": {
+			          "Target": {
+			            "Entity": "clasificacion_accidente.clasificación_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "clasificacion_accidente"
+			            },
+			            "Object": {
+			              "Role": "clasificacion_accidente.clasificación_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clasificacion_accidentes_have_clasificación_accidentes"
+			        }
+			      ]
+			    },
+			    "clasificacion_accidente_has_código_clasificación_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "clasificacion_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "clasificacion_accidente": {
+			          "Target": {
+			            "Entity": "clasificacion_accidente"
+			          }
+			        },
+			        "clasificacion_accidente.código_clasificación_accidente": {
+			          "Target": {
+			            "Entity": "clasificacion_accidente.código_clasificación_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "clasificacion_accidente"
+			            },
+			            "Object": {
+			              "Role": "clasificacion_accidente.código_clasificación_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clasificacion_accidentes_have_código_clasificación_accidentes"
+			        }
+			      ]
+			    },
+			    "tipo_accidente_has_tipo_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo_accidente": {
+			          "Target": {
+			            "Entity": "tipo_accidente"
+			          }
+			        },
+			        "tipo_accidente.tipo_accidente": {
+			          "Target": {
+			            "Entity": "tipo_accidente.tipo_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_accidente"
+			            },
+			            "Object": {
+			              "Role": "tipo_accidente.tipo_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_accidentes_have_tipo_accidentes"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "tipo_accidente"
+			            },
+			            "Name": {
+			              "Role": "tipo_accidente.tipo_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_accidentes_are_names_IDs_of_tipo_accidentes"
+			        }
+			      ]
+			    },
+			    "tipo_accidente_has_código_tipo_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo_accidente": {
+			          "Target": {
+			            "Entity": "tipo_accidente"
+			          }
+			        },
+			        "tipo_accidente.código_tipo_accidente": {
+			          "Target": {
+			            "Entity": "tipo_accidente.código_tipo_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_accidente"
+			            },
+			            "Object": {
+			              "Role": "tipo_accidente.código_tipo_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_accidentes_have_código_tipo_accidentes"
+			        }
+			      ]
+			    },
+			    "causa_accidente_has_causa_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "causa_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "causa_accidente": {
+			          "Target": {
+			            "Entity": "causa_accidente"
+			          }
+			        },
+			        "causa_accidente.causa_accidente": {
+			          "Target": {
+			            "Entity": "causa_accidente.causa_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "causa_accidente"
+			            },
+			            "Object": {
+			              "Role": "causa_accidente.causa_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "causa_accidentes_have_causa_accidentes"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "causa_accidente"
+			            },
+			            "Name": {
+			              "Role": "causa_accidente.causa_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "causa_accidentes_are_names_IDs_of_causa_accidentes"
+			        }
+			      ]
+			    },
+			    "causa_accidente_has_código_causa_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "causa_accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "causa_accidente": {
+			          "Target": {
+			            "Entity": "causa_accidente"
+			          }
+			        },
+			        "causa_accidente.código_causa_accidente": {
+			          "Target": {
+			            "Entity": "causa_accidente.código_causa_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "causa_accidente"
+			            },
+			            "Object": {
+			              "Role": "causa_accidente.código_causa_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "causa_accidentes_have_código_causa_accidentes"
+			        }
+			      ]
+			    },
+			    "municipio_has_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "municipio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.municipio": {
+			          "Target": {
+			            "Entity": "municipio.municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_municipios"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Name": {
+			              "Role": "municipio.municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_are_names_IDs_of_municipios"
+			        }
+			      ]
+			    },
+			    "municipio_has_código_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "municipio"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        },
+			        "municipio.código_municipio": {
+			          "Target": {
+			            "Entity": "municipio.código_municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "municipio.código_municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_código_municipios"
+			        }
+			      ]
+			    },
+			    "unidad_federacion_has_uf": {
+			      "Binding": {
+			        "ConceptualEntity": "unidad_federacion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "unidad_federacion": {
+			          "Target": {
+			            "Entity": "unidad_federacion"
+			          }
+			        },
+			        "unidad_federacion.uf": {
+			          "Target": {
+			            "Entity": "unidad_federacion.uf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unidad_federacion"
+			            },
+			            "Object": {
+			              "Role": "unidad_federacion.uf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unidad_federacions_have_ufs"
+			        }
+			      ]
+			    },
+			    "unidad_federacion_has_código_UF": {
+			      "Binding": {
+			        "ConceptualEntity": "unidad_federacion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "unidad_federacion": {
+			          "Target": {
+			            "Entity": "unidad_federacion"
+			          }
+			        },
+			        "unidad_federacion.código_UF": {
+			          "Target": {
+			            "Entity": "unidad_federacion.código_UF"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "unidad_federacion"
+			            },
+			            "Object": {
+			              "Role": "unidad_federacion.código_UF"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "unidad_federacions_have_código_UFs"
+			        }
+			      ]
+			    },
+			    "accidente_has_longitud": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.longitud": {
+			          "Target": {
+			            "Entity": "accidente.longitud"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.longitud"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_longituds"
+			        }
+			      ]
+			    },
+			    "accidente_has_latitud": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.latitud": {
+			          "Target": {
+			            "Entity": "accidente.latitud"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.latitud"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_latituds"
+			        }
+			      ]
+			    },
+			    "accidente_has_vehículo": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.vehículo": {
+			          "Target": {
+			            "Entity": "accidente.vehículo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.vehículo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_vehículos"
+			        }
+			      ]
+			    },
+			    "accidente_has_herido": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.herido": {
+			          "Target": {
+			            "Entity": "accidente.herido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.herido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_heridos"
+			        }
+			      ]
+			    },
+			    "accidente_has_ignorado": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.ignorado": {
+			          "Target": {
+			            "Entity": "accidente.ignorado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.ignorado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_ignorados"
+			        }
+			      ]
+			    },
+			    "accidente_has_ileso": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.ileso": {
+			          "Target": {
+			            "Entity": "accidente.ileso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.ileso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_ilesos"
+			        }
+			      ]
+			    },
+			    "accidente_has_heridos_graves": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.heridos_graves": {
+			          "Target": {
+			            "Entity": "accidente.heridos_graves"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.heridos_graves"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_heridos_graves"
+			        }
+			      ]
+			    },
+			    "accidente_has_herido_leve": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.herido_leve": {
+			          "Target": {
+			            "Entity": "accidente.herido_leve"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.herido_leve"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_herido_leves"
+			        }
+			      ]
+			    },
+			    "accidente_has_muerto": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.muerto": {
+			          "Target": {
+			            "Entity": "accidente.muerto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.muerto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_muertos"
+			        }
+			      ]
+			    },
+			    "accidente_has_persona": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.persona": {
+			          "Target": {
+			            "Entity": "accidente.persona"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.persona"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_personae"
+			        }
+			      ]
+			    },
+			    "accidente_has_hora_completa": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.hora_completa": {
+			          "Target": {
+			            "Entity": "accidente.hora_completa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.hora_completa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_hora_completas"
+			        }
+			      ]
+			    },
+			    "accidente_has_código_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "accidente.código_accidente": {
+			          "Target": {
+			            "Entity": "accidente.código_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente.código_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_código_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_municipio": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "municipio": {
+			          "Target": {
+			            "Entity": "municipio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "municipio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_municipios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "municipio"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "municipios_have_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_sentido_via": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "sentido_via": {
+			          "Target": {
+			            "Entity": "sentido_via"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "sentido_via"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_sentido_via"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "sentido_via"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "sentido_via_have_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_clasificacion_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "clasificacion_accidente": {
+			          "Target": {
+			            "Entity": "clasificacion_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "clasificacion_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_clasificacion_accidentes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "clasificacion_accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "clasificacion_accidentes_have_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_causa_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "causa_accidente": {
+			          "Target": {
+			            "Entity": "causa_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "causa_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_causa_accidentes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "causa_accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "causa_accidentes_have_accidentes"
+			        }
+			      ]
+			    },
+			    "accidente_has_fecha_accidente": {
+			      "Binding": {
+			        "ConceptualEntity": "accidente"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "accidente": {
+			          "Target": {
+			            "Entity": "accidente"
+			          }
+			        },
+			        "fecha_accidente": {
+			          "Target": {
+			            "Entity": "fecha_accidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "accidente"
+			            },
+			            "Object": {
+			              "Role": "fecha_accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "accidentes_have_fecha_accidentes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_accidente"
+			            },
+			            "Object": {
+			              "Role": "accidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_accidentes_have_accidentes"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
 			}
 		contentType: json
 

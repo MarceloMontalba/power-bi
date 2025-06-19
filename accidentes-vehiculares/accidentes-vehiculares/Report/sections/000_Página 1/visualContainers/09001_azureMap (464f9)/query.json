@@ -1,0 +1,71 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "accidente",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Latitud"
+              },
+              "Name": "Avg(accidente.Latitud)",
+              "NativeReferenceName": "Latitud"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Longitud"
+              },
+              "Name": "Avg(accidente.Longitud)",
+              "NativeReferenceName": "Longitud"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 6,
+            "Primary": {
+              "OverlappingPointsSample": {
+                "X": {
+                  "Index": 1
+                },
+                "Y": {
+                  "Index": 0
+                }
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

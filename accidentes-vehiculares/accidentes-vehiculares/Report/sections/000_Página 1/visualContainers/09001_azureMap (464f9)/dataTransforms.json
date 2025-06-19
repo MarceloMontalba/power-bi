@@ -1,0 +1,320 @@
+{
+  "objects": {
+    "mapControls": [
+      {
+        "properties": {
+          "showLabels": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "showCountryRegionBorders": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showAdminDistrictBorders": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showAdminDistrict2Borders": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showBuildingFootprints": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showRoadDetails": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "defaultStyle": {
+            "expr": {
+              "Literal": {
+                "Value": "'road_shaded_relief'"
+              }
+            }
+          },
+          "worldWrap": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showStylePicker": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showNavigationControls": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "commonDataOptions": [
+      {
+        "properties": {
+          "unselectedTransparency": {
+            "expr": {
+              "Literal": {
+                "Value": "100D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "bubbleLayer": [
+      {
+        "properties": {
+          "bubbleRadius": {
+            "expr": {
+              "Literal": {
+                "Value": "8L"
+              }
+            }
+          },
+          "bubbleStrokeWidth": {
+            "expr": {
+              "Literal": {
+                "Value": "1L"
+              }
+            }
+          },
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 2,
+                    "Percent": -0.25
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "heatMapLayer": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "heatMapRadius": {
+            "expr": {
+              "Literal": {
+                "Value": "3D"
+              }
+            }
+          },
+          "heatMapRadiusUnit": {
+            "expr": {
+              "Literal": {
+                "Value": "'pixels'"
+              }
+            }
+          },
+          "heatMapIntensity": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          },
+          "heatMapColorHigh": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 2,
+                    "Percent": 0.2
+                  }
+                }
+              }
+            }
+          },
+          "heatMapColorCenter": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 2,
+                    "Percent": 0.4
+                  }
+                }
+              }
+            }
+          },
+          "heatMapColorLow": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 2,
+                    "Percent": 0.6
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Y": [
+      0
+    ],
+    "X": [
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Latitud",
+        "Name": "Avg(accidente.Latitud)",
+        "Type": 1,
+        "DataCategory": 10
+      },
+      {
+        "Restatement": "Longitud",
+        "Name": "Avg(accidente.Longitud)",
+        "Type": 1,
+        "DataCategory": 11
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "accidente"
+              }
+            },
+            "Property": "Latitud"
+          }
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "accidente"
+              }
+            },
+            "Property": "Longitud"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "X",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Latitud",
+      "queryName": "Avg(accidente.Latitud)",
+      "roles": {
+        "Y": true
+      },
+      "type": {
+        "category": "Latitude",
+        "underlyingType": 7144707
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "accidente"
+            }
+          },
+          "Property": "Latitud"
+        }
+      }
+    },
+    {
+      "displayName": "Longitud",
+      "queryName": "Avg(accidente.Longitud)",
+      "roles": {
+        "X": true
+      },
+      "type": {
+        "category": "Longitude",
+        "underlyingType": 7210243
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "accidente"
+            }
+          },
+          "Property": "Longitud"
+        }
+      }
+    }
+  ]
+}

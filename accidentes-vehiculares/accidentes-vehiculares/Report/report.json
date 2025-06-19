@@ -1,6 +1,9 @@
 {
   "id": 0,
   "layoutOptimization": 0,
+  "publicCustomVisuals": [
+    "advanceCardE03760C5AB684758B56AA29F9E6C257B"
+  ],
   "resourcePackages": [
     {
       "resourcePackage": {

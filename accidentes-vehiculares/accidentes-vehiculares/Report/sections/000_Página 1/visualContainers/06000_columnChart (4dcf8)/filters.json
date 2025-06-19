@@ -1,0 +1,104 @@
+[
+  {
+    "expression": {
+      "Column": {
+        "Expression": {
+          "SourceRef": {
+            "Entity": "causa_accidente"
+          }
+        },
+        "Property": "Causa Accidente"
+      }
+    },
+    "filter": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "subquery",
+          "Expression": {
+            "Subquery": {
+              "Query": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "c",
+                    "Entity": "causa_accidente",
+                    "Type": 0
+                  },
+                  {
+                    "Name": "m",
+                    "Entity": "MEDIDAS",
+                    "Type": 0
+                  }
+                ],
+                "Select": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "c"
+                        }
+                      },
+                      "Property": "Causa Accidente"
+                    },
+                    "Name": "field"
+                  }
+                ],
+                "OrderBy": [
+                  {
+                    "Direction": 2,
+                    "Expression": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "m"
+                          }
+                        },
+                        "Property": "Total Accidentes"
+                      }
+                    }
+                  }
+                ],
+                "Top": 7
+              }
+            }
+          },
+          "Type": 2
+        },
+        {
+          "Name": "c",
+          "Entity": "causa_accidente",
+          "Type": 0
+        }
+      ],
+      "Where": [
+        {
+          "Condition": {
+            "In": {
+              "Expressions": [
+                {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Property": "Causa Accidente"
+                  }
+                }
+              ],
+              "Table": {
+                "SourceRef": {
+                  "Source": "subquery"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "type": "TopN",
+    "howCreated": 0,
+    "isHiddenInViewMode": false
+  }
+]
