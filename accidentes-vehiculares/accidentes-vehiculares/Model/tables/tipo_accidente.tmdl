@@ -1,0 +1,45 @@
+﻿table tipo_accidente
+
+	column 'Código Tipo Accidente'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Tipo Accidente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Accidente'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tipo Accidente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tipo_accidente = m
+		mode: import
+		queryGroup: Dimensiones
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents(url_db), null, true),
+				    registro_acidente_Sheet = Origen{[Item="registro_acidente",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(registro_acidente_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Fecha", type date}, {"hora", type time}, {"uf", type text}, {"municipio", type text}, {"causa_accidente", type text}, {"tipo_acidente", type text}, {"clasificación_accidente", type text}, {"sentido_via", type text}, {"tipo_pista", type text}, {"Personas", Int64.Type}, {"Muertos", Int64.Type}, {"Herido_Leves", Int64.Type}, {"Heridos_graves", Int64.Type}, {"ilesos", Int64.Type}, {"ignorados", Int64.Type}, {"Heridos", Int64.Type}, {"vehículos", Int64.Type}, {"latitude", type number}, {"longitude", type number}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each true),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas","DeCreciente","Decreciente",Replacer.ReplaceText,{"sentido_via"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","No mantengas una distancia segura.","No mantener una distancia segura",Replacer.ReplaceText,{"causa_accidente"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","Falta de Carretera","Falta de infraestructura vial",Replacer.ReplaceText,{"causa_accidente"}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2",".","",Replacer.ReplaceText,{"causa_accidente"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Valor reemplazado3",{{"id", "Código Accidente"}, {"hora", "Hora"}, {"Herido_Leves", "Herido Leves"}, {"Heridos_graves", "Heridos Graves"}, {"ilesos", "Ilesos"}, {"ignorados", "Ignorados"}, {"vehículos", "Vehículos"}, {"latitude", "Latitud"}, {"longitude", "Longitud"}}),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Columnas con nombre cambiado",{"tipo_acidente"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Otras columnas quitadas"),
+				    #"Valor reemplazado4" = Table.ReplaceValue(#"Duplicados quitados","Queda de ocupante de veículo","Caída de ocupante del vehículo",Replacer.ReplaceText,{"tipo_acidente"}),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Valor reemplazado4", "Índice", 1, 1, Int64.Type),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Índice agregado",{"Índice", "tipo_acidente"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"Índice", "Código Tipo Accidente"}, {"tipo_acidente", "Tipo Accidente"}})
+				in
+				    #"Columnas con nombre cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

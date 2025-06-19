@@ -9,13 +9,15 @@
   },
   "activeSectionIndex": 0,
   "defaultDrillFilterOtherVisuals": true,
+  "linguisticSchemaSyncVersion": 2,
   "settings": {
     "useNewFilterPaneExperience": true,
     "allowChangeFilterTypes": true,
     "useStylableVisualContainerHeader": true,
     "queryLimitOption": 6,
     "exportDataMode": 1,
-    "useDefaultAggregateDisplayName": true
+    "useDefaultAggregateDisplayName": true,
+    "useEnhancedTooltips": true
   },
   "objects": {
     "section": [

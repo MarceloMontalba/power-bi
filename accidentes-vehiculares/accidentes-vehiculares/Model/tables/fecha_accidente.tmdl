@@ -1,0 +1,84 @@
+﻿table fecha_accidente
+	dataCategory: Time
+
+	column Fecha
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Año
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre del día'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre del día
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Día de la semana'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Día de la semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre del mes'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre del mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fecha_accidente = m
+		mode: import
+		queryGroup: Fechas
+		source =
+				let
+				    AñoInicio = Date.Year(List.Min(accidente[Fecha])),
+				    AñoFin = Date.Year(List.Max(accidente[Fecha])),
+				    FechaInicio = #date(AñoInicio,1,1),
+				    FechaFin = #date(AñoFin,12,31),
+				    ListaFechas = List.Dates(
+				    FechaInicio,
+				    Number.From(FechaFin)-Number.From(FechaInicio)+1,
+				    #duration(1,0,0,0)
+				),
+				    #"Convertida en tabla" = Table.FromList(ListaFechas, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Convertida en tabla",{{"Column1", "Fecha"}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"Fecha", type date}}),
+				    #"Año insertado" = Table.AddColumn(#"Tipo cambiado", "Año", each Date.Year([Fecha]), Int64.Type),
+				    #"Nombre del día insertado" = Table.AddColumn(#"Año insertado", "Nombre del día", each Date.DayOfWeekName([Fecha]), type text),
+				    #"Poner En Mayúsculas Cada Palabra" = Table.TransformColumns(#"Nombre del día insertado",{{"Nombre del día", Text.Proper, type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Poner En Mayúsculas Cada Palabra", "Día de la semana", each Date.DayOfWeek([Fecha],1)),
+				    #"Nombre del mes insertado" = Table.AddColumn(#"Personalizada agregada", "Nombre del mes", each Date.MonthName([Fecha]), type text),
+				    #"Poner En Mayúsculas Cada Palabra1" = Table.TransformColumns(#"Nombre del mes insertado",{{"Nombre del mes", Text.Proper, type text}}),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Poner En Mayúsculas Cada Palabra1", "Mes", each Date.Month([Fecha])),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Mes", Int64.Type}, {"Día de la semana", Int64.Type}})
+				in
+				    #"Tipo cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

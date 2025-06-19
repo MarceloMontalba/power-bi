@@ -1,0 +1,233 @@
+﻿table accidente
+
+	column 'Código Accidente'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Código Accidente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hora
+		dataType: dateTime
+		formatString: Long Time
+		summarizeBy: none
+		sourceColumn: Hora
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Código UF'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código UF
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Tipo Pista'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Tipo Pista
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Tipo Accidente'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Tipo Accidente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Municipio'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Municipio
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Sentido Via'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Sentido Via
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Clasificación Accidente'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Clasificación Accidente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Causa Accidente'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Causa Accidente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Personas
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Personas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Muertos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Muertos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Herido Leves'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Herido Leves
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Heridos Graves'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Heridos Graves
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ilesos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Ilesos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ignorados
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Ignorados
+
+		annotation SummarizationSetBy = Automatic
+
+	column Heridos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Heridos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehículos
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Vehículos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitud
+		dataType: double
+		dataCategory: Latitude
+		summarizeBy: sum
+		sourceColumn: Latitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitud
+		dataType: double
+		dataCategory: Longitude
+		summarizeBy: sum
+		sourceColumn: Longitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition accidente = m
+		mode: import
+		queryGroup: Hechos
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents(url_db), null, true),
+				    registro_acidente_Sheet = Origen{[Item="registro_acidente",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(registro_acidente_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"id", Int64.Type}, {"Fecha", type date}, {"hora", type time}, {"uf", type text}, {"municipio", type text}, {"causa_accidente", type text}, {"tipo_acidente", type text}, {"clasificación_accidente", type text}, {"sentido_via", type text}, {"tipo_pista", type text}, {"Personas", Int64.Type}, {"Muertos", Int64.Type}, {"Herido_Leves", Int64.Type}, {"Heridos_graves", Int64.Type}, {"ilesos", Int64.Type}, {"ignorados", Int64.Type}, {"Heridos", Int64.Type}, {"vehículos", Int64.Type}, {"latitude", type number}, {"longitude", type number}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each true),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas","DeCreciente","Decreciente",Replacer.ReplaceText,{"sentido_via"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","No mantengas una distancia segura.","No mantener una distancia segura",Replacer.ReplaceText,{"causa_accidente"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","Falta de Carretera","Falta de infraestructura vial",Replacer.ReplaceText,{"causa_accidente"}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2",".","",Replacer.ReplaceText,{"causa_accidente"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Valor reemplazado3",{{"id", "Código Accidente"}, {"hora", "Hora"}, {"Herido_Leves", "Herido Leves"}, {"Heridos_graves", "Heridos Graves"}, {"ilesos", "Ilesos"}, {"ignorados", "Ignorados"}, {"vehículos", "Vehículos"}, {"latitude", "Latitud"}, {"longitude", "Longitud"}}),
+				    #"Valor reemplazado4" = Table.ReplaceValue(#"Columnas con nombre cambiado","Queda de ocupante de veículo","Caída de ocupante del vehículo",Replacer.ReplaceText,{"tipo_acidente"}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Valor reemplazado4", {"causa_accidente"}, causa_accidente, {"Causa Accidente"}, "causa_accidente.1", JoinKind.LeftOuter),
+				    #"Consultas combinadas1" = Table.NestedJoin(#"Consultas combinadas", {"clasificación_accidente"}, clasificacion_accidente, {"Clasificación Accidente"}, "clasificacion_accidente", JoinKind.LeftOuter),
+				    #"Consultas combinadas2" = Table.NestedJoin(#"Consultas combinadas1", {"municipio"}, municipio, {"Municipio"}, "municipio.1", JoinKind.LeftOuter),
+				    #"Consultas combinadas3" = Table.NestedJoin(#"Consultas combinadas2", {"sentido_via"}, sentido_via, {"Sentido Via"}, "sentido_via.1", JoinKind.LeftOuter),
+				    #"Consultas combinadas4" = Table.NestedJoin(#"Consultas combinadas3", {"tipo_acidente"}, tipo_accidente, {"Tipo Accidente"}, "tipo_accidente", JoinKind.LeftOuter),
+				    #"Consultas combinadas5" = Table.NestedJoin(#"Consultas combinadas4", {"tipo_pista"}, tipo_pista, {"Tipo Pista"}, "tipo_pista.1", JoinKind.LeftOuter),
+				    #"Consultas combinadas6" = Table.NestedJoin(#"Consultas combinadas5", {"uf"}, unidad_federacion, {"UF"}, "unidad_federacion", JoinKind.LeftOuter),
+				    #"Se expandió unidad_federacion" = Table.ExpandTableColumn(#"Consultas combinadas6", "unidad_federacion", {"Código UF"}, {"Código UF"}),
+				    #"Se expandió tipo_pista.1" = Table.ExpandTableColumn(#"Se expandió unidad_federacion", "tipo_pista.1", {"Código Tipo Pista"}, {"Código Tipo Pista"}),
+				    #"Se expandió tipo_accidente" = Table.ExpandTableColumn(#"Se expandió tipo_pista.1", "tipo_accidente", {"Código Tipo Accidente"}, {"Código Tipo Accidente"}),
+				    #"Se expandió sentido_via.1" = Table.ExpandTableColumn(#"Se expandió tipo_accidente", "sentido_via.1", {"Código Sentido Via"}, {"Código Sentido Via"}),
+				    #"Se expandió municipio.1" = Table.ExpandTableColumn(#"Se expandió sentido_via.1", "municipio.1", {"Código Municipio"}, {"Código Municipio"}),
+				    #"Se expandió clasificacion_accidente" = Table.ExpandTableColumn(#"Se expandió municipio.1", "clasificacion_accidente", {"Código Clasificación Accidente"}, {"Código Clasificación Accidente"}),
+				    #"Se expandió causa_accidente.1" = Table.ExpandTableColumn(#"Se expandió clasificacion_accidente", "causa_accidente.1", {"Código Causa Accidente"}, {"Código Causa Accidente"}),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Se expandió causa_accidente.1",{"Código Accidente", "Fecha", "Hora", "Personas", "Muertos", "Herido Leves", "Heridos Graves", "Ilesos", "Ignorados", "Heridos", "Vehículos", "Latitud", "Longitud", "Código Causa Accidente", "Código Clasificación Accidente", "Código Municipio", "Código Sentido Via", "Código Tipo Accidente", "Código Tipo Pista", "Código UF"}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Otras columnas quitadas",{"Código Accidente", "Fecha", "Hora", "Código UF", "Código Tipo Pista", "Código Tipo Accidente", "Código Municipio", "Código Sentido Via", "Código Clasificación Accidente", "Código Causa Accidente", "Personas", "Muertos", "Herido Leves", "Heridos Graves", "Ilesos", "Ignorados", "Heridos", "Vehículos", "Latitud", "Longitud"})
+				in
+				    #"Columnas reordenadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

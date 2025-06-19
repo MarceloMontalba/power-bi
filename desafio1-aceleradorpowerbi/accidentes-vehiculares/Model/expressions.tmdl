@@ -1,7 +1,0 @@
-﻿/// Url de la planilla con la información
-expression url_db = "C:\Users\Admin\Documents\Git\power-bi\desafio1-aceleradorpowerbi\BD-Accidentes-Carreteras.xlsx" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
-
-	annotation PBI_NavigationStepName = Navegación
-
-	annotation PBI_ResultType = Text
-

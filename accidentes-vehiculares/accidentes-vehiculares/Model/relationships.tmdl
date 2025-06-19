@@ -1,0 +1,32 @@
+﻿relationship AutoDetected_dd185928-61a9-4760-806d-d42018dfc5cb
+	fromColumn: accidente.'Código UF'
+	toColumn: unidad_federacion.'Código UF'
+
+relationship AutoDetected_764837aa-4a87-45d3-9ae8-25236541cfbb
+	fromColumn: accidente.'Código Tipo Pista'
+	toColumn: tipo_pista.'Código Tipo Pista'
+
+relationship AutoDetected_3982d8ee-ed89-49c4-99d3-d863a23bb574
+	fromColumn: accidente.'Código Tipo Accidente'
+	toColumn: tipo_accidente.'Código Tipo Accidente'
+
+relationship AutoDetected_4fc4a30e-86ab-4e57-aba0-3b630f6a0e42
+	fromColumn: accidente.'Código Municipio'
+	toColumn: municipio.'Código Municipio'
+
+relationship AutoDetected_4dd720e9-9396-4d69-b96e-9a57e24196c1
+	fromColumn: accidente.'Código Sentido Via'
+	toColumn: sentido_via.'Código Sentido Via'
+
+relationship AutoDetected_f5f6953c-6b3f-4612-bfe0-49aa593a22cd
+	fromColumn: accidente.'Código Clasificación Accidente'
+	toColumn: clasificacion_accidente.'Código Clasificación Accidente'
+
+relationship AutoDetected_d301cbab-67e7-4faa-9760-3d50bdbe100f
+	fromColumn: accidente.'Código Causa Accidente'
+	toColumn: causa_accidente.'Código Causa Accidente'
+
+relationship 64ccd8ea-6b26-1c3f-389a-ad43d580b62a
+	fromColumn: accidente.Fecha
+	toColumn: fecha_accidente.Fecha
+
