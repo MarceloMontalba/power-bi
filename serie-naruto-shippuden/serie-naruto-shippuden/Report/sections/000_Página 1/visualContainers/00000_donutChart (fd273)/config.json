@@ -1,0 +1,100 @@
+{
+  "name": "fd273f55c86788898a00",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0,
+        "y": 56.250298543109629,
+        "z": 0,
+        "width": 349.730117028899,
+        "height": 273.9144972534034,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "donutChart",
+    "projections": {
+      "Y": [
+        {
+          "queryRef": "Sum(capitulo.Número Capitulo)"
+        }
+      ],
+      "Category": [
+        {
+          "queryRef": "tipo_capitulo.Tipo de Capitulo",
+          "active": true
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "c",
+          "Entity": "capitulo",
+          "Type": 0
+        },
+        {
+          "Name": "t",
+          "Entity": "tipo_capitulo",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "Número Capitulo"
+              }
+            },
+            "Function": 2
+          },
+          "Name": "Sum(capitulo.Número Capitulo)",
+          "NativeReferenceName": "Recuento de Número Capitulo"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t"
+              }
+            },
+            "Property": "Tipo de Capitulo"
+          },
+          "Name": "tipo_capitulo.Tipo de Capitulo",
+          "NativeReferenceName": "Tipo de Capitulo"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "c"
+                    }
+                  },
+                  "Property": "Número Capitulo"
+                }
+              },
+              "Function": 2
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}

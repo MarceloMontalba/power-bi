@@ -1,0 +1,39 @@
+﻿table temporadas
+
+	column 'Número Temporada'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Número Temporada
+
+		annotation SummarizationSetBy = Automatic
+
+	column Temporada
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Temporada
+
+		annotation SummarizationSetBy = Automatic
+
+	partition temporadas = m
+		mode: import
+		queryGroup: Dimensiónes
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_bd),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"", Int64.Type}, {"Num_episode", Int64.Type}, {"Title", type text}, {"Type", type text}, {"Year_launch", Int64.Type}, {"Rate", Int64.Type}, {"Votes", Int64.Type}, {"Saga", type text}, {"Airdate", type date}}),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Tipo cambiado",{"Saga"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Otras columnas quitadas"),
+				    #"Dividir columna por: transición de caracteres" = Table.SplitColumn(#"Duplicados quitados", "Saga", Splitter.SplitTextByCharacterTransition({"0".."9"}, (c) => not List.Contains({"0".."9"}, c)), {"Saga.1", "Saga.2"}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Dividir columna por: transición de caracteres","s","",Replacer.ReplaceText,{"Saga.1"}),
+				    #"Dividir columna por posiciones" = Table.SplitColumn(#"Valor reemplazado", "Saga.2", Splitter.SplitTextByPositions({0}), {"Saga.2.1"}),
+				    #"Dividir columna por posiciones1" = Table.SplitColumn(#"Dividir columna por posiciones", "Saga.2.1", Splitter.SplitTextByPositions({1}), {"Saga.2.1.1"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Dividir columna por posiciones1",{{"Saga.2.1.1", type text}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado1",{{"Saga.1", "Número Temporada"}, {"Saga.2.1.1", "Temporada"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,95 @@
+{
+  "name": "31f04b6a53000b49b773",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 17.119656078337712,
+        "y": 446.33389061380467,
+        "z": 1,
+        "width": 799.732505373776,
+        "height": 238.45235251970385,
+        "tabOrder": 1
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "fecha_salida_capitulo.Fecha Salida",
+          "active": true
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sum(capitulo.Número Capitulo)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "f",
+          "Entity": "fecha_salida_capitulo",
+          "Type": 0
+        },
+        {
+          "Name": "c",
+          "Entity": "capitulo",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "f"
+              }
+            },
+            "Property": "Fecha Salida"
+          },
+          "Name": "fecha_salida_capitulo.Fecha Salida",
+          "NativeReferenceName": "Fecha Salida"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "Número Capitulo"
+              }
+            },
+            "Function": 2
+          },
+          "Name": "Sum(capitulo.Número Capitulo)",
+          "NativeReferenceName": "Recuento de Número Capitulo"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 1,
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "f"
+                }
+              },
+              "Property": "Fecha Salida"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}

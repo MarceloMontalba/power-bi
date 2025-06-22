@@ -1,0 +1,6 @@
+﻿expression url_bd = "C:\Users\mmont\Documents\power-bi\serie-naruto-shippuden\naruto.csv" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+

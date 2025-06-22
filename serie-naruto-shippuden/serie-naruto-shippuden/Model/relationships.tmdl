@@ -1,0 +1,12 @@
+﻿relationship AutoDetected_e2a81182-c845-4da9-b072-422a5ac5230f
+	fromColumn: capitulo.'Número Temporada'
+	toColumn: temporadas.'Número Temporada'
+
+relationship b883b3a5-b4f3-6e04-912a-5f85ef44bd0a
+	fromColumn: capitulo.'Código Tipo Capitulo'
+	toColumn: tipo_capitulo.'Código Tipo'
+
+relationship 005e074c-8980-78c8-2b65-a84c1b34a0cc
+	fromColumn: capitulo.'Fecha Salida'
+	toColumn: fecha_salida_capitulo.'Fecha Salida'
+

@@ -1,0 +1,74 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "fecha_salida_capitulo",
+              "Type": 0
+            },
+            {
+              "Name": "c",
+              "Entity": "capitulo",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "f"
+                  }
+                },
+                "Property": "Fecha Salida"
+              },
+              "Name": "fecha_salida_capitulo.Fecha Salida",
+              "NativeReferenceName": "Fecha Salida"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Property": "Número Capitulo"
+                  }
+                },
+                "Function": 2
+              },
+              "Name": "Sum(capitulo.Número Capitulo)",
+              "NativeReferenceName": "Recuento de Número Capitulo"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "BinnedLineSample": {}
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

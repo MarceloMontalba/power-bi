@@ -1,0 +1,97 @@
+﻿table capitulo
+
+	column 'Número Capitulo'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Número Capitulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Título
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Título
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Tipo Capitulo'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Tipo Capitulo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Número Temporada'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Número Temporada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Salida'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: Fecha Salida
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Calificación Promedio'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Calificación Promedio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cantidad de Votos'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Cantidad de Votos
+
+		annotation SummarizationSetBy = Automatic
+
+	partition capitulo = m
+		mode: import
+		queryGroup: Hechos
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_bd),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"", Int64.Type}, {"Num_episode", Int64.Type}, {"Title", type text}, {"Type", type text}, {"Year_launch", Int64.Type}, {"Rate", Int64.Type}, {"Votes", Int64.Type}, {"Saga", type text}, {"Airdate", type date}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{""}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas quitadas","Manga Canon","Canon del manga",Replacer.ReplaceText,{"Type"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","Mixed Canon/Filler","Mixto (canon y relleno)",Replacer.ReplaceText,{"Type"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","Filler","Relleno",Replacer.ReplaceText,{"Type"}),
+				    #"Dividir columna por: transición de caracteres" = Table.SplitColumn(#"Valor reemplazado2", "Saga", Splitter.SplitTextByCharacterTransition({"0".."9"}, (c) => not List.Contains({"0".."9"}, c)), {"Saga.1", "Saga.2"}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Dividir columna por: transición de caracteres",{"Saga.2"}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Columnas quitadas1","s","",Replacer.ReplaceText,{"Saga.1"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Valor reemplazado3",{{"Saga.1", "Número Temporada"}}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Columnas con nombre cambiado", {"Type"}, tipo_capitulo, {"Tipo de Capitulo"}, "tipo_capitulo", JoinKind.LeftOuter),
+				    #"Se expandió tipo_capitulo" = Table.ExpandTableColumn(#"Consultas combinadas", "tipo_capitulo", {"Código Tipo"}, {"Código Tipo"}),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Se expandió tipo_capitulo",{"Num_episode", "Title", "Rate", "Votes", "Número Temporada", "Airdate", "Código Tipo"}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Otras columnas quitadas",{"Num_episode", "Title", "Código Tipo", "Rate", "Votes", "Número Temporada", "Airdate"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"Código Tipo", "Código Tipo Capitulo"}}),
+				    #"Columnas reordenadas1" = Table.ReorderColumns(#"Columnas con nombre cambiado1",{"Num_episode", "Title", "Código Tipo Capitulo", "Número Temporada", "Airdate", "Rate", "Votes"}),
+				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas reordenadas1",{{"Num_episode", "Número Capitulo"}, {"Title", "Título"}, {"Airdate", "Fecha Salida"}, {"Rate", "Calificación Promedio"}, {"Votes", "Cantidad de Votos"}})
+				in
+				    #"Columnas con nombre cambiado2"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
