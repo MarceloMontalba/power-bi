@@ -1,0 +1,7 @@
+﻿/// Url de la planilla de datos
+expression url_bd = "C:\Users\mmont\Documents\power-bi\armas-skyrim\Skyrim_Weapons.csv" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+

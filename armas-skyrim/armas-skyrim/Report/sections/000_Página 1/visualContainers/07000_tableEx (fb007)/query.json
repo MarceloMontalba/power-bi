@@ -1,0 +1,161 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "armas",
+              "Type": 0
+            },
+            {
+              "Name": "m",
+              "Entity": "MEDIDAS",
+              "Type": 0
+            },
+            {
+              "Name": "t",
+              "Entity": "tipo",
+              "Type": 0
+            },
+            {
+              "Name": "v",
+              "Entity": "ventaja",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Nombre"
+              },
+              "Name": "armas.Nombre",
+              "NativeReferenceName": "Nombre"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Daño"
+              },
+              "Name": "Sum(armas.Daño)",
+              "NativeReferenceName": "Daño"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Peso"
+              },
+              "Name": "Sum(armas.Peso)",
+              "NativeReferenceName": "Peso"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Valor"
+              },
+              "Name": "Sum(armas.Valor)",
+              "NativeReferenceName": "Valor"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Eficiencia"
+              },
+              "Name": "MEDIDAS.Eficiencia",
+              "NativeReferenceName": "Eficiencia"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "t"
+                  }
+                },
+                "Property": "Tipo"
+              },
+              "Name": "tipo.Tipo",
+              "NativeReferenceName": "Tipo"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "v"
+                  }
+                },
+                "Property": "Ventaja"
+              },
+              "Name": "ventaja.Ventaja",
+              "NativeReferenceName": "Ventaja"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 1,
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "a"
+                    }
+                  },
+                  "Property": "Nombre"
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Window": {
+                "Count": 500
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,2538 @@
+﻿cultureInfo es-ES
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "arma": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "arma": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "arma.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "arma.categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Categoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "categoria": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "arma.material": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Material"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "material": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "physical": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "substantial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "solid": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "substantive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "arma.ventaja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Ventaja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ventaja": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "arma.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "arma.daño": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Daño"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "daño": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "arma.peso": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Peso"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "peso": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "arma.valor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "armas",
+			          "ConceptualProperty": "Valor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "courage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "bravery": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "heroism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fearlessness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "boldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gallantry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "lionheartedness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pluck": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "spirit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "nerve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "ventaja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ventaja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ventaja": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ventaja.código_ventaja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ventaja",
+			          "ConceptualProperty": "Código Ventaja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código ventaja": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "ventaja.ventaja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ventaja",
+			          "ConceptualProperty": "Ventaja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ventaja": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ventaja name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Ventaja requerida": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "tipo.código_tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo",
+			          "ConceptualProperty": "Código Tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "tipo.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo",
+			          "ConceptualProperty": "Tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tipo name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Tipo de arma": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "material": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "material"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "material": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "physical": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "substantial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "solid": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "substantive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "material.código_material": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "material",
+			          "ConceptualProperty": "Código Material"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código material": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "código fabric": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "código cloth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "código textile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "material.material_actualización": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "material",
+			          "ConceptualProperty": "Material Actualización"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "material actualización": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Material de mejora": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "categoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "categoria": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "categoria.código_categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "categoria",
+			          "ConceptualProperty": "Código Categoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código categoria": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "categoria.categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "categoria",
+			          "ConceptualProperty": "Categoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "categoria": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "categoria name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Categoria de arma": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "numero_armas_material": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_material"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "numero armas material": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "numero arma material": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "numero_armas_material": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "numero arma fabric": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "numero arma cloth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "numero arma textile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_material.material": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_material",
+			          "ConceptualProperty": "Material"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "material": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "physical": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "substantial": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "solid": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "substantive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_material.número_arma": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_material",
+			          "ConceptualProperty": "Número Armas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "número arma": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "numero armas tipo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "numero arma tipo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "numero_armas_tipo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_tipo.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_tipo",
+			          "ConceptualProperty": "Tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_tipo.numero_arma": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_tipo",
+			          "ConceptualProperty": "Numero Armas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "numero arma": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_categoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "numero armas categoria": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "numero arma categoria": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "numero_armas_categoria": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_categoria.categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_categoria",
+			          "ConceptualProperty": "Categoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "categoria": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_categoria.número_arma": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_categoria",
+			          "ConceptualProperty": "Número Armas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "número arma": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_ventaja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_ventaja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "numero armas ventaja": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "numero arma ventaja": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "numero_armas_ventaja": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_ventaja.ventaja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_ventaja",
+			          "ConceptualProperty": "Ventaja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ventaja": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "numero_armas_ventaja.número_arma": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "numero_armas_ventaja",
+			          "ConceptualProperty": "Número Armas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "número arma": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.total_armas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Total Armas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total armas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregate arma": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall arma": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "medida.daño_promedio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Daño Promedio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "daño promedio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.peso_promedio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Peso Promedio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "peso promedio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.valor_promedio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Valor Promedio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor promedio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.daño_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Daño Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "daño total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "daño aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "daño overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "medida.peso_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Peso Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "peso total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "peso aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "peso overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "medida.eficiencia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MEDIDAS",
+			          "ConceptualProperty": "Eficiencia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "eficiencia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "numero_armas_material_has_material1": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_material"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_material": {
+			          "Target": {
+			            "Entity": "numero_armas_material"
+			          }
+			        },
+			        "material": {
+			          "Target": {
+			            "Entity": "material"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_material"
+			            },
+			            "Object": {
+			              "Role": "material"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_materials_have_materials"
+			        }
+			      ]
+			    },
+			    "categoria_has_numero_armas_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "categoria": {
+			          "Target": {
+			            "Entity": "categoria"
+			          }
+			        },
+			        "numero_armas_categoria": {
+			          "Target": {
+			            "Entity": "numero_armas_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "categoria"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "categorias_have_numero_armas_categorias"
+			        }
+			      ]
+			    },
+			    "material_has_numero_armas_material": {
+			      "Binding": {
+			        "ConceptualEntity": "material"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "material": {
+			          "Target": {
+			            "Entity": "material"
+			          }
+			        },
+			        "numero_armas_material": {
+			          "Target": {
+			            "Entity": "numero_armas_material"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "material"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_material"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "materials_have_numero_armas_materials"
+			        }
+			      ]
+			    },
+			    "tipo_has_numero_armas_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo": {
+			          "Target": {
+			            "Entity": "tipo"
+			          }
+			        },
+			        "numero_armas_tipo": {
+			          "Target": {
+			            "Entity": "numero_armas_tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipos_have_numero_armas_tipos"
+			        }
+			      ]
+			    },
+			    "ventaja_has_numero_armas_ventaja": {
+			      "Binding": {
+			        "ConceptualEntity": "ventaja"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ventaja": {
+			          "Target": {
+			            "Entity": "ventaja"
+			          }
+			        },
+			        "numero_armas_ventaja": {
+			          "Target": {
+			            "Entity": "numero_armas_ventaja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ventaja"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_ventaja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ventajas_have_numero_armas_ventajas"
+			        }
+			      ]
+			    },
+			    "arma_has_ventaja": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "ventaja": {
+			          "Target": {
+			            "Entity": "ventaja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "ventaja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_ventajas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ventaja"
+			            },
+			            "Object": {
+			              "Role": "arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ventajas_have_armas"
+			        }
+			      ]
+			    },
+			    "arma_has_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "tipo": {
+			          "Target": {
+			            "Entity": "tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_tipos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo"
+			            },
+			            "Object": {
+			              "Role": "arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipos_have_armas"
+			        }
+			      ]
+			    },
+			    "arma_has_material": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "material": {
+			          "Target": {
+			            "Entity": "material"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "material"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_materials"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "material"
+			            },
+			            "Object": {
+			              "Role": "arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "materials_have_armas"
+			        }
+			      ]
+			    },
+			    "arma_has_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "categoria": {
+			          "Target": {
+			            "Entity": "categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "categoria"
+			            },
+			            "Object": {
+			              "Role": "arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "categorias_have_armas"
+			        }
+			      ]
+			    },
+			    "arma_has_medida_eficiencia": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "medida.eficiencia": {
+			          "Target": {
+			            "Entity": "medida.eficiencia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "medida.eficiencia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_eficiencia"
+			        }
+			      ]
+			    },
+			    "arma_has_medida_peso_total": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "medida.peso_total": {
+			          "Target": {
+			            "Entity": "medida.peso_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "medida.peso_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_peso_total"
+			        }
+			      ]
+			    },
+			    "arma_has_medida_daño_total": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "medida.daño_total": {
+			          "Target": {
+			            "Entity": "medida.daño_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "medida.daño_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_daño_total"
+			        }
+			      ]
+			    },
+			    "arma_has_medida_valor_promedio": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "medida.valor_promedio": {
+			          "Target": {
+			            "Entity": "medida.valor_promedio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "medida.valor_promedio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_valor_promedio"
+			        }
+			      ]
+			    },
+			    "arma_has_medida_peso_promedio": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "medida.peso_promedio": {
+			          "Target": {
+			            "Entity": "medida.peso_promedio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "medida.peso_promedio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_peso_promedio"
+			        }
+			      ]
+			    },
+			    "arma_has_medida_daño_promedio": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "medida.daño_promedio": {
+			          "Target": {
+			            "Entity": "medida.daño_promedio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "medida.daño_promedio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_daño_promedio"
+			        }
+			      ]
+			    },
+			    "arma_has_medida_total_armas": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "medida.total_armas": {
+			          "Target": {
+			            "Entity": "medida.total_armas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "medida.total_armas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_total_armas"
+			        }
+			      ]
+			    },
+			    "numero_armas_ventaja_has_número_arma": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_ventaja"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_ventaja": {
+			          "Target": {
+			            "Entity": "numero_armas_ventaja"
+			          }
+			        },
+			        "numero_armas_ventaja.número_arma": {
+			          "Target": {
+			            "Entity": "numero_armas_ventaja.número_arma"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_ventaja"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_ventaja.número_arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_ventajas_have_número_armas"
+			        }
+			      ]
+			    },
+			    "numero_armas_ventaja_has_ventaja": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_ventaja"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_ventaja": {
+			          "Target": {
+			            "Entity": "numero_armas_ventaja"
+			          }
+			        },
+			        "numero_armas_ventaja.ventaja": {
+			          "Target": {
+			            "Entity": "numero_armas_ventaja.ventaja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_ventaja"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_ventaja.ventaja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_ventajas_have_ventajas"
+			        }
+			      ]
+			    },
+			    "numero_armas_categoria_has_número_arma": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_categoria": {
+			          "Target": {
+			            "Entity": "numero_armas_categoria"
+			          }
+			        },
+			        "numero_armas_categoria.número_arma": {
+			          "Target": {
+			            "Entity": "numero_armas_categoria.número_arma"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_categoria"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_categoria.número_arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_categorias_have_número_armas"
+			        }
+			      ]
+			    },
+			    "numero_armas_categoria_has_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_categoria": {
+			          "Target": {
+			            "Entity": "numero_armas_categoria"
+			          }
+			        },
+			        "numero_armas_categoria.categoria": {
+			          "Target": {
+			            "Entity": "numero_armas_categoria.categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_categoria"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_categoria.categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_categorias_have_categorias"
+			        }
+			      ]
+			    },
+			    "numero_armas_tipo_has_numero_arma": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_tipo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_tipo": {
+			          "Target": {
+			            "Entity": "numero_armas_tipo"
+			          }
+			        },
+			        "numero_armas_tipo.numero_arma": {
+			          "Target": {
+			            "Entity": "numero_armas_tipo.numero_arma"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_tipo"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_tipo.numero_arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_tipos_have_numero_armas"
+			        }
+			      ]
+			    },
+			    "numero_armas_tipo_has_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_tipo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_tipo": {
+			          "Target": {
+			            "Entity": "numero_armas_tipo"
+			          }
+			        },
+			        "numero_armas_tipo.tipo": {
+			          "Target": {
+			            "Entity": "numero_armas_tipo.tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_tipo"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_tipo.tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_tipos_have_tipos"
+			        }
+			      ]
+			    },
+			    "numero_armas_material_has_número_arma": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_material"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_material": {
+			          "Target": {
+			            "Entity": "numero_armas_material"
+			          }
+			        },
+			        "numero_armas_material.número_arma": {
+			          "Target": {
+			            "Entity": "numero_armas_material.número_arma"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_material"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_material.número_arma"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_materials_have_número_armas"
+			        }
+			      ]
+			    },
+			    "numero_armas_material_has_material": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_material"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_material": {
+			          "Target": {
+			            "Entity": "numero_armas_material"
+			          }
+			        },
+			        "numero_armas_material.material": {
+			          "Target": {
+			            "Entity": "numero_armas_material.material"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_material"
+			            },
+			            "Object": {
+			              "Role": "numero_armas_material.material"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_materials_have_materials1"
+			        }
+			      ]
+			    },
+			    "categoria_has_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "categoria": {
+			          "Target": {
+			            "Entity": "categoria"
+			          }
+			        },
+			        "categoria.categoria": {
+			          "Target": {
+			            "Entity": "categoria.categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "categoria"
+			            },
+			            "Object": {
+			              "Role": "categoria.categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "categorias_have_categorias"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "categoria"
+			            },
+			            "Name": {
+			              "Role": "categoria.categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "categorias_are_names_IDs_of_categorias"
+			        }
+			      ]
+			    },
+			    "categoria_has_código_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "categoria": {
+			          "Target": {
+			            "Entity": "categoria"
+			          }
+			        },
+			        "categoria.código_categoria": {
+			          "Target": {
+			            "Entity": "categoria.código_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "categoria"
+			            },
+			            "Object": {
+			              "Role": "categoria.código_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "categorias_have_código_categorias"
+			        }
+			      ]
+			    },
+			    "material_has_material_actualización": {
+			      "Binding": {
+			        "ConceptualEntity": "material"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "material": {
+			          "Target": {
+			            "Entity": "material"
+			          }
+			        },
+			        "material.material_actualización": {
+			          "Target": {
+			            "Entity": "material.material_actualización"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "material"
+			            },
+			            "Object": {
+			              "Role": "material.material_actualización"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "materials_have_material_actualizacións"
+			        }
+			      ]
+			    },
+			    "material_has_código_material": {
+			      "Binding": {
+			        "ConceptualEntity": "material"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "material": {
+			          "Target": {
+			            "Entity": "material"
+			          }
+			        },
+			        "material.código_material": {
+			          "Target": {
+			            "Entity": "material.código_material"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "material"
+			            },
+			            "Object": {
+			              "Role": "material.código_material"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "materials_have_código_materials"
+			        }
+			      ]
+			    },
+			    "tipo_has_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo": {
+			          "Target": {
+			            "Entity": "tipo"
+			          }
+			        },
+			        "tipo.tipo": {
+			          "Target": {
+			            "Entity": "tipo.tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo"
+			            },
+			            "Object": {
+			              "Role": "tipo.tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipos_have_tipos"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "tipo"
+			            },
+			            "Name": {
+			              "Role": "tipo.tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipos_are_names_IDs_of_tipos"
+			        }
+			      ]
+			    },
+			    "tipo_has_código_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo": {
+			          "Target": {
+			            "Entity": "tipo"
+			          }
+			        },
+			        "tipo.código_tipo": {
+			          "Target": {
+			            "Entity": "tipo.código_tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo"
+			            },
+			            "Object": {
+			              "Role": "tipo.código_tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipos_have_código_tipos"
+			        }
+			      ]
+			    },
+			    "ventaja_has_ventaja": {
+			      "Binding": {
+			        "ConceptualEntity": "ventaja"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ventaja": {
+			          "Target": {
+			            "Entity": "ventaja"
+			          }
+			        },
+			        "ventaja.ventaja": {
+			          "Target": {
+			            "Entity": "ventaja.ventaja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ventaja"
+			            },
+			            "Object": {
+			              "Role": "ventaja.ventaja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ventajas_have_ventajas"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "ventaja"
+			            },
+			            "Name": {
+			              "Role": "ventaja.ventaja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ventajas_are_names_IDs_of_ventajas"
+			        }
+			      ]
+			    },
+			    "ventaja_has_código_ventaja": {
+			      "Binding": {
+			        "ConceptualEntity": "ventaja"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "ventaja": {
+			          "Target": {
+			            "Entity": "ventaja"
+			          }
+			        },
+			        "ventaja.código_ventaja": {
+			          "Target": {
+			            "Entity": "ventaja.código_ventaja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "ventaja"
+			            },
+			            "Object": {
+			              "Role": "ventaja.código_ventaja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ventajas_have_código_ventajas"
+			        }
+			      ]
+			    },
+			    "arma_has_valor": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "arma.valor": {
+			          "Target": {
+			            "Entity": "arma.valor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "arma.valor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_valor"
+			        }
+			      ]
+			    },
+			    "arma_has_peso": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "arma.peso": {
+			          "Target": {
+			            "Entity": "arma.peso"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "arma.peso"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_pesos"
+			        }
+			      ]
+			    },
+			    "arma_has_daño": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "arma.daño": {
+			          "Target": {
+			            "Entity": "arma.daño"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "arma.daño"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_daños"
+			        }
+			      ]
+			    },
+			    "arma_has_nombre": {
+			      "Binding": {
+			        "ConceptualEntity": "armas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "arma": {
+			          "Target": {
+			            "Entity": "arma"
+			          }
+			        },
+			        "arma.nombre": {
+			          "Target": {
+			            "Entity": "arma.nombre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "arma"
+			            },
+			            "Object": {
+			              "Role": "arma.nombre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "armas_have_nombres"
+			        }
+			      ]
+			    },
+			    "numero_armas_tipo_has_tipo1": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_tipo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_tipo": {
+			          "Target": {
+			            "Entity": "numero_armas_tipo"
+			          }
+			        },
+			        "tipo": {
+			          "Target": {
+			            "Entity": "tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_tipo"
+			            },
+			            "Object": {
+			              "Role": "tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_tipos_have_tipos1"
+			        }
+			      ]
+			    },
+			    "numero_armas_categoria_has_categoria1": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_categoria": {
+			          "Target": {
+			            "Entity": "numero_armas_categoria"
+			          }
+			        },
+			        "categoria": {
+			          "Target": {
+			            "Entity": "categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_categoria"
+			            },
+			            "Object": {
+			              "Role": "categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_categorias_have_categorias1"
+			        }
+			      ]
+			    },
+			    "numero_armas_ventaja_has_ventaja1": {
+			      "Binding": {
+			        "ConceptualEntity": "numero_armas_ventaja"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "numero_armas_ventaja": {
+			          "Target": {
+			            "Entity": "numero_armas_ventaja"
+			          }
+			        },
+			        "ventaja": {
+			          "Target": {
+			            "Entity": "ventaja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "numero_armas_ventaja"
+			            },
+			            "Object": {
+			              "Role": "ventaja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "numero_armas_ventajas_have_ventajas1"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

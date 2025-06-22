@@ -1,0 +1,47 @@
+﻿table tipo
+
+	column 'Código Tipo'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tipo = m
+		mode: import
+		queryGroup: Dimensiones
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_bd),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Damage", Int64.Type}, {"Weight", type number}, {"Gold", Int64.Type}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Speed"}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas quitadas","N/A","",Replacer.ReplaceText,{"Upgrade"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","3 Ectoplasm","Ectoplasm",Replacer.ReplaceText,{"Upgrade"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","","Cannot be improved",Replacer.ReplaceValue,{"Upgrade"}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2","","Nothing",Replacer.ReplaceValue,{"Perk"}),
+				    #"Valor reemplazado4" = Table.ReplaceValue(#"Valor reemplazado3","-","Nothing",Replacer.ReplaceText,{"Perk"}),
+				    #"Valor reemplazado5" = Table.ReplaceValue(#"Valor reemplazado4","None","Nothing",Replacer.ReplaceText,{"Perk"}),
+				    #"Valor reemplazado6" = Table.ReplaceValue(#"Valor reemplazado5","–","Invalid",Replacer.ReplaceText,{"Perk"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Valor reemplazado6",{{"Upgrade", "Material Actualización"}, {"Perk", "Ventaja"}, {"Type", "Tipo"}, {"Category", "Categoria"}}),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Columnas con nombre cambiado",{"Tipo"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Otras columnas quitadas"),
+				    #"Filas ordenadas" = Table.Sort(#"Duplicados quitados",{{"Tipo", Order.Ascending}}),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Filas ordenadas", "Índice", 1, 1, Int64.Type),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Índice agregado",{"Índice", "Tipo"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"Índice", "Código Tipo"}})
+				in
+				    #"Columnas con nombre cambiado1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

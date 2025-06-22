@@ -1,0 +1,35 @@
+﻿model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Hechos
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Dimensiones
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation PBI_QueryOrder = ["armas","ventaja","tipo","material","categoria","url_bd","numero_armas_material","numero_armas_tipo","numero_armas_categoria","numero_armas_ventaja","MEDIDAS"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.144.878.0 (25.06)+9cca29236de5114792f4d7188221f91ad4a5cc50
+
+ref table armas
+ref table ventaja
+ref table tipo
+ref table material
+ref table categoria
+ref table numero_armas_material
+ref table numero_armas_tipo
+ref table numero_armas_categoria
+ref table numero_armas_ventaja
+ref table MEDIDAS
+
+ref cultureInfo es-ES
+

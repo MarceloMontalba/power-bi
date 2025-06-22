@@ -1,0 +1,58 @@
+﻿table numero_armas_material
+
+	column Material
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Número Armas'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Número Armas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition numero_armas_material = m
+		mode: import
+		queryGroup: Hechos
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(url_bd),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Damage", Int64.Type}, {"Weight", type number}, {"Gold", Int64.Type}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Speed"}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas quitadas","N/A","",Replacer.ReplaceText,{"Upgrade"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","3 Ectoplasm","Ectoplasm",Replacer.ReplaceText,{"Upgrade"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","","Cannot be improved",Replacer.ReplaceValue,{"Upgrade"}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2","","Nothing",Replacer.ReplaceValue,{"Perk"}),
+				    #"Valor reemplazado4" = Table.ReplaceValue(#"Valor reemplazado3","-","Nothing",Replacer.ReplaceText,{"Perk"}),
+				    #"Valor reemplazado5" = Table.ReplaceValue(#"Valor reemplazado4","None","Nothing",Replacer.ReplaceText,{"Perk"}),
+				    #"Valor reemplazado6" = Table.ReplaceValue(#"Valor reemplazado5","–","Invalid",Replacer.ReplaceText,{"Perk"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Valor reemplazado6",{{"Upgrade", "Material Actualización"}, {"Perk", "Ventaja"}, {"Type", "Tipo"}, {"Category", "Categoria"}}),
+				    #"Valor reemplazado7" = Table.ReplaceValue(#"Columnas con nombre cambiado","Cannot be improved","None required",Replacer.ReplaceText,{"Material Actualización"}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Valor reemplazado7", {"Categoria"}, categoria, {"Categoria"}, "categoria.1", JoinKind.LeftOuter),
+				    #"Consultas combinadas1" = Table.NestedJoin(#"Consultas combinadas", {"Material Actualización"}, material, {"Material Actualización"}, "material", JoinKind.LeftOuter),
+				    #"Consultas combinadas3" = Table.NestedJoin(#"Consultas combinadas1", {"Ventaja"}, ventaja, {"Ventaja"}, "ventaja.1", JoinKind.LeftOuter),
+				    #"Se expandió ventaja.1" = Table.ExpandTableColumn(#"Consultas combinadas3", "ventaja.1", {"Código Ventaja"}, {"Código Ventaja"}),
+				    #"Se expandió material" = Table.ExpandTableColumn(#"Se expandió ventaja.1", "material", {"Código Material"}, {"Código Material"}),
+				    #"Se expandió categoria.1" = Table.ExpandTableColumn(#"Se expandió material", "categoria.1", {"Código Categoria"}, {"Código Categoria"}),
+				    #"Consultas combinadas2" = Table.NestedJoin(#"Se expandió categoria.1", {"Tipo"}, tipo, {"Tipo"}, "tipo.1", JoinKind.LeftOuter),
+				    #"Se expandió tipo.1" = Table.ExpandTableColumn(#"Consultas combinadas2", "tipo.1", {"Código Tipo"}, {"Código Tipo"}),
+				    #"Otras columnas quitadas" = Table.SelectColumns(#"Se expandió tipo.1",{"Name", "Damage", "Weight", "Gold", "Código Categoria", "Código Material", "Código Ventaja", "Código Tipo"}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Otras columnas quitadas",{"Name", "Código Categoria", "Código Material", "Código Ventaja", "Código Tipo", "Damage", "Weight", "Gold"}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"Name", "Nombre"}, {"Código Categoria", "Categoria"}, {"Código Material", "Material"}, {"Código Ventaja", "Ventaja"}, {"Código Tipo", "Tipo"}, {"Damage", "Daño"}, {"Weight", "Peso"}, {"Gold", "Valor"}}),
+				    #"Filas ordenadas" = Table.Sort(#"Columnas con nombre cambiado1",{{"Nombre", Order.Ascending}}),
+				    #"Filas agrupadas" = Table.Group(#"Filas ordenadas", {"Material"}, {{"Armas", each Table.RowCount(_), Int64.Type}}),
+				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Filas agrupadas",{{"Armas", "Número Armas"}}),
+				    #"Filas ordenadas1" = Table.Sort(#"Columnas con nombre cambiado2",{{"Material", Order.Ascending}})
+				in
+				    #"Filas ordenadas1"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

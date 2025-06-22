@@ -1,0 +1,93 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "armas",
+              "Type": 0
+            },
+            {
+              "Name": "c",
+              "Entity": "categoria",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Peso"
+              },
+              "Name": "Sum(armas.Peso)",
+              "NativeReferenceName": "Peso"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "Daño"
+              },
+              "Name": "Sum(armas.Daño)",
+              "NativeReferenceName": "Daño"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "Categoria"
+              },
+              "Name": "categoria.Categoria",
+              "NativeReferenceName": "Categoria"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  2
+                ]
+              },
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "OverlappingPointsSample": {
+                "X": {
+                  "Index": 0
+                },
+                "Y": {
+                  "Index": 1
+                }
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

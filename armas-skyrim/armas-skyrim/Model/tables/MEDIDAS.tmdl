@@ -1,0 +1,52 @@
+﻿table MEDIDAS
+
+	measure 'Total Armas' =
+			
+			COUNTROWS(armas)
+		formatString: 0
+
+	measure 'Daño Promedio' =
+			
+			AVERAGE(armas[Daño])
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Peso Promedio' =
+			
+			AVERAGE(armas[Peso])
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Valor Promedio' =
+			
+			AVERAGE(armas[Valor])
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Daño Total' =
+			
+			SUM(armas[Daño])
+		formatString: 0
+
+	measure 'Peso Total' =
+			
+			SUM(armas[Peso])
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Eficiencia = DIVIDE([Daño Total], [Peso Total], 0)
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition MEDIDAS = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

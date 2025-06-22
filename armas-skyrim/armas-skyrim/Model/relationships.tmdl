@@ -1,0 +1,40 @@
+﻿relationship 3e1c578b-a114-3757-bbe8-abeb59e02d8b
+	fromColumn: armas.Categoria
+	toColumn: categoria.'Código Categoria'
+
+relationship 7d59a168-8386-e760-d21f-c874aeeb87be
+	fromColumn: armas.Material
+	toColumn: material.'Código Material'
+
+relationship 0b5ac1ef-5e6e-3488-7bd0-e3a753b6f4cb
+	fromColumn: armas.Tipo
+	toColumn: tipo.'Código Tipo'
+
+relationship d2dd3be4-7bbf-80b2-4114-890bdfbc189d
+	fromColumn: armas.Ventaja
+	toColumn: ventaja.'Código Ventaja'
+
+relationship 460c277c-7fec-0d5f-e487-e89274821c0c
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: numero_armas_material.Material
+	toColumn: material.'Código Material'
+
+relationship 15514ac8-37de-dec8-dbf3-9f6e403bf4c6
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: numero_armas_tipo.Tipo
+	toColumn: tipo.'Código Tipo'
+
+relationship 8c315081-c0ae-173b-5bb7-96e741cca8bf
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: numero_armas_ventaja.Ventaja
+	toColumn: ventaja.'Código Ventaja'
+
+relationship f6bfdabb-d7ef-bdf8-6b49-d3552d9eb644
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: numero_armas_categoria.Categoria
+	toColumn: categoria.Categoria
+

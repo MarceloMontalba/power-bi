@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 722.065332567026,
+            "y": 283.4393968804805
+          },
+          "nodeIndex": "armas",
+          "nodeLineageTag": "808e5562-7b19-4568-b3ce-a683151018b6",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 413.98650092065179,
+            "y": 504.98326664980749
+          },
+          "nodeIndex": "categoria",
+          "nodeLineageTag": "da682d7c-8347-4fcd-91c4-b95107f9261a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1081.13319723326,
+            "y": 205.41314931177382
+          },
+          "nodeIndex": "material",
+          "nodeLineageTag": "5791259c-4a0d-4eb1-9f05-92d4a7f0706d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 398.46496885288616,
+            "y": 697.66974263996553
+          },
+          "nodeIndex": "numero_armas_categoria",
+          "nodeLineageTag": "2b6fa453-993f-490c-8605-ca189d795d2c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1079.27787852267,
+            "y": 0
+          },
+          "nodeIndex": "numero_armas_material",
+          "nodeLineageTag": "60808e9f-5f3c-4c87-a0ea-6f0acfa50a39",
+          "size": {
+            "height": 145,
+            "width": 268.76222526814627
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1080.4913443452504,
+            "y": 688.92410076871818
+          },
+          "nodeIndex": "numero_armas_tipo",
+          "nodeLineageTag": "cb922b97-7bc2-403c-a5f4-c9d7c4e740a7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 410.82629862354759,
+            "y": 0
+          },
+          "nodeIndex": "numero_armas_ventaja",
+          "nodeLineageTag": "3232df89-63d9-4b96-984b-ba1aa4470699",
+          "size": {
+            "height": 145,
+            "width": 273.50252871380269
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1091.7756985337455,
+            "y": 457.58023219324434
+          },
+          "nodeIndex": "tipo",
+          "nodeLineageTag": "3168a430-7673-48c0-9b7a-2928a8f3eed5",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 450.32882733735022,
+            "y": 253.74718403002274
+          },
+          "nodeIndex": "ventaja",
+          "nodeLineageTag": "aafc3bde-4ad9-430d-b77e-2971d00610b1",
+          "size": {
+            "height": 145,
+            "width": 194.49747128619742
+          },
+          "zIndex": 9
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 63.287087723234038,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}
