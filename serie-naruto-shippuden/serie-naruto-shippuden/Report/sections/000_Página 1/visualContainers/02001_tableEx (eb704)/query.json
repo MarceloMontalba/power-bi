@@ -13,21 +13,16 @@
           ],
           "Select": [
             {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "t"
-                      }
-                    },
-                    "Property": "Descripción"
+                  "SourceRef": {
+                    "Source": "t"
                   }
                 },
-                "Function": 3
+                "Property": "Descripción"
               },
-              "Name": "Min(temporadas.Descripción)",
-              "NativeReferenceName": "Primera fecha: Descripción"
+              "Name": "temporadas.Descripción",
+              "NativeReferenceName": "Resumen"
             }
           ],
           "Where": [
@@ -50,11 +45,26 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Temporada 4 - Immortal Devastators'"
+                          "Value": "'Temporada 6 - Prophecy and Vengeance'"
                         }
                       }
                     ]
                   ]
+                }
+              }
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 1,
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "t"
+                    }
+                  },
+                  "Property": "Descripción"
                 }
               }
             }
@@ -66,14 +76,17 @@
               {
                 "Projections": [
                   0
-                ]
+                ],
+                "Subtotal": 1
               }
             ]
           },
           "DataReduction": {
             "DataVolume": 3,
             "Primary": {
-              "Top": {}
+              "Window": {
+                "Count": 500
+              }
             }
           },
           "Version": 1

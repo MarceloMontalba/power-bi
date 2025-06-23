@@ -10,3 +10,11 @@ relationship 005e074c-8980-78c8-2b65-a84c1b34a0cc
 	fromColumn: capitulo.'Fecha Salida'
 	toColumn: fecha_salida_capitulo.'Fecha Salida'
 
+relationship AutoDetected_ff5e23b2-c7ae-4fe6-b240-0fa30bd17702
+	fromColumn: temporadas.'Código Serie'
+	toColumn: serie.'Código Serie'
+
+relationship AutoDetected_cdb6c6c8-2c8e-4cad-a322-15b2a2310a0b
+	fromColumn: genero.'Código Serie'
+	toColumn: serie.'Código Serie'
+

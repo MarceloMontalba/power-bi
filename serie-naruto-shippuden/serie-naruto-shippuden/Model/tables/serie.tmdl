@@ -1,0 +1,84 @@
+﻿table serie
+
+	column 'URL Página'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: URL Página
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Serie'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre Serie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Original'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nombre Original
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Descripción Serie'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Descripción Serie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lenguaje Original'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Lenguaje Original
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'URL Poster'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: URL Poster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Serie'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Serie
+
+		annotation SummarizationSetBy = Automatic
+
+	partition serie = m
+		mode: import
+		queryGroup: Dimensiónes
+		source =
+				let
+				    url_info_serie = "https://api.themoviedb.org/3/tv/"&Text.From(id_naruto)&"?api_key="&Text.From(api_key),
+				    datos          = Json.Document(Web.Contents(url_info_serie)),
+				
+				    // Se construyen las URLs de la serie
+				    nombre_poster = try Record.Field(datos, "poster_path") otherwise null,
+				    url_poster    = if nombre_poster<> null then "https://image.tmdb.org/t/p/w500"&nombre_poster else null,
+				
+				    // Lista que se retorna
+				    lista = [
+				        Código Serie      = Record.Field(datos, "id"),
+				        URL Página        = Record.Field(datos, "homepage"),
+				        Nombre Serie      = Record.Field(datos, "name"),
+				        Nombre Original   = Record.Field(datos, "original_name"),
+				        Descripción Serie = Record.Field(datos, "overview"),
+				        Lenguaje Original = Record.Field(datos, "original_language"),
+				        URL Poster        = url_poster
+				    ],
+				    #"Convertido en tabla" = Record.ToTable(lista),
+				    #"Columna dinamizada" = Table.Pivot(#"Convertido en tabla", List.Distinct(#"Convertido en tabla"[Name]), "Name", "Value"),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna dinamizada",{{"Código Serie", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

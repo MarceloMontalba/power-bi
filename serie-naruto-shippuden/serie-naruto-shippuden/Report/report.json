@@ -1,8 +1,16 @@
 {
   "id": 0,
   "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "f533c60ec7305290050e",
+      "config": "{}",
+      "name": "aab228b47ac08d180450"
+    }
+  ],
   "publicCustomVisuals": [
-    "simpleImageEBC4593F96F1425FB3D84C5BF02B5075"
+    "simpleImageEBC4593F96F1425FB3D84C5BF02B5075",
+    "advanceCardE03760C5AB684758B56AA29F9E6C257B"
   ],
   "resourcePackages": [
     {
@@ -17,6 +25,20 @@
         ],
         "name": "SharedResources",
         "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "plantilla056732456171288415.bmp",
+            "path": "plantilla056732456171288415.bmp",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
       }
     }
   ]

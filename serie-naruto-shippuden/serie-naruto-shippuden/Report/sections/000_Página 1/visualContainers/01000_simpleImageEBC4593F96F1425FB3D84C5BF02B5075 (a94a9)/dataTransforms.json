@@ -1,19 +1,26 @@
 {
   "objects": {
-    "labels": [
+    "imageSettings": [
       {
         "properties": {
-          "fontSize": {
+          "imageAlignment": {
             "expr": {
               "Literal": {
-                "Value": "13D"
+                "Value": "'center'"
+              }
+            }
+          },
+          "scalingMode": {
+            "expr": {
+              "Literal": {
+                "Value": "'fit'"
               }
             }
           }
         }
       }
     ],
-    "categoryLabels": [
+    "altTextSettings": [
       {
         "properties": {
           "show": {
@@ -28,15 +35,15 @@
     ]
   },
   "projectionOrdering": {
-    "Values": [
+    "imageURL": [
       0
     ]
   },
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Primera fecha: Descripción",
-        "Name": "Min(temporadas.Descripción)",
+        "Restatement": "Url Portada",
+        "Name": "temporadas.Url Portada",
         "Type": 2048
       }
     ]
@@ -45,7 +52,7 @@
     {
       "DataRoles": [
         {
-          "Name": "Values",
+          "Name": "imageURL",
           "Projection": 0,
           "isActive": false
         }
@@ -54,28 +61,23 @@
   ],
   "selects": [
     {
-      "displayName": "Primera fecha: Descripción",
-      "queryName": "Min(temporadas.Descripción)",
+      "displayName": "Url Portada",
+      "queryName": "temporadas.Url Portada",
       "roles": {
-        "Values": true
+        "imageURL": true
       },
       "type": {
         "category": null,
         "underlyingType": 1
       },
       "expr": {
-        "Aggregation": {
+        "Column": {
           "Expression": {
-            "Column": {
-              "Expression": {
-                "SourceRef": {
-                  "Entity": "temporadas"
-                }
-              },
-              "Property": "Descripción"
+            "SourceRef": {
+              "Entity": "temporadas"
             }
           },
-          "Function": 3
+          "Property": "Url Portada"
         }
       }
     }

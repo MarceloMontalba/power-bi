@@ -4,12 +4,12 @@
     {
       "id": 0,
       "position": {
-        "x": 787.16417910447763,
-        "y": 0,
-        "z": 2,
-        "width": 459.40298507462683,
-        "height": 92.238805970149258,
-        "tabOrder": 2
+        "x": 84.48196469685341,
+        "y": 28.488104374520336,
+        "z": 2000,
+        "width": 417.498081350729,
+        "height": 46.170376055257094,
+        "tabOrder": 2000
       }
     }
   ],
@@ -95,7 +95,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Temporada 4 - Immortal Devastators'"
+                                "Value": "'Temporada 6 - Prophecy and Vengeance'"
                               }
                             }
                           ]
@@ -116,6 +116,67 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "pendingChangesIcon": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

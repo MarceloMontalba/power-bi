@@ -1,1 +1,61 @@
-{}
+{
+  "relationships": [
+    {
+      "source": "eb70489da7d46788462e",
+      "target": "fd273f55c86788898a00",
+      "type": 3
+    },
+    {
+      "source": "eb70489da7d46788462e",
+      "target": "a94a9bf043cd43b4069c",
+      "type": 3
+    },
+    {
+      "source": "eb70489da7d46788462e",
+      "target": "6f0afe40018c54397256",
+      "type": 3
+    }
+  ],
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'plantilla.bmp'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "plantilla056732456171288415.bmp"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fit'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

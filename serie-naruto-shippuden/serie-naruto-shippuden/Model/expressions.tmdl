@@ -23,15 +23,17 @@ expression obtenerDatosTmdb = ```
 		    respuesta = Json.Document(Web.Contents(url_api)),
 		
 		    nombre_imagen         = try Record.Field(respuesta, "poster_path") otherwise null,
-		    descripcion_temporada = try Record.Field(respuesta, "overview") otherwise null,
+		    descripcion_temporada = try Record.Field(respuesta, "overview") otherwise "",
 		
-		    // Se arma consigue la url publica de la portada con el nombre obtenido del JSON
-		    url_poster = if nombre_imagen <> null then "https://image.tmdb.org/t/p/w500"&nombre_imagen else null,
+		    // Se arma consigue la url publica de la portada con el nombre obtenido del JSON.
+		    // Si no se encuentra la imagen se llama a una por defecto
+		    url_poster = if nombre_imagen <> null then "https://image.tmdb.org/t/p/w500"&nombre_imagen 
+		                 else "https://cdn.displate.com/artwork/857x1200/2022-04-15/7422bfe15b3ea7b5933dffd896e9c7f9_46003a1b7353dc7b5a02949bd074432a.jpg",
 		
 		    // Se empaqueta la información a rescatar (portada y descripcion de la temporada)
 		    resultado = [
-		        Url Portada = url_poster,
-		        Descripción = descripcion_temporada
+		        Url Portada  = url_poster,
+		        Descripción  = descripcion_temporada
 		    ]
 		in
 		    resultado

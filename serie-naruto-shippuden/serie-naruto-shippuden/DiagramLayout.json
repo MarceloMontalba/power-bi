@@ -5,13 +5,13 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 837.1438894599039
       },
       "nodes": [
         {
           "location": {
             "x": 483.41466238649457,
-            "y": 534.05547048076983
+            "y": 1090.34606538581
           },
           "nodeIndex": "capitulo",
           "nodeLineageTag": "f1e4c1cf-f0c0-47ca-a658-f6c912f7b782",
@@ -23,8 +23,8 @@
         },
         {
           "location": {
-            "x": 500.82269811662661,
-            "y": 945.93679022920912
+            "x": 479.68270090804322,
+            "y": 1471.2220558949937
           },
           "nodeIndex": "fecha_salida_capitulo",
           "nodeLineageTag": "3c261237-0724-44b1-b4c6-b5d26495761d",
@@ -36,21 +36,21 @@
         },
         {
           "location": {
-            "x": 66.772000558283366,
-            "y": 660.48079134577586
+            "x": 853.1798967175871,
+            "y": 1127.9833979747657
           },
           "nodeIndex": "temporadas",
           "nodeLineageTag": "788604e7-dfd8-4822-ab6b-f3c9ea9e64de",
           "size": {
-            "height": 128,
+            "height": 237.92798548463384,
             "width": 234
           },
           "zIndex": 2
         },
         {
           "location": {
-            "x": 878.88932451264782,
-            "y": 659.848787996076
+            "x": 88.253428911627452,
+            "y": 1161.1753901587995
           },
           "nodeIndex": "tipo_capitulo",
           "nodeLineageTag": "25f8b722-cf54-4b11-b536-d909a5397f48",
@@ -62,26 +62,26 @@
         },
         {
           "location": {
-            "x": 1265.237301623032,
-            "y": 869.20144563716235
+            "x": 1129.9413194880979,
+            "y": 849.46724807986016
           },
-          "nodeIndex": "informacion_serie",
-          "nodeLineageTag": "13d3cc8c-6ab6-4677-a26e-a77a69857653",
+          "nodeIndex": "serie",
+          "nodeLineageTag": "800ebdb6-34a1-4232-85a5-ec90dee77231",
           "size": {
-            "height": 128,
+            "height": 240.91199776686676,
             "width": 234
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 1313.3453233960813,
-            "y": 480.45915003447624
+            "x": 825.37462330666267,
+            "y": 700.84759476546935
           },
-          "nodeIndex": "MEDIDAS",
-          "nodeLineageTag": "f0273778-187c-488d-bc01-b44840643112",
+          "nodeIndex": "genero",
+          "nodeLineageTag": "1b7802b6-a6c9-44ea-ab9a-7d7c4dd62be9",
           "size": {
-            "height": 104,
+            "height": 147.73066406134456,
             "width": 234
           },
           "zIndex": 0

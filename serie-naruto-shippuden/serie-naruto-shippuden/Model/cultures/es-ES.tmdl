@@ -2,8 +2,2120 @@
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "capitulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "capitulo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "capitulo.número_capitulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo",
+			          "ConceptualProperty": "Número Capitulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "número capitulo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "capitulo.título": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo",
+			          "ConceptualProperty": "Título"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "título": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "capitulo.código_tipo_capitulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo",
+			          "ConceptualProperty": "Código Tipo Capitulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código tipo capitulo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "capitulo.número_temporada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo",
+			          "ConceptualProperty": "Número Temporada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "número temporada": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "capitulo.fecha_salida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo",
+			          "ConceptualProperty": "Fecha Salida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "fecha salida": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "capitulo.calificación_promedio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo",
+			          "ConceptualProperty": "Calificación Promedio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "calificación promedio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "capitulo.cantidad_de_voto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "capitulo",
+			          "ConceptualProperty": "Cantidad de Votos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cantidad de voto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "temporada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "temporadas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "temporada": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "temporada.número_temporada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "temporadas",
+			          "ConceptualProperty": "Número Temporada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "número temporada": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "temporada.temporada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "temporadas",
+			          "ConceptualProperty": "Temporada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "temporada": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "temporada name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "temporada.descripción": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "temporadas",
+			          "ConceptualProperty": "Descripción"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descripción": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Resumen": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "temporada.url_portada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "temporadas",
+			          "ConceptualProperty": "Url Portada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "url portada": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "website portada": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "site portada": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "web address portada": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.471
+			          }
+			        }
+			      ]
+			    },
+			    "temporada.nombre_completo_temporada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "temporadas",
+			          "ConceptualProperty": "Nombre Completo Temporada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre completo temporada": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "temporada.código_serie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "temporadas",
+			          "ConceptualProperty": "Código Serie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código serie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "tipo_capitulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_capitulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo capitulo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tipo_capitulo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "tipo_capitulo.código_tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_capitulo",
+			          "ConceptualProperty": "Código Tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "tipo_capitulo.tipo_de_capitulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "tipo_capitulo",
+			          "ConceptualProperty": "Tipo de Capitulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo de capitulo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha salida capitulo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fecha_salida_capitulo": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo.fecha_salida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Fecha Salida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha salida": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fecha_salida_capitulo.me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo.año": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Año"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "año": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo.nombre_del_me": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Nombre del mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre del me": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo.día_de_la_semana": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Día de la semana"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "día de la semana": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo.nombre_del_día": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Nombre del día"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre del día": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo.nombre_trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fecha_salida_capitulo",
+			          "ConceptualProperty": "Nombre Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre trimestre": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "serie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "serie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "serie.URL_página": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie",
+			          "ConceptualProperty": "URL Página"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "URL página": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "website página": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "site página": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "web address página": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.471
+			          }
+			        }
+			      ]
+			    },
+			    "serie.nombre_serie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie",
+			          "ConceptualProperty": "Nombre Serie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre serie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "serie.nombre_original": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie",
+			          "ConceptualProperty": "Nombre Original"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre original": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nombre archetype": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "nombre exemplar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "nombre template": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "serie.descripción_serie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie",
+			          "ConceptualProperty": "Descripción Serie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descripción serie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "serie.lenguaje_original": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie",
+			          "ConceptualProperty": "Lenguaje Original"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lenguaje original": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "lenguaje archetype": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "lenguaje exemplar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "lenguaje template": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "serie.URL_poster": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie",
+			          "ConceptualProperty": "URL Poster"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "URL poster": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "poster": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "website poster": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "site poster": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "url artwork": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "artwork": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "url picture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "url print": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "url reproduction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "url photograph": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "picture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "print": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "serie.código_serie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "serie",
+			          "ConceptualProperty": "Código Serie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código serie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "genero": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "genero"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "genero": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "genero.código_género": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "genero",
+			          "ConceptualProperty": "Código Género"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "código género": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "genero.género": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "genero",
+			          "ConceptualProperty": "Género"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "género": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "genero.código_serie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "genero",
+			          "ConceptualProperty": "Código Serie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "código serie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "temporada_is_named_temporada": {
+			      "Binding": {
+			        "ConceptualEntity": "temporadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "temporada": {
+			          "Target": {
+			            "Entity": "temporada"
+			          }
+			        },
+			        "temporada.temporada": {
+			          "Target": {
+			            "Entity": "temporada.temporada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Name": {
+			              "Role": "temporada.temporada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_are_names_IDs_of_temporadas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Object": {
+			              "Role": "temporada.temporada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_have_temporadas"
+			        }
+			      ]
+			    },
+			    "serie_URL_poster_post_serie": {
+			      "Binding": {
+			        "ConceptualEntity": "serie"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "serie.URL_poster": {
+			          "Target": {
+			            "Entity": "serie.URL_poster"
+			          }
+			        },
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "serie.URL_poster"
+			            },
+			            "Verbs": [
+			              {
+			                "post": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "URL_posters_post_series"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie.URL_poster"
+			            },
+			            "Object": {
+			              "Role": "serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "URL_posters_have_series"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "serie.URL_poster"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_URL_posters"
+			        }
+			      ]
+			    },
+			    "capitulo_has_número_capitulo": {
+			      "Binding": {
+			        "ConceptualEntity": "capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "capitulo": {
+			          "Target": {
+			            "Entity": "capitulo"
+			          }
+			        },
+			        "capitulo.número_capitulo": {
+			          "Target": {
+			            "Entity": "capitulo.número_capitulo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "capitulo"
+			            },
+			            "Object": {
+			              "Role": "capitulo.número_capitulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "capitulos_have_número_capitulos"
+			        }
+			      ]
+			    },
+			    "capitulo_has_título": {
+			      "Binding": {
+			        "ConceptualEntity": "capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "capitulo": {
+			          "Target": {
+			            "Entity": "capitulo"
+			          }
+			        },
+			        "capitulo.título": {
+			          "Target": {
+			            "Entity": "capitulo.título"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "capitulo"
+			            },
+			            "Object": {
+			              "Role": "capitulo.título"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "capitulos_have_títulos"
+			        }
+			      ]
+			    },
+			    "capitulo_has_calificación_promedio": {
+			      "Binding": {
+			        "ConceptualEntity": "capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "capitulo": {
+			          "Target": {
+			            "Entity": "capitulo"
+			          }
+			        },
+			        "capitulo.calificación_promedio": {
+			          "Target": {
+			            "Entity": "capitulo.calificación_promedio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "capitulo"
+			            },
+			            "Object": {
+			              "Role": "capitulo.calificación_promedio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "capitulos_have_calificación_promedios"
+			        }
+			      ]
+			    },
+			    "capitulo_has_cantidad_de_voto": {
+			      "Binding": {
+			        "ConceptualEntity": "capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "capitulo": {
+			          "Target": {
+			            "Entity": "capitulo"
+			          }
+			        },
+			        "capitulo.cantidad_de_voto": {
+			          "Target": {
+			            "Entity": "capitulo.cantidad_de_voto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "capitulo"
+			            },
+			            "Object": {
+			              "Role": "capitulo.cantidad_de_voto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "capitulos_have_cantidad_de_votos"
+			        }
+			      ]
+			    },
+			    "temporada_has_número_temporada": {
+			      "Binding": {
+			        "ConceptualEntity": "temporadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "temporada": {
+			          "Target": {
+			            "Entity": "temporada"
+			          }
+			        },
+			        "temporada.número_temporada": {
+			          "Target": {
+			            "Entity": "temporada.número_temporada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Object": {
+			              "Role": "temporada.número_temporada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_have_número_temporadas"
+			        }
+			      ]
+			    },
+			    "temporada_has_descripción": {
+			      "Binding": {
+			        "ConceptualEntity": "temporadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "temporada": {
+			          "Target": {
+			            "Entity": "temporada"
+			          }
+			        },
+			        "temporada.descripción": {
+			          "Target": {
+			            "Entity": "temporada.descripción"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Object": {
+			              "Role": "temporada.descripción"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_have_descripcións"
+			        }
+			      ]
+			    },
+			    "temporada_has_url_portada": {
+			      "Binding": {
+			        "ConceptualEntity": "temporadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "temporada": {
+			          "Target": {
+			            "Entity": "temporada"
+			          }
+			        },
+			        "temporada.url_portada": {
+			          "Target": {
+			            "Entity": "temporada.url_portada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Object": {
+			              "Role": "temporada.url_portada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_have_url_portadas"
+			        }
+			      ]
+			    },
+			    "temporada_has_nombre_completo_temporada": {
+			      "Binding": {
+			        "ConceptualEntity": "temporadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "temporada": {
+			          "Target": {
+			            "Entity": "temporada"
+			          }
+			        },
+			        "temporada.nombre_completo_temporada": {
+			          "Target": {
+			            "Entity": "temporada.nombre_completo_temporada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Object": {
+			              "Role": "temporada.nombre_completo_temporada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_have_nombre_completo_temporadas"
+			        }
+			      ]
+			    },
+			    "tipo_capitulo_has_código_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo_capitulo": {
+			          "Target": {
+			            "Entity": "tipo_capitulo"
+			          }
+			        },
+			        "tipo_capitulo.código_tipo": {
+			          "Target": {
+			            "Entity": "tipo_capitulo.código_tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_capitulo"
+			            },
+			            "Object": {
+			              "Role": "tipo_capitulo.código_tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_capitulos_have_código_tipos"
+			        }
+			      ]
+			    },
+			    "tipo_capitulo_has_tipo_de_capitulo": {
+			      "Binding": {
+			        "ConceptualEntity": "tipo_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "tipo_capitulo": {
+			          "Target": {
+			            "Entity": "tipo_capitulo"
+			          }
+			        },
+			        "tipo_capitulo.tipo_de_capitulo": {
+			          "Target": {
+			            "Entity": "tipo_capitulo.tipo_de_capitulo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_capitulo"
+			            },
+			            "Object": {
+			              "Role": "tipo_capitulo.tipo_de_capitulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_capitulos_have_tipo_de_capitulos"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_fecha_salida": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.fecha_salida": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.fecha_salida"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.fecha_salida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_fecha_salidas"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_me": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.me": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_me"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_año": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.año": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.año"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.año"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_años"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_nombre_del_me": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.nombre_del_me": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.nombre_del_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.nombre_del_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_nombre_del_me"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_día_de_la_semana": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.día_de_la_semana": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.día_de_la_semana"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.día_de_la_semana"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_día_de_la_semanas"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_nombre_del_día": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.nombre_del_día": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.nombre_del_día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.nombre_del_día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_nombre_del_días"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.trimestre": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_trimestres"
+			        }
+			      ]
+			    },
+			    "fecha_salida_capitulo_has_nombre_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "fecha_salida_capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo.nombre_trimestre": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo.nombre_trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo.nombre_trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_nombre_trimestres"
+			        }
+			      ]
+			    },
+			    "serie_has_URL_página": {
+			      "Binding": {
+			        "ConceptualEntity": "serie"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        },
+			        "serie.URL_página": {
+			          "Target": {
+			            "Entity": "serie.URL_página"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "serie.URL_página"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_URL_páginas"
+			        }
+			      ]
+			    },
+			    "serie_has_nombre_serie": {
+			      "Binding": {
+			        "ConceptualEntity": "serie"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        },
+			        "serie.nombre_serie": {
+			          "Target": {
+			            "Entity": "serie.nombre_serie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "serie.nombre_serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_nombre_series"
+			        }
+			      ]
+			    },
+			    "serie_has_nombre_original": {
+			      "Binding": {
+			        "ConceptualEntity": "serie"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        },
+			        "serie.nombre_original": {
+			          "Target": {
+			            "Entity": "serie.nombre_original"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "serie.nombre_original"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_nombre_originals"
+			        }
+			      ]
+			    },
+			    "serie_has_descripción_serie": {
+			      "Binding": {
+			        "ConceptualEntity": "serie"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        },
+			        "serie.descripción_serie": {
+			          "Target": {
+			            "Entity": "serie.descripción_serie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "serie.descripción_serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_descripción_series"
+			        }
+			      ]
+			    },
+			    "serie_has_lenguaje_original": {
+			      "Binding": {
+			        "ConceptualEntity": "serie"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        },
+			        "serie.lenguaje_original": {
+			          "Target": {
+			            "Entity": "serie.lenguaje_original"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "serie.lenguaje_original"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_lenguaje_originals"
+			        }
+			      ]
+			    },
+			    "serie_has_código_serie": {
+			      "Binding": {
+			        "ConceptualEntity": "serie"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        },
+			        "serie.código_serie": {
+			          "Target": {
+			            "Entity": "serie.código_serie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "serie.código_serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_código_series"
+			        }
+			      ]
+			    },
+			    "genero_has_código_género": {
+			      "Binding": {
+			        "ConceptualEntity": "genero"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "genero": {
+			          "Target": {
+			            "Entity": "genero"
+			          }
+			        },
+			        "genero.código_género": {
+			          "Target": {
+			            "Entity": "genero.código_género"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "genero"
+			            },
+			            "Object": {
+			              "Role": "genero.código_género"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "generos_have_código_géneros"
+			        }
+			      ]
+			    },
+			    "genero_has_género": {
+			      "Binding": {
+			        "ConceptualEntity": "genero"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "genero": {
+			          "Target": {
+			            "Entity": "genero"
+			          }
+			        },
+			        "genero.género": {
+			          "Target": {
+			            "Entity": "genero.género"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "genero"
+			            },
+			            "Object": {
+			              "Role": "genero.género"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "generos_have_géneros"
+			        }
+			      ]
+			    },
+			    "capitulo_has_temporada": {
+			      "Binding": {
+			        "ConceptualEntity": "capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "capitulo": {
+			          "Target": {
+			            "Entity": "capitulo"
+			          }
+			        },
+			        "temporada": {
+			          "Target": {
+			            "Entity": "temporada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "capitulo"
+			            },
+			            "Object": {
+			              "Role": "temporada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "capitulos_have_temporadas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Object": {
+			              "Role": "capitulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_have_capitulos"
+			        }
+			      ]
+			    },
+			    "capitulo_has_tipo_capitulo": {
+			      "Binding": {
+			        "ConceptualEntity": "capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "capitulo": {
+			          "Target": {
+			            "Entity": "capitulo"
+			          }
+			        },
+			        "tipo_capitulo": {
+			          "Target": {
+			            "Entity": "tipo_capitulo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "capitulo"
+			            },
+			            "Object": {
+			              "Role": "tipo_capitulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "capitulos_have_tipo_capitulos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "tipo_capitulo"
+			            },
+			            "Object": {
+			              "Role": "capitulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_capitulos_have_capitulos"
+			        }
+			      ]
+			    },
+			    "capitulo_has_fecha_salida_capitulo": {
+			      "Binding": {
+			        "ConceptualEntity": "capitulo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "capitulo": {
+			          "Target": {
+			            "Entity": "capitulo"
+			          }
+			        },
+			        "fecha_salida_capitulo": {
+			          "Target": {
+			            "Entity": "fecha_salida_capitulo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "capitulo"
+			            },
+			            "Object": {
+			              "Role": "fecha_salida_capitulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "capitulos_have_fecha_salida_capitulos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fecha_salida_capitulo"
+			            },
+			            "Object": {
+			              "Role": "capitulo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fecha_salida_capitulos_have_capitulos"
+			        }
+			      ]
+			    },
+			    "temporada_has_serie": {
+			      "Binding": {
+			        "ConceptualEntity": "temporadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "temporada": {
+			          "Target": {
+			            "Entity": "temporada"
+			          }
+			        },
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "temporada"
+			            },
+			            "Object": {
+			              "Role": "serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "temporadas_have_series"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "temporada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_temporadas"
+			        }
+			      ]
+			    },
+			    "genero_has_serie": {
+			      "Binding": {
+			        "ConceptualEntity": "genero"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "genero": {
+			          "Target": {
+			            "Entity": "genero"
+			          }
+			        },
+			        "serie": {
+			          "Target": {
+			            "Entity": "serie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "genero"
+			            },
+			            "Object": {
+			              "Role": "serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "generos_have_series"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "serie"
+			            },
+			            "Object": {
+			              "Role": "genero"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "series_have_generos"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
 			}
 		contentType: json
 

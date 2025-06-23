@@ -39,6 +39,17 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Código Serie'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Serie
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
 	partition temporadas = m
 		mode: import
 		queryGroup: Dimensiónes
@@ -60,9 +71,10 @@
 				    #"Se expandió DatoTMDB" = Table.ExpandRecordColumn(#"Personalizada agregada", "DatoTMDB", {"Url Portada", "Descripción"}, {"Url Portada", "Descripción"}),
 				    #"Columnas reordenadas" = Table.ReorderColumns(#"Se expandió DatoTMDB",{"Número Temporada", "Temporada", "Descripción", "Url Portada"}),
 				    #"Personalizada agregada1" = Table.AddColumn(#"Columnas reordenadas", "Nombre Completo Temporada", each if [Temporada] <> null then "Temporada " & Text.From([Número Temporada]) &" - " & [Temporada] else "Temporada " & Text.From([Número Temporada])),
-				    #"Columnas reordenadas1" = Table.ReorderColumns(#"Personalizada agregada1",{"Número Temporada", "Temporada", "Nombre Completo Temporada", "Descripción", "Url Portada"})
+				    #"Personalizada agregada2" = Table.AddColumn(#"Personalizada agregada1", "Código Serie", each id_naruto),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada2",{{"Código Serie", Int64.Type}})
 				in
-				    #"Columnas reordenadas1"
+				    #"Tipo cambiado3"
 
 	annotation PBI_NavigationStepName = Navegación
 

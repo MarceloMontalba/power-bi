@@ -1,0 +1,47 @@
+﻿table genero
+
+	column 'Código Género'
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: Código Género
+
+		annotation SummarizationSetBy = Automatic
+
+	column Género
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Género
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Serie'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Código Serie
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition genero = m
+		mode: import
+		queryGroup: Dimensiónes
+		source =
+				let
+				    url_info_serie = "https://api.themoviedb.org/3/tv/"&Text.From(id_naruto)&"?api_key="&Text.From(api_key),
+				    datos          = Json.Document(Web.Contents(url_info_serie)),
+				    generos        = Record.Field(datos, "genres"),
+				    tabla_generos  = Table.FromList(generos, Record.FieldValues),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(tabla_generos,{{"Column1", "Código Género"}, {"Column2", "Género"}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "Código Serie", each id_naruto),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Código Serie", Int64.Type}, {"Código Género", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

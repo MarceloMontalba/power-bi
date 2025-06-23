@@ -46,7 +46,7 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'Temporada 4 - Immortal Devastators'"
+                              "Value": "'Temporada 6 - Prophecy and Vengeance'"
                             }
                           }
                         ]
@@ -67,6 +67,52 @@
             "expr": {
               "Literal": {
                 "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "header": [
+      {
+        "properties": {
+          "textSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "pendingChangesIcon": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "items": [
+      {
+        "properties": {
+          "textSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
               }
             }
           }
