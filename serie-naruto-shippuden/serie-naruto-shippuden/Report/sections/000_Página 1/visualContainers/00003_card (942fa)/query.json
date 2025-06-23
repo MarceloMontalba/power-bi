@@ -6,17 +6,7 @@
           "Version": 2,
           "From": [
             {
-              "Name": "c",
-              "Entity": "capitulo",
-              "Type": 0
-            },
-            {
               "Name": "t",
-              "Entity": "tipo_capitulo",
-              "Type": 0
-            },
-            {
-              "Name": "t1",
               "Entity": "temporadas",
               "Type": 0
             }
@@ -28,28 +18,16 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Source": "c"
+                        "Source": "t"
                       }
                     },
-                    "Property": "Número Capitulo"
+                    "Property": "Descripción"
                   }
                 },
-                "Function": 2
+                "Function": 3
               },
-              "Name": "Sum(capitulo.Número Capitulo)",
-              "NativeReferenceName": "Recuento de Número Capitulo"
-            },
-            {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Source": "t"
-                  }
-                },
-                "Property": "Tipo de Capitulo"
-              },
-              "Name": "tipo_capitulo.Tipo de Capitulo",
-              "NativeReferenceName": "Tipo de Capitulo"
+              "Name": "Min(temporadas.Descripción)",
+              "NativeReferenceName": "Primera fecha: Descripción"
             }
           ],
           "Where": [
@@ -61,7 +39,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "t1"
+                            "Source": "t"
                           }
                         },
                         "Property": "Nombre Completo Temporada"
@@ -80,26 +58,6 @@
                 }
               }
             }
-          ],
-          "OrderBy": [
-            {
-              "Direction": 2,
-              "Expression": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "c"
-                        }
-                      },
-                      "Property": "Número Capitulo"
-                    }
-                  },
-                  "Function": 2
-                }
-              }
-            }
           ]
         },
         "Binding": {
@@ -107,8 +65,7 @@
             "Groupings": [
               {
                 "Projections": [
-                  0,
-                  1
+                  0
                 ]
               }
             ]

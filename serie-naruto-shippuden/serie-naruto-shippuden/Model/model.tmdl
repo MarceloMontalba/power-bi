@@ -18,7 +18,15 @@ queryGroup Fechas
 
 	annotation PBI_QueryGroupOrder = 2
 
-annotation PBI_QueryOrder = ["capitulo","temporadas","tipo_capitulo","url_bd","fecha_salida_capitulo"]
+queryGroup Funciones
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup Parámetros
+
+	annotation PBI_QueryGroupOrder = 4
+
+annotation PBI_QueryOrder = ["capitulo","temporadas","tipo_capitulo","url_bd","fecha_salida_capitulo","obtenerDatosTmdb","api_key","id_naruto"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 

@@ -1,6 +1,60 @@
-﻿expression url_bd = "C:\Users\mmont\Documents\power-bi\serie-naruto-shippuden\naruto.csv" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+﻿/// Url de la planilla de la que se extraen los datos
+expression url_bd = "C:\Users\Admin\Documents\Git\power-bi\serie-naruto-shippuden\naruto.csv" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	queryGroup: Parámetros
 
 	annotation PBI_NavigationStepName = Navegación
 
 	annotation PBI_ResultType = Text
+
+expression obtenerDatosTmdb = ```
+		// Autor : Marcelo Montalba
+		// Fecha : 23-06-2025
+		// Descripción: Función que se conecta a la API de TMDB con una key creada en un cuenta gratuida y obtiene
+		//              la información faltante de las temporadas de naruto Shippuden que son la url de portada y
+		//              descripcion de la serie.
+		
+		(numeroTemporada as number) as record =>
+		let
+		    api_key = api_key,                                   // Key de la api en TMDB
+		    idSerie = id_naruto,                                 // ID de Naruto Shippuden en TMDB
+		    url_api = "https://api.themoviedb.org/3/tv/"&Text.From(idSerie)&"/season/"&Text.From(numeroTemporada)&"?api_key="&Text.From(api_key),
+		    
+		    // Se realiza la petición del JSON a la API
+		    respuesta = Json.Document(Web.Contents(url_api)),
+		
+		    nombre_imagen         = try Record.Field(respuesta, "poster_path") otherwise null,
+		    descripcion_temporada = try Record.Field(respuesta, "overview") otherwise null,
+		
+		    // Se arma consigue la url publica de la portada con el nombre obtenido del JSON
+		    url_poster = if nombre_imagen <> null then "https://image.tmdb.org/t/p/w500"&nombre_imagen else null,
+		
+		    // Se empaqueta la información a rescatar (portada y descripcion de la temporada)
+		    resultado = [
+		        Url Portada = url_poster,
+		        Descripción = descripcion_temporada
+		    ]
+		in
+		    resultado
+		```
+	queryGroup: Funciones
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Function
+
+/// Key de usuario de la API de TMDB
+expression api_key = "1e664fa94b10aafaa9e2e61f87e0fcfe" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	queryGroup: Parámetros
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+
+/// Id de la serie Naruto Shippuden en TMDB
+expression id_naruto = 31910 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	queryGroup: Parámetros
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Number
 

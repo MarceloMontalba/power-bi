@@ -27,39 +27,6 @@
         "Name": "tipo_capitulo.Tipo de Capitulo",
         "Type": 2048
       }
-    ],
-    "Filters": [
-      {
-        "type": 2,
-        "expression": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "capitulo"
-                  }
-                },
-                "Property": "Número Capitulo"
-              }
-            },
-            "Function": 2
-          }
-        }
-      },
-      {
-        "type": 0,
-        "expression": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "tipo_capitulo"
-              }
-            },
-            "Property": "Tipo de Capitulo"
-          }
-        }
-      }
     ]
   },
   "visualElements": [

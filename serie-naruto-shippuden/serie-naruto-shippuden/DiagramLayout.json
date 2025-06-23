@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 451,
-            "y": 92
+            "x": 483.41466238649457,
+            "y": 534.05547048076983
           },
           "nodeIndex": "capitulo",
           "nodeLineageTag": "f1e4c1cf-f0c0-47ca-a658-f6c912f7b782",
@@ -23,8 +23,8 @@
         },
         {
           "location": {
-            "x": 672.76134207977191,
-            "y": 403.81866629447779
+            "x": 500.82269811662661,
+            "y": 945.93679022920912
           },
           "nodeIndex": "fecha_salida_capitulo",
           "nodeLineageTag": "3c261237-0724-44b1-b4c6-b5d26495761d",
@@ -36,8 +36,8 @@
         },
         {
           "location": {
-            "x": 162.60665457052824,
-            "y": 63.398674668727494
+            "x": 66.772000558283366,
+            "y": 660.48079134577586
           },
           "nodeIndex": "temporadas",
           "nodeLineageTag": "788604e7-dfd8-4822-ab6b-f3c9ea9e64de",
@@ -49,8 +49,8 @@
         },
         {
           "location": {
-            "x": 801.37600141450866,
-            "y": 54.310672435594242
+            "x": 878.88932451264782,
+            "y": 659.848787996076
           },
           "nodeIndex": "tipo_capitulo",
           "nodeLineageTag": "25f8b722-cf54-4b11-b536-d909a5397f48",
@@ -59,6 +59,32 @@
             "width": 234
           },
           "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1265.237301623032,
+            "y": 869.20144563716235
+          },
+          "nodeIndex": "informacion_serie",
+          "nodeLineageTag": "13d3cc8c-6ab6-4677-a26e-a77a69857653",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1313.3453233960813,
+            "y": 480.45915003447624
+          },
+          "nodeIndex": "MEDIDAS",
+          "nodeLineageTag": "f0273778-187c-488d-bc01-b44840643112",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",

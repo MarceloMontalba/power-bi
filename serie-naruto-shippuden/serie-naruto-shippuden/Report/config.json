@@ -9,6 +9,7 @@
   },
   "activeSectionIndex": 0,
   "defaultDrillFilterOtherVisuals": true,
+  "linguisticSchemaSyncVersion": 2,
   "settings": {
     "useNewFilterPaneExperience": true,
     "allowChangeFilterTypes": true,

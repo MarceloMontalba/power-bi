@@ -27,8 +27,9 @@
 		annotation SummarizationSetBy = Automatic
 
 	column 'Número Temporada'
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		summarizeBy: none
 		sourceColumn: Número Temporada
 
@@ -87,9 +88,10 @@
 				    #"Columnas reordenadas" = Table.ReorderColumns(#"Otras columnas quitadas",{"Num_episode", "Title", "Código Tipo", "Rate", "Votes", "Número Temporada", "Airdate"}),
 				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"Código Tipo", "Código Tipo Capitulo"}}),
 				    #"Columnas reordenadas1" = Table.ReorderColumns(#"Columnas con nombre cambiado1",{"Num_episode", "Title", "Código Tipo Capitulo", "Número Temporada", "Airdate", "Rate", "Votes"}),
-				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas reordenadas1",{{"Num_episode", "Número Capitulo"}, {"Title", "Título"}, {"Airdate", "Fecha Salida"}, {"Rate", "Calificación Promedio"}, {"Votes", "Cantidad de Votos"}})
+				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas reordenadas1",{{"Num_episode", "Número Capitulo"}, {"Title", "Título"}, {"Airdate", "Fecha Salida"}, {"Rate", "Calificación Promedio"}, {"Votes", "Cantidad de Votos"}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"Número Temporada", Int64.Type}})
 				in
-				    #"Columnas con nombre cambiado2"
+				    #"Tipo cambiado1"
 
 	annotation PBI_NavigationStepName = Navegación
 
