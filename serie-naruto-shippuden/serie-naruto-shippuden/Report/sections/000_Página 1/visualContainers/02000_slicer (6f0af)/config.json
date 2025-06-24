@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 84.48196469685341,
-        "y": 28.488104374520336,
+        "x": 145.89665653495439,
+        "y": 79.589665653495416,
         "z": 2000,
-        "width": 417.498081350729,
-        "height": 46.170376055257094,
+        "width": 473.677811550152,
+        "height": 58.358662613981764,
         "tabOrder": 2000
       }
     }
@@ -43,9 +43,15 @@
             "Property": "Nombre Completo Temporada"
           },
           "Name": "temporadas.Nombre Completo Temporada",
-          "NativeReferenceName": "Nombre Completo Temporada"
+          "NativeReferenceName": "Temporada"
         }
       ]
+    },
+    "columnProperties": {
+      "temporadas.Nombre Completo Temporada": {
+        "formatString": "G",
+        "displayName": "Temporada"
+      }
     },
     "drillFilterOtherVisuals": true,
     "objects": {
@@ -65,6 +71,20 @@
       "general": [
         {
           "properties": {
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -95,7 +115,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Temporada 6 - Prophecy and Vengeance'"
+                                "Value": "'Temporada 15 - The Fourth Great Ninja War - Sasuke And Itachi'"
                               }
                             }
                           ]
@@ -104,6 +124,18 @@
                     }
                   }
                 ]
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
               }
             }
           }
@@ -135,7 +167,19 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
                 }
               }
             }
@@ -164,6 +208,51 @@
                   "Value": "10D"
                 }
               }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.6
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "underline": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -171,6 +260,52 @@
     },
     "vcObjects": {
       "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
         {
           "properties": {
             "show": {

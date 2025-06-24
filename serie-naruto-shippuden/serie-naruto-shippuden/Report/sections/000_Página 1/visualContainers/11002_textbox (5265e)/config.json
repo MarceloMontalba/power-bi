@@ -1,0 +1,57 @@
+{
+  "name": "5265eab15790a50e4d26",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 93.373860182370819,
+        "y": 28.206686930091188,
+        "z": 11002,
+        "width": 909.42249240121589,
+        "height": 37.933130699088146,
+        "tabOrder": 11002
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ANÁLISIS POR TEMPORADA",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "DIN",
+                      "fontSize": "18pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

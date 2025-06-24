@@ -5,13 +5,13 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 837.1438894599039
+        "y": 831.50655687094832
       },
       "nodes": [
         {
           "location": {
             "x": 483.41466238649457,
-            "y": 1090.34606538581
+            "y": 1440.7698627685447
           },
           "nodeIndex": "capitulo",
           "nodeLineageTag": "f1e4c1cf-f0c0-47ca-a658-f6c912f7b782",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 479.68270090804322,
-            "y": 1471.2220558949937
+            "y": 1821.6458532777283
           },
           "nodeIndex": "fecha_salida_capitulo",
           "nodeLineageTag": "3c261237-0724-44b1-b4c6-b5d26495761d",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 853.1798967175871,
-            "y": 1127.9833979747657
+            "y": 1478.4071953575003
           },
           "nodeIndex": "temporadas",
           "nodeLineageTag": "788604e7-dfd8-4822-ab6b-f3c9ea9e64de",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 88.253428911627452,
-            "y": 1161.1753901587995
+            "y": 1511.5991875415341
           },
           "nodeIndex": "tipo_capitulo",
           "nodeLineageTag": "25f8b722-cf54-4b11-b536-d909a5397f48",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 1129.9413194880979,
-            "y": 849.46724807986016
+            "y": 1199.8910454625948
           },
           "nodeIndex": "serie",
           "nodeLineageTag": "800ebdb6-34a1-4232-85a5-ec90dee77231",
@@ -76,12 +76,25 @@
         {
           "location": {
             "x": 825.37462330666267,
-            "y": 700.84759476546935
+            "y": 1051.2713921482041
           },
           "nodeIndex": "genero",
           "nodeLineageTag": "1b7802b6-a6c9-44ea-ab9a-7d7c4dd62be9",
           "size": {
             "height": 147.73066406134456,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1325.6878905764704,
+            "y": 832.11102794749672
+          },
+          "nodeIndex": "MEDIDAS",
+          "nodeLineageTag": "6b61e74a-5d6a-4928-b7e7-61d451600d35",
+          "size": {
+            "height": 104,
             "width": 234
           },
           "zIndex": 0

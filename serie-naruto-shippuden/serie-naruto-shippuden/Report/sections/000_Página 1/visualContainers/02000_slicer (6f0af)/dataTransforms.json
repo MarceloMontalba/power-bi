@@ -16,6 +16,20 @@
     "general": [
       {
         "properties": {
+          "outlineWeight": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          },
+          "orientation": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
           "filter": {
             "filter": {
               "Version": 2,
@@ -46,7 +60,7 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'Temporada 6 - Prophecy and Vengeance'"
+                              "Value": "'Temporada 15 - The Fourth Great Ninja War - Sasuke And Itachi'"
                             }
                           }
                         ]
@@ -55,6 +69,18 @@
                   }
                 }
               ]
+            }
+          },
+          "outlineColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
             }
           }
         }
@@ -86,7 +112,19 @@
           "show": {
             "expr": {
               "Literal": {
-                "Value": "false"
+                "Value": "true"
+              }
+            }
+          },
+          "fontColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": -0.1
+                  }
+                }
               }
             }
           }
@@ -115,6 +153,51 @@
                 "Value": "10D"
               }
             }
+          },
+          "background": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": -0.6
+                  }
+                }
+              }
+            }
+          },
+          "fontColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "outlineStyle": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "padding": {
+            "expr": {
+              "Literal": {
+                "Value": "4D"
+              }
+            }
+          },
+          "underline": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
           }
         }
       }
@@ -136,9 +219,25 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Nombre Completo Temporada",
+        "Restatement": "Temporada",
         "Name": "temporadas.Nombre Completo Temporada",
-        "Type": 2048
+        "Type": 2048,
+        "Format": "G"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "temporadas"
+              }
+            },
+            "Property": "Nombre Completo Temporada"
+          }
+        }
       }
     ]
   },
@@ -155,7 +254,8 @@
   ],
   "selects": [
     {
-      "displayName": "Nombre Completo Temporada",
+      "displayName": "Temporada",
+      "format": "G",
       "queryName": "temporadas.Nombre Completo Temporada",
       "roles": {
         "Values": true

@@ -4,12 +4,12 @@
     {
       "id": 0,
       "position": {
-        "x": 286.84574059861853,
-        "y": 99.217191097467378,
-        "z": 2001,
-        "width": 409.63929393706826,
-        "height": 250.49884881043744,
-        "tabOrder": 2001
+        "x": 272.340425531915,
+        "y": 241.21580547112453,
+        "z": 3000,
+        "width": 416.29179331306995,
+        "height": 207.17325227963528,
+        "tabOrder": 3000
       }
     }
   ],
@@ -47,7 +47,7 @@
       ],
       "OrderBy": [
         {
-          "Direction": 1,
+          "Direction": 2,
           "Expression": {
             "Column": {
               "Expression": {
@@ -150,7 +150,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "10D"
                 }
               }
             }
@@ -245,7 +245,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10.5D"
+                  "Value": "8.5D"
                 }
               }
             }

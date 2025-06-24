@@ -9,6 +9,11 @@
               "Name": "t",
               "Entity": "temporadas",
               "Type": 0
+            },
+            {
+              "Name": "c",
+              "Entity": "capitulo",
+              "Type": 0
             }
           ],
           "Select": [
@@ -22,7 +27,77 @@
                 "Property": "Nombre Completo Temporada"
               },
               "Name": "temporadas.Nombre Completo Temporada",
-              "NativeReferenceName": "Nombre Completo Temporada"
+              "NativeReferenceName": "Temporada"
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "And": {
+                  "Left": {
+                    "Comparison": {
+                      "ComparisonKind": 2,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Calificación Promedio"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "1D"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "Comparison": {
+                      "ComparisonKind": 4,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Calificación Promedio"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "100D"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "c"
+                        }
+                      },
+                      "Property": "Cantidad de Votos"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1D"
+                    }
+                  }
+                }
+              }
             }
           ]
         },

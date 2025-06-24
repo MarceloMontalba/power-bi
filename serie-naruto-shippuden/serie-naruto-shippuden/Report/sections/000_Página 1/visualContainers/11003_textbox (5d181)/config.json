@@ -1,0 +1,57 @@
+{
+  "name": "5d18188328010cb0ee9c",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 724.62006079027356,
+        "y": 237,
+        "z": 11003,
+        "width": 223.70820668693011,
+        "height": 33.069908814589667,
+        "tabOrder": 11003
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Capítulos por tipo",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

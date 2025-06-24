@@ -6,39 +6,27 @@
           "Version": 2,
           "From": [
             {
-              "Name": "c",
-              "Entity": "capitulo",
+              "Name": "t",
+              "Entity": "tipo_capitulo",
               "Type": 0
             },
             {
-              "Name": "t",
-              "Entity": "tipo_capitulo",
+              "Name": "m",
+              "Entity": "MEDIDAS",
               "Type": 0
             },
             {
               "Name": "t1",
               "Entity": "temporadas",
               "Type": 0
+            },
+            {
+              "Name": "c",
+              "Entity": "capitulo",
+              "Type": 0
             }
           ],
           "Select": [
-            {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "c"
-                      }
-                    },
-                    "Property": "Número Capitulo"
-                  }
-                },
-                "Function": 2
-              },
-              "Name": "Sum(capitulo.Número Capitulo)",
-              "NativeReferenceName": "Recuento de Número Capitulo"
-            },
             {
               "Column": {
                 "Expression": {
@@ -50,6 +38,18 @@
               },
               "Name": "tipo_capitulo.Tipo de Capitulo",
               "NativeReferenceName": "Tipo de Capitulo"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Capítulos Totales"
+              },
+              "Name": "MEDIDAS.Capítulos Totales",
+              "NativeReferenceName": "Capítulos Totales"
             }
           ],
           "Where": [
@@ -72,11 +72,79 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Temporada 6 - Prophecy and Vengeance'"
+                          "Value": "'Temporada 15 - The Fourth Great Ninja War - Sasuke And Itachi'"
                         }
                       }
                     ]
                   ]
+                }
+              }
+            },
+            {
+              "Condition": {
+                "And": {
+                  "Left": {
+                    "Comparison": {
+                      "ComparisonKind": 2,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Calificación Promedio"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "1D"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "Comparison": {
+                      "ComparisonKind": 4,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Calificación Promedio"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "100D"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "c"
+                        }
+                      },
+                      "Property": "Cantidad de Votos"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1D"
+                    }
+                  }
                 }
               }
             }
@@ -85,18 +153,13 @@
             {
               "Direction": 2,
               "Expression": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "c"
-                        }
-                      },
-                      "Property": "Número Capitulo"
+                    "SourceRef": {
+                      "Source": "m"
                     }
                   },
-                  "Function": 2
+                  "Property": "Capítulos Totales"
                 }
               }
             }

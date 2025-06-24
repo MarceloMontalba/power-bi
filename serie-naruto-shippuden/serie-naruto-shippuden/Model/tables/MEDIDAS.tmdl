@@ -1,0 +1,83 @@
+﻿table MEDIDAS
+
+	measure 'Capítulos Totales' = ```
+			
+			DISTINCTCOUNT(capitulo[Número Capitulo])
+			
+			```
+		formatString: 0
+
+	measure 'Calificación Promedio' =
+			
+			AVERAGE(capitulo[Calificación Promedio])
+		formatString: 0.00
+
+	measure 'Votos Totales' = ```
+			
+			SUM(capitulo[Cantidad de Votos])
+			
+			
+			```
+		formatString: 0
+
+	measure 'Capitulos Temporada' =
+			
+			CALCULATE(
+			    [Capítulos Totales],
+			    ALLEXCEPT(capitulo,  temporadas[Número Temporada], temporadas[Nombre Completo Temporada])
+			)
+		formatString: 0
+
+	measure 'Capítulos Relleno' = ```
+			
+			VAR capitulos_relleno = 
+			CALCULATE(
+			    [Capítulos Totales],
+			    capitulo[Código Tipo Capitulo]=3
+			)
+			
+			VAR capitulos_mixtos = 
+			DIVIDE( // Se cuentan los capitulos mixtos y se dividen por 2 devido a que solo la mitad de estos cuenta como relleno
+			    CALCULATE(
+			        [Capítulos Totales],
+			        capitulo[Código Tipo Capitulo]=2
+			    ),
+			    2,
+			    0
+			)
+			
+			RETURN capitulos_relleno+capitulos_mixtos
+			```
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tasa de Relleno Temporada' = ```
+			
+			VAR relleno = 
+			DIVIDE(
+			    [Capítulos Relleno],
+			    [Capitulos Temporada],
+			    0
+			)
+			
+			RETURN
+			IF(
+			    ISBLANK(relleno),
+			    0,
+			    relleno
+			)
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+
+	partition MEDIDAS = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

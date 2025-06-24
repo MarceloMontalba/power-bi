@@ -66,6 +66,16 @@
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Título Completo'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Título Completo
+		sortByColumn: 'Número Capitulo'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
 	partition capitulo = m
 		mode: import
 		queryGroup: Hechos
@@ -89,9 +99,11 @@
 				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas reordenadas",{{"Código Tipo", "Código Tipo Capitulo"}}),
 				    #"Columnas reordenadas1" = Table.ReorderColumns(#"Columnas con nombre cambiado1",{"Num_episode", "Title", "Código Tipo Capitulo", "Número Temporada", "Airdate", "Rate", "Votes"}),
 				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas reordenadas1",{{"Num_episode", "Número Capitulo"}, {"Title", "Título"}, {"Airdate", "Fecha Salida"}, {"Rate", "Calificación Promedio"}, {"Votes", "Cantidad de Votos"}}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"Número Temporada", Int64.Type}})
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado2",{{"Número Temporada", Int64.Type}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado1", "Título Completo", each Text.From([Número Capitulo])&" - "&[Título]),
+				    #"Columnas reordenadas2" = Table.ReorderColumns(#"Personalizada agregada",{"Número Capitulo", "Título", "Título Completo", "Código Tipo Capitulo", "Número Temporada", "Fecha Salida", "Calificación Promedio", "Cantidad de Votos"})
 				in
-				    #"Tipo cambiado1"
+				    #"Columnas reordenadas2"
 
 	annotation PBI_NavigationStepName = Navegación
 

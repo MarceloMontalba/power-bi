@@ -82,7 +82,7 @@
           "fontSize": {
             "expr": {
               "Literal": {
-                "Value": "12D"
+                "Value": "10D"
               }
             }
           }
@@ -177,7 +177,7 @@
           "fontSize": {
             "expr": {
               "Literal": {
-                "Value": "10.5D"
+                "Value": "8.5D"
               }
             }
           }
@@ -213,6 +213,21 @@
         "Name": "temporadas.Descripción",
         "Type": 2048
       }
+    ],
+    "Filters": [
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "temporadas"
+              }
+            },
+            "Property": "Descripción"
+          }
+        }
+      }
     ]
   },
   "visualElements": [
@@ -233,7 +248,7 @@
       "roles": {
         "Values": true
       },
-      "sort": 1,
+      "sort": 2,
       "sortOrder": 0,
       "type": {
         "category": null,
