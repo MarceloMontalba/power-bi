@@ -4,10 +4,10 @@
     {
       "id": 0,
       "position": {
-        "x": 145.89665653495439,
-        "y": 79.589665653495416,
+        "x": 137.14285714285714,
+        "y": 74.8936170212766,
         "z": 2000,
-        "width": 473.677811550152,
+        "width": 568.02431610942256,
         "height": 58.358662613981764,
         "tabOrder": 2000
       }
@@ -115,7 +115,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Temporada 15 - The Fourth Great Ninja War - Sasuke And Itachi'"
+                                "Value": "'Temporada 6 - Prophecy and Vengeance'"
                               }
                             }
                           ]

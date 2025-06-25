@@ -1097,7 +1097,7 @@
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "MEDIDAS",
-			          "ConceptualProperty": "Tasa de Relleno Temporada"
+			          "ConceptualProperty": "Tasa Relleno Temporada"
 			        }
 			      },
 			      "State": "Generated",

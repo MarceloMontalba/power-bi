@@ -6,11 +6,13 @@
 			
 			```
 		formatString: 0
+		displayFolder: Medidas Númericas
 
 	measure 'Calificación Promedio' =
 			
 			AVERAGE(capitulo[Calificación Promedio])
 		formatString: 0.00
+		displayFolder: Medidas Númericas
 
 	measure 'Votos Totales' = ```
 			
@@ -19,6 +21,7 @@
 			
 			```
 		formatString: 0
+		displayFolder: Medidas Númericas
 
 	measure 'Capitulos Temporada' =
 			
@@ -27,6 +30,7 @@
 			    ALLEXCEPT(capitulo,  temporadas[Número Temporada], temporadas[Nombre Completo Temporada])
 			)
 		formatString: 0
+		displayFolder: Medidas Númericas
 
 	measure 'Capítulos Relleno' = ```
 			
@@ -48,10 +52,11 @@
 			
 			RETURN capitulos_relleno+capitulos_mixtos
 			```
+		displayFolder: Medidas Númericas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Tasa de Relleno Temporada' = ```
+	measure 'Tasa Relleno Temporada' = ```
 			
 			VAR relleno = 
 			DIVIDE(
@@ -68,6 +73,23 @@
 			)
 			```
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Medidas Númericas
+
+	measure 'Descripción Temporada' = ```
+			
+			VAR descripcion =
+			SELECTEDVALUE(
+			    temporadas[Descripción], 
+			    "*No se encontró la descripción correspondiente a la temporada.*"
+			)
+			
+			RETURN
+			IF(
+			    ISBLANK(descripcion),
+			    "*No se encontró la descripción correspondiente a la temporada.*",
+			    descripcion
+			)
+			```
 
 	partition MEDIDAS = m
 		mode: import

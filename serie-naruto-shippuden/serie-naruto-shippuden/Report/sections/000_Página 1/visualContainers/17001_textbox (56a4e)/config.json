@@ -1,0 +1,56 @@
+{
+  "name": "56a4e65c58ba3e1477d0",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 312,
+        "y": 232,
+        "z": 17001,
+        "width": 181.77339901477833,
+        "height": 32.807881773399018,
+        "tabOrder": 17001
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Resumen",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

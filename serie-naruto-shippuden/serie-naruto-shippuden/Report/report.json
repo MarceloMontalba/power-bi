@@ -32,8 +32,23 @@
         "disabled": false,
         "items": [
           {
-            "name": "plantilla04640853542568302.bmp",
-            "path": "plantilla04640853542568302.bmp",
+            "name": "kunai08669978753036733.png",
+            "path": "kunai08669978753036733.png",
+            "type": 100
+          },
+          {
+            "name": "shuriken33748636695946543.png",
+            "path": "shuriken33748636695946543.png",
+            "type": 100
+          },
+          {
+            "name": "kunai_(1)31210128781944724.png",
+            "path": "kunai_(1)31210128781944724.png",
+            "type": 100
+          },
+          {
+            "name": "plantilla7907458687113008.bmp",
+            "path": "plantilla7907458687113008.bmp",
             "type": 100
           }
         ],

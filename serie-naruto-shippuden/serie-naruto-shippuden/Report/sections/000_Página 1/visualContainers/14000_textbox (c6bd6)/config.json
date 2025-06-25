@@ -1,0 +1,57 @@
+{
+  "name": "c6bd6707a02e49a7180a",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 625,
+        "y": 469,
+        "z": 14000,
+        "width": 330.73891625615767,
+        "height": 33.694581280788178,
+        "tabOrder": 14000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Capítulos emitidos por día",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

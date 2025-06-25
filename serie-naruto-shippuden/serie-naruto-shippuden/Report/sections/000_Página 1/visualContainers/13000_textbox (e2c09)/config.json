@@ -1,0 +1,57 @@
+{
+  "name": "e2c095e52d555c3dece2",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 993.99014778325125,
+        "y": 232.3152709359606,
+        "z": 13000,
+        "width": 239.40886699507391,
+        "height": 31.921182266009854,
+        "tabOrder": 13000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Capítulos mejor valorados",
+                    "textStyle": {
+                      "fontFamily": "DIN",
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
